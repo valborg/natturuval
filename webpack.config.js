@@ -20,6 +20,8 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {test: /\.(jpe?g|png|gif|svg)$/i, loader: "url-loader?name=assets/[name].[ext]"},
+
     ],
   },
   resolve: {
