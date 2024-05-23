@@ -19,22 +19,22 @@ const App = () => {
                     onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                     >
                     <Nav.Item>
-                        <Nav.Link href="/"></Nav.Link>
+                        <Nav.Link href="#main">squarelogo/top/home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-1">Link</Nav.Link>
+                        <Nav.Link href="#team">The team</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-2">Link</Nav.Link>
+                        <Nav.Link href="#history">The story</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="disabled" disabled>
-                        Disabled
+                        <Nav.Link href='gamefound.com'>
+                        Gamefound
                         </Nav.Link>
                     </Nav.Item>
             </Nav>
         </Container>
-        <section className='main'>
+        <section id="main" className='main'>
       <Container>
         <Row>
             <Col className="col-sm-12 col-md-12 col-lg-6">
@@ -44,8 +44,7 @@ const App = () => {
             </Col>
             
             <Col className="col-sm-12 col-md-12 col-lg-6">
-                <iframe className="App-video" src="https://player.vimeo.com/video/949243604?h=94a7c4ea97"  frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
-                {/* <p><a href="https://vimeo.com/949243604">N&aacute;tt&uacute;ruval Introduction Video</a> from <a href="https://vimeo.com/user220051647">Justin Richer</a> on <a href="https://vimeo.com">Vimeo</a>.</p> */}
+                <iframe src="https://player.vimeo.com/video/949243604?h=94a7c4ea97" width="640" height="360" maxwidth="100%" maxheight="50%" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
             </Col>
         </Row>
       </Container>
@@ -91,7 +90,37 @@ const App = () => {
     </CardGroup>
     </section>
     <section className='App-history'>
+        <h1>The story behind it</h1>
+        <div className="firstHistroy">
+        <Row>
+        <Col className='col-sm-12 col-md-4 col-lg-5'>
+        <img src="/assets/NattLockupWithTagline.svg" alt="ITIS THE OLD"/>
+        </Col>
+        <Col className='col-sm-12 col-md-8 col-lg-7'>
+            <p>And the story behind it is this, such a lorem ipsum it was. Very every and there and then wow it was all such an incredible journey i'm sure it'll get sold to the guys over there in Hollywood any time soon. Not looking at my watch or anything but you know, can't be too careful</p>
+            <p>Lets make another paragraph to emphasizwea how big of an histoire it is really. </p>
+            <p>while we're at it. Let. Us. Do. THREE!!!</p>
+        </Col>
 
+        </Row>
+        </div>
+        <div className='secondHistory'>
+            
+        <Row>
+
+        <Col className='col-sm-12 col-md-8 col-lg-7'>
+            <p>And the story behind it is this, such a lorem ipsum it was. Very every and there and then wow it was all such an incredible journey i'm sure it'll get sold to the guys over there in Hollywood any time soon. Not looking at my watch or anything but you know, can't be too careful</p>
+            <p>Lets make another paragraph to emphasizwea how big of an histoire it is really. </p>
+            <p>while we're at it. Let. Us. Do. THREE!!!</p>
+        </Col>
+        <Col className='col-sm-12 col-md-4 col-lg-5'>
+        <img src="/assets/NattSquareLockup.png" height="300" alt="ITIS THE OLD"/>
+        </Col>
+
+        </Row>
+
+        </div>
+        
 
     </section>
 </div>
