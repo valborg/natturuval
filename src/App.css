@@ -49,16 +49,16 @@
         padding-bottom: 0.4rem;
     }
 
-    .App-history{
-        padding-top: 3em;
+    .App-history h1{
+        padding-top: 1em;
     }
     .App-history div{
-        padding-top: 1em;
-        padding-bottom: 1em;
+        padding: 1em;
     }
     .App-history p{
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
 .App-gamefound {
     background-color: beige;
+    padding: 2em;
 }
