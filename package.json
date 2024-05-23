@@ -1,1 +1,13 @@
-{"scripts":{"start":"webpack serve --mode development","build":"webpack --mode production"},"dependencies":{"bootstrap":"^5.3.3","css-loader":"^7.1.1","react-bootstrap":"^2.10.2","style-loader":"^4.0.0","yarn":"^1.22.22"},"devDependencies":{"file-loader":"^6.2.0","url-loader":"^4.1.1"}}
+{
+    "scripts":{
+        "start":"webpack serve --mode development",
+        "build":"webpack --mode production"},
+    "dependencies":{
+        "bootstrap":"^5.3.3",
+        "css-loader":"^7.1.1",
+        "react-bootstrap":"^2.10.2",
+        "style-loader":"^4.0.0"
+    },
+    "devDependencies":{
+        "url-loader":"^4.1.1"}
+    }
