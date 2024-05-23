@@ -93,7 +93,7 @@ const App = () => {
         <h1>The story behind it</h1>
         <div className="firstHistroy">
         <Row>
-        <Col className='col-sm-12 col-md-4 col-lg-5'>
+        <Col className='col-sm-12 col-md-4 col-lg-5' >
         <img src="/assets/NattLockupWithTagline.svg" alt="ITIS THE OLD"/>
         </Col>
         <Col className='col-sm-12 col-md-8 col-lg-7'>
@@ -122,6 +122,14 @@ const App = () => {
         </div>
         
 
+    </section>
+    <section className='App-gamefound'>
+        <h1>How gamefound works</h1>
+        <div className="gamefound">
+        <p>And the story behthe story behind it is this, such a lorem ipsumind it is this, such a lorem ipsum ithe story behind it is this, such a lorem ipsumt was. Very every and there and then wow it was all such an incredible journey i'm sure it'll get sold to the guys over there in Hollywood any time soon. Not looking at my watch or anything but you know, can't be too careful</p>
+            <p>Lets make another paragrthe story behind it is this, such a lorem ipsumaph to emphasizwea how bigthe story behind it is this, such a lorem ipsum of an histoire it is really. </p>
+            <p>while we'rethe story behind it is this, such a lorem ipsum at it.the story behind it is this, such a lorem ipsum Let. Us. Do. THREE!!!</p>
+            </div>
     </section>
 </div>
   );
