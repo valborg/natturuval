@@ -2,7 +2,9 @@
     "scripts":{
         "start":"webpack serve --mode development",
         "build":"webpack --mode production",
-        "deploy": "npm run build && git subtree push --prefix dist origin gh-pages"},
+        "deploy": "npm run build && git subtree push --prefix dist origin gh-pages --force",
+        "publish": "gh-pages -d src"
+    },
     "dependencies":{
         "bootstrap":"^5.3.3",
         "css-loader":"^7.1.1",
