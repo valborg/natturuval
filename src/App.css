@@ -51,6 +51,7 @@
     background-color: beige;
     padding: 2em;
 }
+<<<<<<< HEAD
 .row {
     height: '100vh';
   }
@@ -97,3 +98,10 @@
 .col {
     flex: 0 0 auto; /* Reset the flex properties */
   }
+=======
+
+.App-main{
+    padding-top: 6em;
+    padding-bottom: 2em;
+}
+>>>>>>> main
