@@ -3,7 +3,8 @@
         "start":"webpack serve --mode development",
         "build":"webpack --mode production",
         "deploy": "npm run build && git subtree push --prefix dist origin gh-pages --force",
-        "publish": "gh-pages -d dist"
+        "homepage": "https://valborg.github.io/natturuval",
+        "publish": "npm run build gh-pages -d src"
     },
     "dependencies":{
         "bootstrap":"^5.3.3",
