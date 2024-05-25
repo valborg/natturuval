@@ -8,7 +8,8 @@
 }
   .App h1{
     text-align: center;
-    font-family: Botanica;
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
   }
   
   .App-about {
@@ -22,6 +23,11 @@
   
   .App-about p {
     color: #555;
+  }
+
+  .card-group col{
+    padding: 0.2em;
+    border: #333;
   }
 
   .card-img-top {
@@ -38,12 +44,9 @@
         padding-bottom: 0.4rem;
     }
 
-    .App-history h1{
-        padding-top: 1em;
-    }
-    .App-history div{
+    /* .App-history div{
         padding: 1em;
-    }
+    } */
     .App-history p{
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
@@ -52,9 +55,10 @@
     padding: 2em;
 }
 
-.row {
+/* .row {
     height: '100vh';
-  }
+    padding-bottom: 2.2em;
+  } */
 
 .embed-responsive {
     position: relative;
@@ -95,13 +99,17 @@
         padding-bottom: percentage(9 / 16);
     }
 }
-.col {
-    flex: 0 0 auto; /* Reset the flex properties */
-  }
-
 
 .App-main{
     padding-top: 6em;
     padding-bottom: 2em;
 }
 
+.game-components-demo .img {
+  width:"100%";
+  height:"50%";
+}
+
+.col {
+  flex: 0 0 auto; /* Reset the flex properties */
+}

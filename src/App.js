@@ -1,13 +1,16 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 import leaf from '../public/Leaf.svg'
 import logoWithTagline from '../public/NattLockupWithTagline.svg'
+import front from '../public/front.svg'
+import back from '../public/back.svg'
+import fantasy from '../public/fantasy.svg'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -35,34 +38,43 @@ function changeLanguages() {
 const App = () => {
   return (
     <div className="App">
-        <Container fluid >
-            <Nav className='topnav'
-                    activeKey="/home"
-                    >
+        {/* <Container fluid > */}
+            
+        <Navbar bg="light" expand="lg" className='topnav'>
+            <Nav  activeKey="/home">
+                <img src={leaf} width="40px" height="auto" alt="leaf"/>
+            </Nav>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className='mr-auto'>
                     <Nav.Item>
-                        <Nav.Link href="#main"><img src="/assets/Leaf.svg" width="40px" height="auto" alt="leaf"/></Nav.Link>
+                        <Nav.Link href="#demo" name="textstring" className="nav_demo">Demo</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="#team" name="textstring" className="nav_team"></Nav.Link>
+                        <Nav.Link href="#team" name="textstring" className="nav_team">The team</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="#history" name="textstring" className="nav_history">blerg</Nav.Link>
+                        <Nav.Link href="#history" name="textstring" className="nav_history">The story</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href='https://gamefound.com/en/projects/search?term=n%C3%A1tt%C3%BAruval'>
+                        <Nav.Link target="_blank" href={textstringData[0]['en'].gamefoundurl}>
                         Gamefound
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Button onClick={changeLanguages}>Íslenskum þéttara</Button>
-                    </Nav.Item>
-            </Nav>
-        </Container>
+            {/* U+1F1EC U+1F1E7	&#127468 &#127463 English flag
+            U+1F1EE U+1F1F8	&#127470 &#127480 Icelandic flag */}
+                <Nav.Link onClick={changeLanguages} className="nav_flag" name="textstring" >🇬🇧</Nav.Link>
+                </Nav.Item>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+        {/* </Container> */}
         <section id="main" className='App-main'>
       <Container>
         <Row className='row align-items-center'>
             <Col className="col-sm-12 col-md-12 col-lg-6">
-                <img src="/assets/NattLockupWithTagline.svg" width="100%" height="auto" alt="logo"/>
+                <img src={logoWithTagline} width="100%" height="auto" alt="logo"/>
                 <p className="someFont main_subtext" name="textstring" >We are proud to present our game Náttúruval that brings joy, laughter and science to anyone who plays it. 
                 The game is being funded via Gamefound and you can make your pledge there to secure a copy for you, yours and even an educational center if you are feeling charitable.</p>
             </Col>
@@ -78,7 +90,7 @@ const App = () => {
       <section className="App-action">
       <Row>
         <Col>
-        <Button variant="outline-info"  name="textstring" className="call_to_action_button" >Check it out</Button>
+        <Button target="_blank" href={textstringData[0]['en'].gamefoundurl} variant="outline-info"  name="textstring" className="call_to_action_button" >Check it out</Button>
         </Col>
         <Col>
             <p  name="textstring" className="call_to_action" >This is a limited time crowdfunding project so to get your hands on a copy you have to pledge or get a grown up to do it for you!</p>
@@ -86,46 +98,83 @@ const App = () => {
         </Row>
       </section>
       <section>
-        <div className="game-components">
+        <div className="game-components demo">
             {/* <Fan></Fan> */}
+            <h1 name="textstring" className="demo_title">Game cards</h1>
+            <Row>
+                <Col className="col-sm-12 col-md-12 col-lg-4">
+                    <Row>
+                        <img src={front} alt="front og the card"/>
+                        </Row>
+                    <Row>
+                            <p name="textstring" className="demo_front" >The front of the basic card</p>
+                    </Row>
+                </Col>
+                <Col className="col-sm-12 col-md-12 col-lg-4">
+                    <Row>
+                        <img src={back} alt="back of the card"/>
+                        </Row>
+                    <Row>
+                        
+                        <p name="textstring" className="demo_back" >The back of each card, all cards including add ons</p>
+                    </Row>
+                </Col>
+                <Col className="col-sm-12 col-md-12 col-lg-4">
+                    <Row>
+                        <img src={fantasy} alt="template for the fantasy card"/>
+                    </Row>
+                    <Row>
+                        
+                        <p name="textstring" className="demo_fantasy" >A blank fantasy card were your design might become a real card</p>
+                    </Row>
+                </Col>
+            </Row>
         </div>
       </section>
       <section className="App-about" id="team">
         <h1 name="textstring" className="meet_the_team">Meet the team!</h1>
-    <CardGroup className='card-group'>
-        <Card className="col-sm-12 col-md-6 col-lg-3">
+    <Row className='card-group'>
+        <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
+        <Card className="flex-fill">               
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Boston_terrier_looking_upwards.png" width="100%" height="auto" className="card-img-top" alt="boston terrier"/>
             <div className="card-body">
                 <h5 className="card-title">Justin Richer</h5>
                 <p className="card-text justin_text" name="textstring">The top dog behind the project and when he's not out walking he's on the trail of securty breaches.</p>
                 <Button href="https://bspk.io" className="btn btn-primary justin_button" name="textstring">Go safely</Button>
             </div>
-        </Card>
-        <Card className="col-sm-12 col-md-6 col-lg-3">
+            </Card>
+        </Col>
+        <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
+            <Card className="flex-fill">               
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Hairy_dragonfly_%28Brachytron_pratense%29_male_close_up.jpg"  width="100%" height="auto" className="card-img-top" alt="hairy dragonfly"/>
             <div  className="card-body">
             <h5  className="card-title">Kate Estrop</h5>
             <p  className="card-text kate_text" name="textstring">This bug has been buzzing around the look and feel of the project, and possibly even smell.</p>
             <Button href="https://kateestrop.com/" className="btn btn-warning kate_button" name="textstring">Go bug them</Button>
             </div>
-        </Card>
-        <Card className="col-sm-12 col-md-6 col-lg-3">
+            </Card>
+        </Col>
+        <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
+        <Card className="flex-fill">               
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Randwick_bird_of_paradise_001.jpg" width="100%" height="auto" className="card-img-top" alt="is it a bird?"/>
             <div  className="card-body">
             <h5  className="card-title">Valborg Sturludóttir</h5>
             <p  className="card-text  valborg_text" name="textstring">Between fighting dragons and solving sudokus this bird mama tried to catch them all</p>
             <Button className='btn btn-info valborg_button' href="https://github.com/valborg" name="textstring">Go on a nerdy adventure</Button>
             </div>
-        </Card>  
-        <Card className="col-sm-12 col-md-6 col-lg-3">
+            </Card>
+        </Col>
+        <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
+        <Card className="flex-fill">               
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Giant_Anteater_Santa_Barbara_Zoo_1.jpg"  width="100%" height="auto" className="card-img-top" alt="ant eater"/>
             <div  className="card-body">
             <h5  className="card-title">Rökkvi Þór</h5>
             <p  className="card-text rokkvi_text" name="textstring">This young man's favorite scientist is David Attenborogh, and he can't wait to tell you facts about animals you've never heard of.</p>
             <Button href="" className="btn btn-success rokkvi_button" name="textstring" >Go get my game!</Button>
             </div>
-        </Card>
-    </CardGroup>
+            </Card>
+        </Col>
+    </Row>
     </section>
     <section className='App-history' id="history">
         <h1 name="textstring" className="history_title">The story behind the game</h1>
