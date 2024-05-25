@@ -8,7 +8,7 @@
 }
   .App h1{
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: Botanica;
   }
   
   .App-about {
@@ -104,3 +104,4 @@
     padding-top: 6em;
     padding-bottom: 2em;
 }
+
