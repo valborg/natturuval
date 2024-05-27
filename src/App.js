@@ -26,10 +26,7 @@ function changeLanguages() {
     const collection = document.getElementsByName("textstring")
     for(const item of collection){
         const identifier = item.className.split(' ').find(word => word.includes('_')||'')
-        console.log(identifier)
         const replacement = textstringData[0][CURR_LANG][identifier]
-        console.log(replacement)
-        const text = replacement.en
         document.getElementsByClassName(identifier)[0].innerHTML = replacement
     }
 }
@@ -98,34 +95,33 @@ const App = () => {
         </Row>
       </section>
       <section>
-        <div className="game-components demo">
+        <div className="game-components demo" >
             {/* <Fan></Fan> */}
             <h1 name="textstring" className="demo_title">Game cards</h1>
-            <Row>
-                <Col className="col-sm-12 col-md-12 col-lg-4">
-                    <Row>
+            <Row  >
+                <Col className="col-sm-12 col-md-12 col-lg-4 d-flex">
+                    <Row className="flex-fill">
                         <img src={front} alt="front og the card"/>
-                        </Row>
-                    <Row>
+                        <div>
                             <p name="textstring" className="demo_front" >The front of the basic card</p>
-                    </Row>
-                </Col>
-                <Col className="col-sm-12 col-md-12 col-lg-4">
-                    <Row>
-                        <img src={back} alt="back of the card"/>
+                        </div>
                         </Row>
-                    <Row>
-                        
-                        <p name="textstring" className="demo_back" >The back of each card, all cards including add ons</p>
-                    </Row>
                 </Col>
-                <Col className="col-sm-12 col-md-12 col-lg-4">
-                    <Row>
-                        <img src={fantasy} alt="template for the fantasy card"/>
-                    </Row>
-                    <Row>
-                        
+                <Col className="col-sm-12 col-md-12 col-lg-4 d-flex">
+                <Row className="flex-fill">
+                        <img src={back} alt="back of the card"/>
+                        <div>
+                        <p name="textstring" className="demo_back" >The back of each card, all cards including add ons</p>
+                        </div>
+                        </Row>
+                </Col>
+                <Col className="col-sm-12 col-md-12 col-lg-4 d-flex">
+                    <Row className="flex-fill" >
+                        <img src={fantasy}  alt="template for the fantasy card"/>
+                        <div>
                         <p name="textstring" className="demo_fantasy" >A blank fantasy card were your design might become a real card</p>
+
+                        </div>
                     </Row>
                 </Col>
             </Row>
