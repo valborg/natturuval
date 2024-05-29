@@ -8,9 +8,6 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import leaf from '../public/Leaf.svg'
 import logoWithTagline from '../public/NattLockupWithTagline.svg'
-import front from '../public/front.svg'
-import back from '../public/back.svg'
-import fantasy from '../public/fantasy.svg'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -45,17 +42,17 @@ const App = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className='mr-auto'>
                     <Nav.Item>
-                        <Nav.Link href="#demo" name="textstring" className="nav_demo">Demo</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
                         <Nav.Link href="#team" name="textstring" className="nav_team">The team</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link href="#history" name="textstring" className="nav_history">The story</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link target="_blank" href={textstringData[0]['en'].gamefoundurl}>
-                        Gamefound
+                        <Nav.Link href="#crowdfunding" name="textstring" className="nav_crowdfunding">Crowdfunding</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link target="_blank" name="textstring" className="nav_gamefound" href={textstringData[0]['en'].gamefoundurl}>
+                        Visit Gamefound
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
@@ -69,19 +66,19 @@ const App = () => {
         {/* </Container> */}
         <section id="main" className='App-main'>
       <Container>
-        <Row className='row align-items-center'>
-            <Col className="col-sm-12 col-md-12 col-lg-6">
+        {/* <Row className='row align-items-center'> */}
+            {/* <Col className="col-sm-12 col-md-12 col-lg-6"> */}
                 <img src={logoWithTagline} width="100%" height="auto" alt="logo"/>
                 <p className="someFont main_subtext" name="textstring" >We are proud to present our game Náttúruval that brings joy, laughter and science to anyone who plays it. 
                 The game is being funded via Gamefound and you can make your pledge there to secure a copy for you, yours and even an educational center if you are feeling charitable.</p>
-            </Col>
-            
+            {/* </Col> */}
+{/*             
             <Col className="col-sm-12 col-md-12 col-lg-6">
                 <div className='embed-responsive embed-responsive-16by9'>
                     <iframe  className='embed-responsive-item' src="https://player.vimeo.com/video/949243604?h=94a7c4ea97"  height="180" width="320"  frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </Col>
-        </Row>
+        </Row> */}
       </Container>
       </section>
       <section className="App-action">
@@ -94,49 +91,38 @@ const App = () => {
         </Col>
         </Row>
       </section>
-      <section>
-        <div className="game-components demo" >
-            {/* <Fan></Fan> */}
-            <h1 name="textstring" className="demo_title">Game cards</h1>
-            <Row  >
-                <Col className="col-sm-12 col-md-12 col-lg-4 d-flex">
-                    <Row className="flex-fill">
-                        <img src={front} alt="front og the card"/>
-                        <div>
-                            <p name="textstring" className="demo_front" >The front of the basic card</p>
-                        </div>
-                        </Row>
-                </Col>
-                <Col className="col-sm-12 col-md-12 col-lg-4 d-flex">
-                <Row className="flex-fill">
-                        <img src={back} alt="back of the card"/>
-                        <div>
-                        <p name="textstring" className="demo_back" >The back of each card, all cards including add ons</p>
-                        </div>
-                        </Row>
-                </Col>
-                <Col className="col-sm-12 col-md-12 col-lg-4 d-flex">
-                    <Row className="flex-fill" >
-                        <img src={fantasy}  alt="template for the fantasy card"/>
-                        <div>
-                        <p name="textstring" className="demo_fantasy" >A blank fantasy card were your design might become a real card</p>
-
-                        </div>
-                    </Row>
-                </Col>
-            </Row>
-        </div>
-      </section>
       <section className="App-about" id="team">
         <h1 name="textstring" className="meet_the_team">Meet the team!</h1>
     <Row className='card-group'>
+    <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
+        <Card className="flex-fill">               
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Randwick_bird_of_paradise_001.jpg" width="100%" height="auto" className="card-img-top" alt="is it a bird?"/>
+            <div  className="card-body">
+            <h5  className="card-title">Valborg Sturludóttir</h5>
+            <p  className="card-text  valborg_text" name="textstring">Between fighting dragons and solving sudokus this bird mama tried to catch them all. This is the loadest person who will never ever ever stop talking no matter what and then you will just know if shes in the vincinity because of the shrill laughter</p>
+            <Button className='btn btn-info valborg_button' href="https://github.com/valborg" name="textstring">Go on a nerdy adventure</Button>
+            </div>
+            </Card>
+        </Col>
         <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
         <Card className="flex-fill">               
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Boston_terrier_looking_upwards.png" width="100%" height="auto" className="card-img-top" alt="boston terrier"/>
             <div className="card-body">
                 <h5 className="card-title">Justin Richer</h5>
-                <p className="card-text justin_text" name="textstring">The top dog behind the project and when he's not out walking he's on the trail of securty breaches.</p>
+                <p className="card-text justin_text" name="textstring">The top dog behind the project and when he's not out walking he's on the trail of securty breaches. He comes from a place down by the lake and he makes stuff crust pizas when he's not at all afraid of a few sentences about him online because and this is key he's never heard of greinamerki</p>
                 <Button href="https://bspk.io" className="btn btn-primary justin_button" name="textstring">Go safely</Button>
+            </div>
+            </Card>
+        </Col>
+
+
+        <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
+        <Card className="flex-fill">               
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Giant_Anteater_Santa_Barbara_Zoo_1.jpg"  width="100%" height="auto" className="card-img-top" alt="ant eater"/>
+            <div  className="card-body">
+            <h5  className="card-title">Rökkvi Þór</h5>
+            <p  className="card-text rokkvi_text" name="textstring">This young man's favorite scientist is David Attenborogh, and he can't wait to tell you facts about animals you've never heard of. But being the youngest and somwhat kept out of this ehlp process he will have the most to say about it and its fore most critic. just like those who have an education are all pretty expert on the educational system, this is like I became a dentist from going there a few times. The orthodontist even. where is my degree ?</p>
+            <Button href="" className="btn btn-success rokkvi_button" name="textstring" >Go get my game!</Button>
             </div>
             </Card>
         </Col>
@@ -145,28 +131,8 @@ const App = () => {
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Hairy_dragonfly_%28Brachytron_pratense%29_male_close_up.jpg"  width="100%" height="auto" className="card-img-top" alt="hairy dragonfly"/>
             <div  className="card-body">
             <h5  className="card-title">Kate Estrop</h5>
-            <p  className="card-text kate_text" name="textstring">This bug has been buzzing around the look and feel of the project, and possibly even smell.</p>
+            <p  className="card-text kate_text" name="textstring">This bug has been buzzing around the look and feel of the project, and possibly even smell. Same goes here we know this there is a text and a subtext and then some undertones even and motivs and leitmotivs and what we're saying is kate would love to do a musical about bugs</p>
             <Button href="https://kateestrop.com/" className="btn btn-warning kate_button" name="textstring">Go bug them</Button>
-            </div>
-            </Card>
-        </Col>
-        <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
-        <Card className="flex-fill">               
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Randwick_bird_of_paradise_001.jpg" width="100%" height="auto" className="card-img-top" alt="is it a bird?"/>
-            <div  className="card-body">
-            <h5  className="card-title">Valborg Sturludóttir</h5>
-            <p  className="card-text  valborg_text" name="textstring">Between fighting dragons and solving sudokus this bird mama tried to catch them all</p>
-            <Button className='btn btn-info valborg_button' href="https://github.com/valborg" name="textstring">Go on a nerdy adventure</Button>
-            </div>
-            </Card>
-        </Col>
-        <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
-        <Card className="flex-fill">               
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Giant_Anteater_Santa_Barbara_Zoo_1.jpg"  width="100%" height="auto" className="card-img-top" alt="ant eater"/>
-            <div  className="card-body">
-            <h5  className="card-title">Rökkvi Þór</h5>
-            <p  className="card-text rokkvi_text" name="textstring">This young man's favorite scientist is David Attenborogh, and he can't wait to tell you facts about animals you've never heard of.</p>
-            <Button href="" className="btn btn-success rokkvi_button" name="textstring" >Go get my game!</Button>
             </div>
             </Card>
         </Col>
@@ -202,7 +168,7 @@ const App = () => {
         
 
     </section>
-    <section className='App-gamefound'>
+    <section className='App-gamefound' id="crowdfunding">
         <h1 name="textstring" className="crowdfunding_title">How crowdfunding works</h1>
         <div className="gamefound">
             <Row>
