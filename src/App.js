@@ -8,6 +8,12 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import leaf from '../public/Leaf.svg'
 import logoWithTagline from '../public/NattLockupWithTagline.svg'
+import justin from '../public/justin.jpeg'
+import valborg from '../public/valborg.jpeg'
+import rokkvi from '../public/rokkvi1.jpeg'
+import kate from '../public/kate.jpg'
+import socials from '../public/socials.jpeg'
+import lockup from '../public/NattSquareLockup.png'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -82,21 +88,25 @@ const App = () => {
       </Container>
       </section>
       <section className="App-action">
-      <Row>
+        <div>
+        <Button target="_blank" href={textstringData[0]['en'].gamefoundurl} variant="outline-info"  name="textstring" className="call_to_action_button" >Check it out</Button>
+        <p  name="textstring" className="call_to_action" >This is a limited time crowdfunding project so to get your hands on a copy you have to pledge or get a grown up to do it for you!</p>
+        </div>
+      {/* <Row>
         <Col>
         <Button target="_blank" href={textstringData[0]['en'].gamefoundurl} variant="outline-info"  name="textstring" className="call_to_action_button" >Check it out</Button>
         </Col>
         <Col>
             <p  name="textstring" className="call_to_action" >This is a limited time crowdfunding project so to get your hands on a copy you have to pledge or get a grown up to do it for you!</p>
         </Col>
-        </Row>
+        </Row> */}
       </section>
       <section className="App-about" id="team">
         <h1 name="textstring" className="meet_the_team">Meet the team!</h1>
     <Row className='card-group'>
     <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
         <Card className="flex-fill">               
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Randwick_bird_of_paradise_001.jpg" width="100%" height="auto" className="card-img-top" alt="is it a bird?"/>
+            <img src={valborg} width="100%" height="auto" className="card-img-top" alt="is it a bird?"/>
             <div  className="card-body">
             <h5  className="card-title">Valborg Sturludóttir</h5>
             <p  className="card-text  valborg_text" name="textstring">Between fighting dragons and solving sudokus this bird mama tried to catch them all. This is the loadest person who will never ever ever stop talking no matter what and then you will just know if shes in the vincinity because of the shrill laughter</p>
@@ -106,7 +116,7 @@ const App = () => {
         </Col>
         <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
         <Card className="flex-fill">               
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Boston_terrier_looking_upwards.png" width="100%" height="auto" className="card-img-top" alt="boston terrier"/>
+            <img src={justin} width="100%" height="auto" className="card-img-top" alt="boston terrier"/>
             <div className="card-body">
                 <h5 className="card-title">Justin Richer</h5>
                 <p className="card-text justin_text" name="textstring">The top dog behind the project and when he's not out walking he's on the trail of securty breaches. He comes from a place down by the lake and he makes stuff crust pizas when he's not at all afraid of a few sentences about him online because and this is key he's never heard of greinamerki</p>
@@ -118,7 +128,7 @@ const App = () => {
 
         <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
         <Card className="flex-fill">               
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Giant_Anteater_Santa_Barbara_Zoo_1.jpg"  width="100%" height="auto" className="card-img-top" alt="ant eater"/>
+            <img src={rokkvi}  width="100%" height="auto" className="card-img-top" alt="ant eater"/>
             <div  className="card-body">
             <h5  className="card-title">Rökkvi Þór</h5>
             <p  className="card-text rokkvi_text" name="textstring">This young man's favorite scientist is David Attenborogh, and he can't wait to tell you facts about animals you've never heard of. But being the youngest and somwhat kept out of this ehlp process he will have the most to say about it and its fore most critic. just like those who have an education are all pretty expert on the educational system, this is like I became a dentist from going there a few times. The orthodontist even. where is my degree ?</p>
@@ -128,7 +138,7 @@ const App = () => {
         </Col>
         <Col className="col-sm-12 col-md-6 col-lg-3 d-flex">
             <Card className="flex-fill">               
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Hairy_dragonfly_%28Brachytron_pratense%29_male_close_up.jpg"  width="100%" height="auto" className="card-img-top" alt="hairy dragonfly"/>
+            <img src={kate}  width="100%" height="auto" className="card-img-top" alt="hairy dragonfly"/>
             <div  className="card-body">
             <h5  className="card-title">Kate Estrop</h5>
             <p  className="card-text kate_text" name="textstring">This bug has been buzzing around the look and feel of the project, and possibly even smell. Same goes here we know this there is a text and a subtext and then some undertones even and motivs and leitmotivs and what we're saying is kate would love to do a musical about bugs</p>
@@ -143,7 +153,7 @@ const App = () => {
         <div className="firstHistroy">
         <Row>
         <Col className='col-sm-12 col-md-4 col-lg-5' >
-        <img src="/assets/NattLockupWithTagline.svg" width="100%" height="auto" alt="old-card-1.0"/>
+        <img src={lockup} width="100%" height="auto" alt="old-card-1.0"/>
 
         </Col>
         <Col className='col-sm-12 col-md-8 col-lg-7'>
@@ -160,7 +170,7 @@ const App = () => {
             <p name="textstring" className="history_part_2">Justin could see potential in the game already, but had doubts about Valborg's inkscape graphic design. He was already a publisher of a few other games and knew what he was getting himself into. He got in touch with one of his previous contacts in the printing buisness and got them to do a prototype of the game, one for him in English and one for Valborg and Rökkvi in Icelandic, but with a much better design, better size and better paper. When the game arrived the news was that each box would need to retail at about 50$ for it to be viable, which was the end of that. But wait, there is more. Justin didn't just give up like that, he contacted other sources and got quotes and there was a chance for this happening and for as little as 20$ and that was a number they could work with. Justin had done an amazing job at redesigning the cards but thought it would be best to bring in a professional. Kate Estrop was that professional, they are a designer that specializes in animal, and more specifically bug, illustrations and they were excited to be on this team, and dare we say made even Justin's fancy card design look like yesterday's news</p>
         </Col>
         <Col className='col-sm-12 col-md-4 col-lg-5'>
-        <img src="/assets/NattSquareLockup.png" width="100%" height="auto" alt="old-card-2.0"/>
+        <img src={logoWithTagline} width="100%" height="auto" alt="old-card-2.0"/>
         </Col>
         </Row>
 
@@ -173,7 +183,7 @@ const App = () => {
         <div className="gamefound">
             <Row>
             <Col className='col-sm-12 col-md-2 col-lg-4'>
-            <img src="/assets/NattSquareLockup.png" width="100%" height="auto" alt="krepskplyak"/>
+            <img src={socials} width="100%" height="auto" alt="gamefound reward"/>
             
             </Col>
             <Col className='col-sm-12 col-md-10 col-lg-8'>
