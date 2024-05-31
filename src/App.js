@@ -9,11 +9,13 @@ import Navbar from 'react-bootstrap/Navbar'
 import leaf from '../public/Leaf.svg'
 import logoWithTagline from '../public/NattLockupWithTagline.svg'
 import justin from '../public/justin.jpeg'
-import valborg from '../public/valborg.jpeg'
-import rokkvi from '../public/rokkvi1.jpeg'
+import valborg from '../public/valborgS2.jpeg'
+import rokkvi from '../public/rokkvi12.jpeg'
 import kate from '../public/kate.jpg'
 import socials from '../public/socials.jpeg'
 import lockup from '../public/NattSquareLockup.png'
+import prototypeArt from '../public/prototypeArt.jpg'
+import basicLayout from '../public/basicLayout.jpg'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -151,26 +153,36 @@ const App = () => {
     <section className='App-history' id="history">
         <h1 name="textstring" className="history_title">The story behind the game</h1>
         <div className="firstHistroy">
-        <Row>
-        <Col className='col-sm-12 col-md-4 col-lg-5' >
-        <img src={lockup} width="100%" height="auto" alt="old-card-1.0"/>
+        <Row className="flex-fill">
+            <Col className='col-sm-12 col-md-12 col-lg-5 d-flex' >
+            <img src={basicLayout} width="100%" height="auto" alt="old-card-1.0"/>
 
-        </Col>
-        <Col className='col-sm-12 col-md-8 col-lg-7'>
-            <p name="textstring" className="history_part_1">Rökkvi Þór, who's favorite scientist is Sir David Frederick Attenborough, asked his mother one day to create "little cards" with information about animals. Valborg, his mother, started right away making a dataset of the suggested animals. Then the dataset needed some uniformity and a discussion started between the two about what sort of statistics are universal enough to be able to quantify over most animals? Speed, how long they sleep, number of eyes, average distance traveled, were all mentioned at one point or another during the process but ultimately discarded, well the number of eyes is easily quantifiable but not very diverse. The statistics that did end up on the card were weight of an adult, length (from head to toe) of an adult, how many offspring and adult produces in one bout, average lifetime in the wild of an adult, number of feet of a healthy adult (the average would always be lower than that, like the average number of hands on people is less than two). Now here are 5 numbers that can be checked in nature and there wasn't any other category they could think of that would fit the criteria of universallly available of most animals. So they started making the cards, mind you they were more like spreadsheet printouts than game cards, and they realized that if they could add one more category they would be able to use a dice and make a game of the, essentially, flashcards. So they made a program count the numbers in the scientific name and that became a stat. After the dice was brought in there was no going back, Valborg made a program that churnes out printables for cards that fit 9 on an A4 for all 13 animals from the dataset, which then grew but small number of cards didn't stop us from playing the game profusively. Anytime they added animals to the deck they always added nine at a time to make use of the paper (why 13 then you ask? Mistakes.). This deck is therefore ever expanding and they have been playing and one time Justin came over with his wife and played a few rounds.</p>
-        </Col>
+            </Col>
+            <Col className='col-sm-12 col-md-12 col-lg-7'>
+                <p name="textstring" className="history_part_1">Rökkvi Þór, who's favorite scientist is Sir David Frederick Attenborough, asked his mother one day to create "little cards" with information about animals. Valborg, his mother, started right away making a dataset of the suggested animals. Then the dataset needed some uniformity and a discussion started between the two about what sort of statistics are universal enough to be able to quantify over most animals? Speed, how long they sleep, number of eyes, average distance traveled, were all mentioned at one point or another during the process but ultimately discarded, well the number of eyes is easily quantifiable but not very diverse. The statistics that did end up on the card were weight of an adult, length (from head to toe) of an adult, how many offspring and adult produces in one bout, average lifetime in the wild of an adult, number of feet of a healthy adult (the average would always be lower than that, like the average number of hands on people is less than two). Now here are 5 numbers that can be checked in nature and there wasn't any other category they could think of that would fit the criteria of universallly available of most animals. So they started making the cards, mind you they were more like spreadsheet printouts than game cards, and they realized that if they could add one more category they would be able to use a dice and make a game of the, essentially, flashcards. So they made a program count the numbers in the scientific name and that became a stat. After the dice was brought in there was no going back, Valborg made a program that churnes out printables for cards that fit 9 on an A4 for all 13 animals from the dataset, which then grew but small number of cards didn't stop us from playing the game profusively. Anytime they added animals to the deck they always added nine at a time to make use of the paper (why 13 then you ask? Mistakes.). This deck is therefore ever expanding and they have been playing and one time Justin came over with his wife and played a few rounds.</p>
+            </Col>
 
         </Row>
         </div>
+            <div className="logoFiller">
+                <Row>
+                    <Col>
+                    <img src={leaf} height="50vh" width="auto" alt="logo" class="img-flip"/>
+                    </Col>
+                    {/* <Col className='col-sm-6 col-md-6 col-lg-6'>
+                    <img src={leaf} height="90vh" width="auto" alt="logo" className="img-flip-back" />
+                    </Col> */}
+                </Row>
+            </div>
         <div className='secondHistory'>
-            
-        <Row>
 
-        <Col className='col-sm-12 col-md-8 col-lg-7'>
+        <Row className="flex-fill">
+
+        <Col className='col-sm-12 col-md-12 col-lg-7'>
             <p name="textstring" className="history_part_2">Justin could see potential in the game already, but had doubts about Valborg's inkscape graphic design. He was already a publisher of a few other games and knew what he was getting himself into. He got in touch with one of his previous contacts in the printing buisness and got them to do a prototype of the game, one for him in English and one for Valborg and Rökkvi in Icelandic, but with a much better design, better size and better paper. When the game arrived the news was that each box would need to retail at about 50$ for it to be viable, which was the end of that. But wait, there is more. Justin didn't just give up like that, he contacted other sources and got quotes and there was a chance for this happening and for as little as 20$ and that was a number they could work with. Justin had done an amazing job at redesigning the cards but thought it would be best to bring in a professional. Kate Estrop was that professional, they are a designer that specializes in animal, and more specifically bug, illustrations and they were excited to be on this team, and dare we say made even Justin's fancy card design look like yesterday's news</p>
         </Col>
-        <Col className='col-sm-12 col-md-4 col-lg-5'>
-        <img src={logoWithTagline} width="100%" height="auto" alt="old-card-2.0"/>
+        <Col className='col-sm-12 col-md-12 col-lg-5 d-flex'>
+        <img src={prototypeArt} width="100%" height="auto" alt="old-card-2.0"/>
         </Col>
         </Row>
 
@@ -182,11 +194,11 @@ const App = () => {
         <h1 name="textstring" className="crowdfunding_title">How crowdfunding works</h1>
         <div className="gamefound">
             <Row>
-            <Col className='col-sm-12 col-md-2 col-lg-4'>
+            <Col className='col-sm-12 col-md-12 col-lg-4 '>
             <img src={socials} width="100%" height="auto" alt="gamefound reward"/>
             
             </Col>
-            <Col className='col-sm-12 col-md-10 col-lg-8'>
+            <Col className='col-sm-12 col-md-12 col-lg-8'>
             <p name="textstring" className="crowdfunding_text_1" >Gamefound is a crowdfunding platform. Crowdfunding is the practice of funding a project or venture by raising money from a large number of people, typically via the internet. In short, it is a way to make small independent ventures possible because the need for capital in the beginning of the project is not necessary. So this is not an online store, this is a way for you pay for a game that we then promise to make as long as enough people do that, if the project does not gain enough traction and you have already spent money on it and it does not get printed you will get your money back.</p>
 
 <p>There are more things to buy from the site as well like stickers, posters and t-shirts, there is a fantasy creature deck and you could pledge to not only get that extra deck, that is compatable with the regular game, but also have your design in there, like Rökkvi made Krepskplyak the not crab.</p>

@@ -1,6 +1,7 @@
-/* src/App.css */ /* 
+/* src/App.css */
  .col {
-  flex: 0 0 auto; /* Reset the flex properties */
+  flex: 0 0 auto;
+  } /* Reset the flex properties */
 .App {
   text-align: justify;
   font-family: Arial, sans-serif;
@@ -34,12 +35,12 @@
 .card-group col{
   padding: 0.2em;
   border: #333;
-  margin: 80em;
 }
 
 .card-img-top {
   width: 100%;
   max-height: 15vw;
+  min-height: 20em;
   object-fit: cover;
 }
 
@@ -64,3 +65,13 @@
     padding-bottom: 2em;
 }
 
+.logoFiller{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5%;
+}
+
+.img-flip {
+  transform: rotateY(180deg);
+}
