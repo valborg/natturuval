@@ -4,19 +4,19 @@ Ljón: Líttu á
 
 2
 00:00:04,00 --> 00:00:05,605
-Ríkið mitt
+Ljón: Ríkið mitt
 
 3
 00:00:07,00 --> 00:00:10,605
-Ég er konungur alls þess
+Ljón: Ég er konungur alls þess
 
 4
 00:00:14,00 --> 00:00:19,605
-Enginn myndi skora á mig
+Ljón: Enginn myndi skora á mig
 
 5
 00:00:20,84 --> 00:00:23,605
-Fluga: Ekki þennan asa
+Fluga: Engan asa
 
 6
 00:00:23,97 --> 00:00:26,605
@@ -31,11 +31,11 @@ Fluga: Varaðu þig... ég hef
 Ljón: HVAÐ?!
 
 9
-00:00:33,82 --> 00:00:34,605
+00:00:34,02 --> 00:00:34,905
 Fluga: FLEIRI FÆTUR
 
 10
-00:00:34,63 --> 00:00:39,42
+00:00:35,63 --> 00:00:39,42
 Ljón: Neeeeeeiiiiiiii!!!!
 
 11
@@ -44,7 +44,7 @@ Fluga: Ég er því sannlega með yfirburðum
 
 12
 00:00:42,55 --> 00:00:45,53
-heh heh heh
+Fluga: heh heh heh
 
 13
 00:00:45,53 --> 00:00:46,52
@@ -273,9 +273,11 @@ ensku og íslensku
 53
 00:03:40,25 --> 00:03:41,75
 Takk fyrir áhorfið
+
 54
 00:03:41,75 --> 00:03:46,00
 Og takk fyrir að blása lífi í þetta verkefni okkar
+
 55
 00:03:46,00 --> 00:03:48,00
 blub blub

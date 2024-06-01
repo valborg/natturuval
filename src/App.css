@@ -1,7 +1,7 @@
 /* src/App.css */
-/* .col {
+.col {
   flex: 0 0 auto;
-} */
+}
 
 /* Reset the flex properties */
 .App {
@@ -77,15 +77,27 @@
 
 .App-history p {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-inline: 1em;
+}
+
+.firstHistory img {
+  border-radius: 5%;
+}
+
+.secondHistory img {
+  border-radius: 2%;
 }
 
 .App-history img {
-  height: max-content;
+  width: 100%;
+  max-height: min-content;
 }
 
-.App-gamefound {
+.App-gamefound{
   background-color: rgb(194, 206, 190);
   padding: 2em;
+  align-items: center;
+  border-radius: 2%;
 }
 
 .App-main {
@@ -94,8 +106,9 @@
 }
 
 .logoFiller img {
-  height: 3em;
+  height: 1em;
   mask-repeat: repeat;
+  height: 3%;
 }
 
 .img-flip {
