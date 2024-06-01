@@ -135,11 +135,11 @@ const App = () => {
             <section className='App-history' id="history">
                 <h1 name="textstring" className="history_title">The story behind the game</h1>
                 <div className="firstHistory">
-                    <Row className="d-flex">
+                    <Row className="d-flex justify-content-center">
                         <Col className='col-sm-12 col-md-12 col-lg-4'>
                             <img src={basicLayout} width="100%" height="auto" alt="old-card-1.0" />
                         </Col>
-                        <Col className='col-sm-12 col-md-12 col-lg-8'>
+                        <Col className='col-sm-12 col-md-12 col-lg-5'>
                             <p name="textstring" className="history_origin">Rökkvi Þór, who's favorite scientist is Sir David Frederick Attenborough, asked his mother one day to create "little cards" with information about animals. Valborg, his mother, started right away making a dataset of the suggested animals. Then the dataset needed some uniformity and a discussion started between the two about what sort of statistics are universal enough to be able to quantify over most animals? Speed, how long they sleep, number of eyes, average distance traveled, were all mentioned at one point or another during the process but ultimately discarded, well the number of eyes is easily quantifiable but not very diverse. </p>
                         </Col>
                     </Row>
@@ -148,8 +148,8 @@ const App = () => {
                             <img src={grass} width="100%" height="1%" alt="old-card-2.0" />
                         </Col>
                     </Row>
-                    <Row className="d-flex">
-                        <Col className='col-sm-12 col-md-12 col-lg-8'>
+                    <Row className="d-flex justify-content-center">
+                        <Col className='col-sm-12 col-md-12 col-lg-5'>
                         <p name="textstring" className="history_decisions">
                             The statistics that did end up on the card were weight of an adult, length (from head to toe) of an adult, how many offspring and adult produces in one bout, average lifetime in the wild of an adult, number of feet of a healthy adult (the average would always be lower than that, like the average number of hands on people is less than two). Now here are 5 numbers that can be checked in nature and there wasn't any other category they could think of that would fit the criteria of universallly available of most animals. So they started making the cards, mind you they were more like spreadsheet printouts than game cards, and they realized that if they could add one more category they would be able to use a dice and make a game of the, essentially, flashcards. So they made a program count the numbers in the scientific name and that became a stat.
                             </p>
@@ -158,13 +158,13 @@ const App = () => {
                             <img src={version1} width="100%" height="1%" alt="old-card-2.0" />
                         </Col>
                     </Row>
-                    <Row className="d-flex">
+                    <Row className="d-flex justify-content-center">
                         <Col className=' d-flex'>
                             <img src={grass} width="100%" height="1%" alt="old-card-2.0" />
                         </Col>
                     </Row>
-                    <Row className='d-flex'>
-                        <Col className='col-sm-12 col-md-12 col-lg-8'>
+                    <Row className='d-flex justify-content-center'>
+                        <Col className='col-sm-12 col-md-12 col-lg-5'>
                             <p name="textstring" className="history_version_1">
                              After the dice was brought in there was no going back, Valborg made a program that churnes out printables for cards that fit 9 on an A4 for all 13 animals from the dataset, which then grew but small number of cards didn't stop us from playing the game profusively. Anytime they added animals to the deck they always added nine at a time to make use of the paper (why 13 then you ask? Mistakes.). This deck is therefore ever expanding and they have been playing and one time Justin came over with his wife and played a few rounds.</p>
                         </Col>
@@ -177,8 +177,8 @@ const App = () => {
                     <img src={grass} height="auto" width="100%" alt="logo" />
                 </div> */}
                 <div className='secondHistory'>
-                    <Row className="flex-column">
-                        <Col className='col-sm-12 col-md-12 col-lg-5 d-flex'>
+                    <Row className="d-flex justify-content-center">
+                        <Col className='col-sm-12 col-md-12 col-lg-2 d-flex'>
                             <img src={back} width="100%" height="auto" alt="old-card-2.0" />
                         </Col>
                         <Col className='col-sm-12 col-md-12 col-lg-7 d-flex'>
@@ -186,13 +186,13 @@ const App = () => {
                             </p>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col>
-                            <img src={prototypeComparison} width="100%" height="auto" alt="old-card-2.0" />
-                        </Col>
-                        <Col>
+                    <Row className="d-flex justify-content-center">
+                        <Col className='col-sm-12 col-md-12 col-lg-5 d-flex'>
                             <p name="textstring" className="history_end">
                             But wait, there is more. Justin didn't just give up like that, he contacted other sources and got quotes and there was a chance for this happening and for as little as 20$ and that was a number they could work with. Justin had done an amazing job at redesigning the cards but thought it would be best to bring in a professional. Kate Estrop was that professional, they are a designer that specializes in animal, and more specifically bug, illustrations and they were excited to be on this team, and dare we say made even Justin's fancy card design look like yesterday's news</p>
+                        </Col>
+                        <Col className='col-sm-12 col-md-12 col-lg-4 d-flex'>
+                            <img src={prototypeComparison} width="100%" height="auto" alt="old-card-2.0" />
                         </Col>
                     </Row>
                 </div>
@@ -200,26 +200,26 @@ const App = () => {
             <section className='App-gamefound' id="crowdfunding">
                 <h1 name="textstring" className="crowdfunding_title">How crowdfunding works</h1>
                 <div className="gamefound">
-                    <Row className='flex-column'>
+                    <Row className='justify-content-center'>
                         <Col className='col-sm-12 col-md-12 col-lg-4 d-flex'>
                             <img src={socials} width="100%" height="auto" alt="gamefound reward" />
-
                         </Col>
-                        <Col className='col-sm-12 col-md-12 col-lg-8 d-flex'>
+                        <Col className='col-sm-12 col-md-12 col-lg-5 d-flex'>
                             <p name="textstring" className="crowdfunding_text_1" >Gamefound is a crowdfunding platform. Crowdfunding is the practice of funding a project or venture by raising money from a large number of people, typically via the internet. In short, it is a way to make small independent ventures possible because the need for capital in the beginning of the project is not necessary. So this is not an online store, this is a way for you pay for a game that we then promise to make as long as enough people do that, if the project does not gain enough traction and you have already spent money on it and it does not get printed you will get your money back.</p>
-                            </Col>
+                        </Col>
                     </Row>
-                    <Row>
-                            <Col className='col-sm-12 col-md-12 col-lg-8 d-flex'>
+                    <Row className='justify-content-center'>
+                        <Col className='col-sm-12 col-md-12 col-lg-9 d-flex'>
                             <p name="textstring" className="crowdfunding_text_2" >There are more things to buy from the site as well like stickers, posters and t-shirts, there is a fantasy creature deck and you could pledge to not only get that extra deck, that is compatable with the regular game, but also have your design in there, like Rökkvi made Krepskplyak the not crab.</p>
-                            </Col>
-                            <Col className='col-sm-12 col-md-12 col-lg-8 d-flex'>
-                                
+                        </Col>
+                    </Row>
+                    <Row className='justify-content-center'>
+                        <Col className='col-sm-12 col-md-12 col-lg-9 d-flex'>
                             <p name="textstring" className="crowdfunding_text_3" >
                                 Gamefound is all about making game creation faster and simpler. A platform that brings together supporters and game developers, not just for board games, but for all kinds of gaming projects.
                                 Here, creators can concentrate on what they do best, while backers can easily find and support the games they love.
                                 They offer a range of services, including crowdfunding, pledge management for any campaign, and marketing support, all in one hassle-free place.</p>
-                            </Col>
+                        </Col>
                     </Row>
                 </div>
             </section>
