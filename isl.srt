@@ -15,7 +15,7 @@ Ljón: Ég er konungur alls þess
 Ljón: Enginn myndi skora á mig
 
 5
-00:00:20,84 --> 00:00:23,605
+00:00:20,84 --> 00:00:22,605
 Fluga: Engan asa
 
 6
@@ -31,20 +31,20 @@ Fluga: Varaðu þig... ég hef
 Ljón: HVAÐ?!
 
 9
-00:00:34,02 --> 00:00:34,905
+00:00:34,02 --> 00:00:34,605
 Fluga: FLEIRI FÆTUR
 
 10
-00:00:35,63 --> 00:00:39,42
+00:00:35,93 --> 00:00:39,42
 Ljón: Neeeeeeiiiiiiii!!!!
 
 11
 00:00:39,42 --> 00:00:42,55
-Fluga: Ég er því sannlega með yfirburðum
+Fluga: Ég hef sannarlega yfirburði
 
 12
-00:00:42,55 --> 00:00:45,53
-Fluga: heh heh heh
+00:00:42,55 --> 00:00:44,53
+Fluga: Heh heh heh
 
 13
 00:00:45,53 --> 00:00:46,52
@@ -73,12 +73,12 @@ um að finna sitt sérsvið og dafna
 
 19
 00:01:06,89 --> 00:01:09,52
-Þau eru ekki alltaf stærri og sterkari
-sem lifa af
+Dýrin sem lifa af eru ekki alltaf
+stærri og sterkari
 
 20
 00:01:09,52 --> 00:01:13,25
-Það sem gerir einhver samkeppnishæf
+Það sem gerir þau samkeppnishæf
 er ekki alltaf augljóst
 
 202
@@ -126,7 +126,7 @@ vísindum og rannsóknum
 
 28
 00:01:40,16 --> 00:01:43,20
-Þú færð að læra áhugaverðar staðreyndir
+Þú uppgötvar áhugaverðar staðreyndir
 um allskonar dýr
 
 282
@@ -136,26 +136,26 @@ um allskonar dýr
 29
 00:01:46,20 --> 00:01:48,00
 Öll fá spil á hendi,
-hvert spil er einstakt
+hvert með sínu dýri
 
 292
 00:01:48,00 --> 00:01:51,00
-og upplýsingar þess í sex flokkum
+og upplýsingum þess í sex flokkum
 
 30
 00:01:51,00 --> 00:01:54,40
-Svo kastiði tengingum or sjáið hvaða
-flokk þið berið saman
+Svo kastið þið tveimur tengingum og 
+sjáið í hvaða flokki þið keppið
 
 31
 00:01:54,40 --> 00:02:00,33
-Hver spilari velur spil af hendi sinni sem
-er líklegast það besta fyrir þessa viðureign
+Hver spilari velur spil af hendi sem
+er líklegast til að vinna viðureignina
 
 32
 00:02:00,33 --> 00:02:06,56 
 Dýrið sem er með hæstu eða lægstu töluna
-í flokkinum, sem um ræðir, vinnur
+í flokkinum vinnur
 
 33
 00:02:06,56 --> 00:02:11,06 
@@ -164,12 +164,12 @@ Náttúruval er hugsað fyrir börn
 
 34
 00:02:11,06 --> 00:02:14,39
-En þetta er frábært samkvæmisspil
+en þetta er frábært samkvæmisspil
 fyrir börn á öllum aldri
 
 35
 00:02:14,39 --> 00:02:18,44
-Fyrir yngri börn er fjöldin allur
+Fyrir yngri börn er fjöldinn allur
 af einfaldari útgáfum
 
 352
@@ -178,8 +178,8 @@ sem eru stórskemmtilegar án flókinna reglna
 
 36
 00:02:22,44 --> 00:02:26,45
-Og fyrir fullorðna fólkið erum við með 
-huglægu partý útgáfuna
+Fyrir fullorðna fólkið erum við með 
+partý útgáfu
 
 37
 00:02:26,45 --> 00:02:30,30
@@ -189,18 +189,19 @@ handahófskennda viðureign fyrir hverja umferð
 38
 00:02:30,30 --> 00:02:34,25
 Spurningar eins og:
-Hver myndi kaupa mestan súkkulaði ísinn?
+Hver myndi kaupa mest af súkkulaðiís?
+
 39
 00:02:34,25 --> 00:02:36,50
 Hver myndi keyra hægast?
 
 40
 00:02:36,50 --> 00:02:40,53
-Hvaða dýr yrði besti forsetinn?
+Hver yrði besti forsetinn?
 
 41
 00:02:40,53 --> 00:02:44,76 
-Svo velja öll dýr af hendi og
+Svo velja spilarar dýr af hendi og
 færa rök fyrir máli sínu
 
 42
@@ -220,11 +221,11 @@ eins og límmiða, plaggöt og jafnvel boli
 44
 00:02:52,80 --> 00:02:59,00
 Þar að auki ætlum við að bjóða aukalega upp á 
-furðudýra pakka fullan af ævintýralegum skepnum.
+furðudýrapakka með ævintýralegum skepnum.
 
 45
 00:02:59,00 --> 00:03:01,78
-Þessi spil má vel nota með venjulega stokknum
+Furðudýrin má nota með venjulega stokknum
 
 452
 00:03:01,78 --> 00:03:05,38
@@ -232,51 +233,54 @@ En þessar kynjaskeppnur eru óútreiknanlegar
 
 46
 00:03:05,38 --> 00:03:10,58
-Og ef þú vilt, þá getur þú búið til þitt eigið spil
-í þennan stokk með hvaða dýr sem þér dettur í hug
+Þú getur annað spil í furðudýrastokkinn með 
+hvaða dýri sem þér dettur í hug
 
 47
-00:03:10,58 --> 00:03:16,33
-Við vildum líka geta verið með útprentaðar spurningar,
-teninga sem lýsa í myrkri og jafnvel fleiri spil
+00:03:10,58 --> 00:03:13,33
+Okkur langar að bæta í kassann spurningum
+og teningum fyrir partýútgáfuna
+
+472
+00:03:13,33 --> 00:03:16,33
 
 48
 00:03:16,33 --> 00:03:21,50
-Náttúruval er frábært leið til að kynna
-allskonar dýr fyrir börnum
+Náttúruval er frábært spil til að 
+börn kynnist allskonar dýrum
 
 49
 00:03:21,50 --> 00:03:25,81
-Við erum staðráðin í að gera þetta aðgengilegt
+Við erum staðráðin í að gera spilið aðgengilegt
 eins mörgum og við frekast getum
 
 50
-00:03:25,81 --> 00:03:29,50
-Ef þú hefur burði til þá hefurðu kost á því 
-að fá ekki bara þitt eintak af Náttúruval
+00:03:26,31 --> 00:03:29,50
+Ef þú vilt getur þú keypt þér eintak og
+einnig gefið áfram eintak
 
 51
-00:03:29,50 --> 00:03:33,10
-heldur láta gefa í þínu nafni eintak til
-skóla, félagsmiðstöðvar eða
+00:03:30,30 --> 00:03:33,10
+til skóla, bókasafna eða félagsmiðstöðva
 
 512
-00:03:33,10 --> 00:03:37,10
-annarar fræðamiðstöðvar sem við 
-munum vera í samstarfi við
+00:03:33,50 --> 00:03:37,10
+sem við verðum í samstarfi við,
+í þínu nafni
 
 52
-00:03:37,10 --> 00:03:40,25
+00:03:37,40 --> 00:03:40,25
 Við gefum leikinn út bæði á
 ensku og íslensku
 
 53
-00:03:40,25 --> 00:03:41,75
+00:03:40,65 --> 00:03:41,75
 Takk fyrir áhorfið
 
 54
 00:03:41,75 --> 00:03:46,00
-Og takk fyrir að blása lífi í þetta verkefni okkar
+Takk fyrir að hjálpa til við að
+blása lífi í þetta verkefni okkar
 
 55
 00:03:46,00 --> 00:03:48,00

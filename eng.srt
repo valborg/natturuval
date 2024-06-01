@@ -12,10 +12,11 @@ I am king of all that you see
 
 4
 00:00:14,00 --> 00:00:19,605
-None would dare raise a challenge to me
+None would dare raise 
+a challenge to me
 
 5
-00:00:20,84 --> 00:00:23,605
+00:00:20,84 --> 00:00:22,605
 Fly: Not so fast!
 
 6
@@ -31,11 +32,11 @@ Fly: Be prepared – I have...
 Lion: WHAT?!
 
 9
-00:00:33,82 --> 00:00:34,605
+00:00:34,02 --> 00:00:34,605
 Fly: MORE FEET!
 
 10
-00:00:34,63 --> 00:00:39,42
+00:00:35,93 --> 00:00:39,42
 Lion: Noooooooooooo!!!!
 
 11
@@ -43,7 +44,7 @@ Lion: Noooooooooooo!!!!
 Fly: Truly I am the superior creature
 
 12
-00:00:42,55 --> 00:00:45,53
+00:00:43,65 --> 00:00:44,53
 heh heh heh
 
 13
@@ -249,12 +250,12 @@ and we’re committed to making this game available
 to as many people as we can, 
 
 50
-00:03:25,81 --> 00:03:29,50
+00:03:26,31 --> 00:03:29,50
 If you’re able, you can pledge to get not only 
 your copy of Natturuval
 
 51
-00:03:29,50 --> 00:03:33,10
+00:03:30,30 --> 00:03:33,10
 but also have a copy donated to
 a school, community center,
 
@@ -264,12 +265,12 @@ or other educational group
 that we’ll be partnering with
 
 52
-00:03:37,10 --> 00:03:40,25
+00:03:37,40 --> 00:03:40,25
 We’re also going to be printing this game
 in both English and Icelandic!
 
 53
-00:03:40,25 --> 00:03:41,75
+00:03:40,65 --> 00:03:41,75
 Thank you for watching
 
 54
