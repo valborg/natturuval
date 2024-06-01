@@ -1,25 +1,46 @@
 /* src/App.css */
- .col {
+/* .col {
   flex: 0 0 auto;
-  } /* Reset the flex properties */
+} */
+
+/* Reset the flex properties */
 .App {
   text-align: justify;
   font-family: Arial, sans-serif;
 }
-.App-action {
-    text-align: center;
+
+.leaf-action {
+  text-align: center;
+  margin-top: 2.2rem;
+  margin-bottom: 2.7em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
-.App h1{
+
+.leaf-action a {
+  font-size: x-large;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+}
+
+.App h1 {
   text-align: center;
   padding-top: 0.5em;
   padding-bottom: 0.3em;
 }
-  
+
 .App-about {
   padding: 20px;
   background-color: #f0f0f0;
 }
-  
+
 .App-about h2 {
   color: #333;
 }
@@ -28,11 +49,12 @@
   color: #555;
 
 }
-.App-about row {
-  align-items: center;
+
+.card {
+  margin: 0.6em;
 }
 
-.card-group col{
+.card-group card {
   padding: 0.2em;
   border: #333;
 }
@@ -44,34 +66,39 @@
   object-fit: cover;
 }
 
-.App-action{
-    background-color: rgb(219, 228, 225);
-    margin-top: 4.5rem;
-    margin-bottom: 2em;
-    padding-top: 1em;
-    padding-bottom: 0.4rem;
+.card-group button {
+  margin-top: auto;
 }
 
-.App-history p{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.App-history div {
+  padding: 0.3em;
+  align-items: center;
 }
+
+.App-history p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.App-history img {
+  height: max-content;
+}
+
 .App-gamefound {
-    background-color: beige;
-    padding: 2em;
+  background-color: rgb(194, 206, 190);
+  padding: 2em;
 }
 
-.App-main{
-    padding-top: 6em;
-    padding-bottom: 2em;
+.App-main {
+  padding-top: 6em;
+  padding-bottom: 2em;
 }
 
-.logoFiller{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 5%;
+.logoFiller img {
+  height: 3em;
+  mask-repeat: repeat;
 }
 
 .img-flip {
   transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
