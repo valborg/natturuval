@@ -105,45 +105,53 @@ const App = () => {
             </section>
             <section className="App-about" id="team">
                 <h1 name="textstring" className="meet_the_team">Meet the team!</h1>
-                <CardGroup className="flex-fill"> 
-                    <Card>
-                        <CardImg src={valborg} width="100%" height="auto" className="card-img-top" alt="picture of a smiling Valborg by a sowing machine"></CardImg>
-                        <CardBody className="d-flex flex-column">
-                            <CardTitle>Valborg Sturludóttir
-                            </CardTitle>
-                            <CardText className="valborg_text" name="textstring">Between fighting dragons and solving sudokus this bird mama tried to catch them all. This is the loadest person who will never ever ever stop talking no matter what and then you will just know if shes in the vincinity because of the shrill laughter
-                            </CardText>
-                            <Button variant="outline-success" className='btn valborg_button mt-auto' href="https://github.com/valborg" name="textstring">Go on a nerdy adventure</Button>
-                        </CardBody>
-                    </Card>
-                    <Card>
-                        <CardImg src={justin} width="100%" height="auto" className="card-img-top" alt="Justin smiling professionally straight into the camera" ></CardImg>
-                        <CardBody className="d-flex flex-column">
-                            <CardTitle>Justin Richer</CardTitle>
-                            <CardText className="justin_text" name="textstring">The top dog behind the project and when he's not out walking he's on the trail of securty breaches. He comes from a place down by the lake and he makes stuff crust pizas when he's not at all afraid of a few sentences about him online because and this is key he's never heard of greinamerki
+                <Row className="d-flex justify-content-center">
+                    <Col className='col-12 col-md-6 col-lg-6 col-xl-3 p-3'>
+                        <Card className='h-100 m-0'>
+                            <CardImg src={valborg} width="100%" height="auto" className="card-img-top" alt="picture of a smiling Valborg by a sowing machine"></CardImg>
+                            <CardBody className="d-flex flex-column">
+                                <CardTitle>Valborg Sturludóttir
+                                </CardTitle>
+                                <CardText className="valborg_text" name="textstring">Between fighting dragons and solving sudokus this bird mama tried to catch them all. This is the loadest person who will never ever ever stop talking no matter what and then you will just know if shes in the vincinity because of the shrill laughter
                                 </CardText>
-                                <Button href="https://bspk.io" variant="outline-success" className="btn justin_button mt-auto" name="textstring">Go safely</Button>
-                        </CardBody >
-                    </Card>
-                    <Card>
-                        <CardImg src={rokkvi} width="100%" height="auto" className="card-img-top" alt="Rökkvi Þór apprehensive about formal dresswear"></CardImg>
-                        <CardBody className="d-flex flex-column">
-                        <CardTitle>Rökkvi Þór</CardTitle>
-                        <CardText className="rokkvi_text" name="textstring">This young man's favorite scientist is David Attenborogh, and he can't wait to tell you facts about animals you've never heard of.
-                        </CardText>
-                                    <Button href="" variant="outline-success" className="btn rokkvi_button mt-auto" name="textstring" >Go get my game!</Button>
-                        </CardBody>
-                    </Card>
-                    <Card>
-                        <CardImg src={kate} width="100%" height="auto" className="card-img-top" alt="Kate really impressed either by their ability to attract bugs or the bug itself"></CardImg>
-                        <CardBody className="d-flex flex-column">
-                        <CardTitle>Kate Estrop</CardTitle>
-                        <CardText className="kate_text" name="textstring">This bug has been buzzing around the look and feel of the project, and possibly even smell. Same goes here we know this there is a text and a subtext and then some undertones even and motivs and leitmotivs and what we're saying is kate would love to do a musical about bugs 
-                        </CardText>
-                                <Button href="https://kateestrop.com/" variant="outline-success" className="btn kate_button mt-auto" name="textstring">Go bug them</Button>
-                        </CardBody>
-                    </Card>
-                </CardGroup>
+                                <Button variant="outline-success" className='btn valborg_button mt-auto' href="https://github.com/valborg" name="textstring">Go on a nerdy adventure</Button>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col className='col-12 col-md-6 col-lg-6 col-xl-3 p-3'>
+                        <Card className='h-100 m-0'>
+                            <CardImg src={justin} width="100%" height="auto" className="card-img-top" alt="Justin smiling professionally straight into the camera" ></CardImg>
+                            <CardBody className="d-flex flex-column">
+                                <CardTitle>Justin Richer</CardTitle>
+                                <CardText className="justin_text" name="textstring">The top dog behind the project and when he's not out walking he's on the trail of securty breaches. He comes from a place down by the lake and he makes stuff crust pizas when he's not at all afraid of a few sentences about him online because and this is key he's never heard of greinamerki
+                                    </CardText>
+                                    <Button href="https://bspk.io" variant="outline-success" className="btn justin_button mt-auto" name="textstring">Go safely</Button>
+                            </CardBody >
+                        </Card>
+                    </Col>
+                    <Col className='col-12 col-md-6 col-lg-6 col-xl-3 p-3'>
+                        <Card className='h-100 m-0'>
+                            <CardImg src={rokkvi} width="100%" height="auto" className="card-img-top" alt="Rökkvi Þór apprehensive about formal dresswear"></CardImg>
+                            <CardBody className="d-flex flex-column">
+                            <CardTitle>Rökkvi Þór</CardTitle>
+                            <CardText className="rokkvi_text" name="textstring">This young man's favorite scientist is David Attenborogh, and he can't wait to tell you facts about animals you've never heard of.
+                            </CardText>
+                                        <Button href="" variant="outline-success" className="btn rokkvi_button mt-auto" name="textstring" >Go get my game!</Button>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col className='col-12 col-md-6 col-lg-6 col-xl-3 p-3'>
+                        <Card className='h-100 m-0'>
+                            <CardImg src={kate} width="100%" height="auto" className="card-img-top" alt="Kate really impressed either by their ability to attract bugs or the bug itself"></CardImg>
+                            <CardBody className="d-flex flex-column">
+                            <CardTitle>Kate Estrop</CardTitle>
+                            <CardText className="kate_text" name="textstring">This bug has been buzzing around the look and feel of the project, and possibly even smell. Same goes here we know this there is a text and a subtext and then some undertones even and motivs and leitmotivs and what we're saying is kate would love to do a musical about bugs 
+                            </CardText>
+                                    <Button href="https://kateestrop.com/" variant="outline-success" className="btn kate_button mt-auto" name="textstring">Go bug them</Button>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
             </section>
             <section className='App-history' id="history">
                 <h1 name="textstring" className="history_title">The story behind the game</h1>
