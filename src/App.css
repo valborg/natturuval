@@ -94,10 +94,18 @@
 }
 
 .App-gamefound{
-  background-color: rgb(194, 206, 190);
+  background-color:   rgb(218, 224, 215);
   padding: 2em;
   align-items: center;
   border-radius: 2%;
+}
+
+/* .gamefoundBorder{
+  position: absolute;
+} */
+
+.gamefound{
+  position: relative;
 }
 
 .App-main {

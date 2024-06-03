@@ -21,6 +21,8 @@ import grass from '../public/GrassPattern.svg'
 import pattern from '../public/multiColorPattern.png'
 import back from '../public/back.svg'
 import version1 from '../public/oldcardsWithHand.jpg'
+import border from '../public/Border.svg'
+import videostill from '../public/videostill.jpeg'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -31,6 +33,7 @@ import { CardBody, CardImg, CardText, CardTitle } from 'react-bootstrap';
 console.log(textstringData)
 
 let CURR_LANG = "en"
+let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
 
 function changeLanguages() {
     CURR_LANG = CURR_LANG === 'en' ? 'is' : 'en'
@@ -65,7 +68,7 @@ const App = () => {
                             <Nav.Link href="#crowdfunding" name="textstring" className="nav_crowdfunding">Crowdfunding</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link target="_blank" name="textstring" className="nav_gamefound" href={textstringData[0]['en'].gamefoundurl}>
+                            <Nav.Link target="_blank" name="textstring" className="nav_gamefound" href={gamefoundurl}>
                                 Visit Gamefound
                             </Nav.Link>
                         </Nav.Item>
@@ -83,11 +86,21 @@ const App = () => {
                     <img src={logoWithTagline} width="100%" height="auto" alt="logo" />
                     <p className="someFont main_subtext" name="textstring" >We are proud to present our game Náttúruval that brings joy, laughter and science to anyone who plays it.
                         The game is being funded via Gamefound and you can make your pledge there to secure a copy for you, yours and even an educational center if you are feeling charitable.</p>
+                        <img
+                            src={videostill}
+                            alt="pic id code"
+                            onClick={() => window.open(gamefoundurl)}
+                            role="button"
+                            tabIndex="0"
+                            target="#"
+                            width="100%" 
+                            height="auto"
+                        />
                 </Container>
                 <div className="App-action">
                 </div >
                 <div className="leaf-action" style={{ backgroundImage: `url(${leaf})` }}>
-                    <a name="textstring" className="call_to_action_button_text_1" href={textstringData[0]['en'].gamefoundurl} >Check it out!</a>
+                    <a name="textstring" className="call_to_action_button_text_1" href={gamefoundurl} target='#'>Check it out!</a>
                 </div>
             </section>
             <section className="App-about" id="team">
@@ -188,7 +201,7 @@ const App = () => {
                     </Row>
                 </div>
             </section>
-            <section className='App-gamefound' id="crowdfunding">
+            <section className='App-gamefound'>
                 <h1 name="textstring" className="crowdfunding_title">How crowdfunding works</h1>
                 <div className="gamefound">
                     <Row className='justify-content-center'>
@@ -199,20 +212,32 @@ const App = () => {
                             <p name="textstring" className="crowdfunding_text_1" >Hópfjármögnun gefur áhugafólki kost á að fara úti í gjörninga sem venjulega krefjast töluverðs fjármagns í upphafi. Svo í staðinn fyrir að búa til vöru og framleiða, til dæmis gefa út bók eða geisladisk, þá getur fólk sett verkefnið inn í hópfjármögnun og gefið fólki kost á að heita á verkefnið með ákveðnu fjármagni sem gefur þeim ákveðin verðlaun, sem gæti þá verið spilið eða fleiri eintök og eitthvað sem fæst ekki annarsstaðar. Með þessu móti getur fólk lofað að kaupa vöruna ef hún kemst þá í útgáfu, ef hún gerir það ekki þá fellur áheitið um sig sjáft. Svo ef þú hefur mikinn áhuga á því sem þú hefur heitt á þá segirðu sem flestum frá því. Þau verkefnið sem hafa náð ákveðinni lágmarksfjármögnun er enn hægt að heita á, því með auknu fjármagni er hægt að gera útgáfuna betri. Til að mynda mun grunnumbun í þessari fjármögnun vera spilið sjálft og öll þau sem hafa kosið sér þá umbun munu fá hana þegar markmiðinu er náð. Ef fjármögnunin fer fram úr þeim lágmarkskröfum sem settar voru þá er hægt að bæta við umbunina hjá öllum þeim sem höfðu þegar heitið á, og fyrsta sem við settum þar á lista voru teningar sem lýsa í myrkri og svo þar fram eftir götum."</p>
                         </Col>
                     </Row>
-                    <Row className='justify-content-center'>
-                        <Col className='col-sm-12 col-md-12 col-lg-9 d-flex'>
-                            <p name="textstring" className="crowdfunding_text_2" >Þannig að þegar kom að því að velja vettvang fyrir hópfjármögnunina varð gamefound fyrir valinu. Þau sérhæfa sig í spilum og leikjum, eru alþjóðleg og traust. Justin hefur reynslu af því að setja verkefni í hópfjármögnun og hefur gefið út önnur spil sem fóru þá leið. Gamefound er fyrirtæki sem gerir sér grein fyrir því að áhugafólk getur gert ótrúlega mögnuð spil, og spilatengd verkefni.</p>
+                    <Row>
+                        <Col className='col-sm-12 col-md-10 col-lg-8'>
+                            <Row className='justify-content-center'>
+                                <Col className=''>
+                                    <p name="textstring" className="crowdfunding_text_2" >Þannig að þegar kom að því að velja vettvang fyrir hópfjármögnunina varð gamefound fyrir valinu. Þau sérhæfa sig í spilum og leikjum, eru alþjóðleg og traust. Justin hefur reynslu af því að setja verkefni í hópfjármögnun og hefur gefið út önnur spil sem fóru þá leið. Gamefound er fyrirtæki sem gerir sér grein fyrir því að áhugafólk getur gert ótrúlega mögnuð spil, og spilatengd verkefni.</p>
+                                </Col>
+                            </Row>
+                            <Row className='justify-content-center'>
+                                <Col className=''>
+                                    <p name="textstring" className="crowdfunding_text_3" >Prentarinn sem við erum búin að gera samning við hefur áður unnið með verkefni sem fóru í gegnum hópfjármögnun, Panda Game Manufacturing. Þau gerðu meðal annars Scythe og Wingspan og önnur glæsileg spil. Náttúruval er því í einkar góðum höndum og ef það eru einhverjar spurningar um ferlið er hægt að ná í okkur á Gamefound síðunni.</p>
+                                </Col>
+                            </Row>
                         </Col>
-                    </Row>
-                    <Row className='justify-content-center'>
-                        <Col className='col-sm-12 col-md-12 col-lg-9 d-flex'>
-                            <p name="textstring" className="crowdfunding_text_3" >Prentarinn sem við erum búin að gera samning við hefur áður unnið með verkefni sem fóru í gegnum hópfjármögnun, Panda Game Manufacturing. Þau gerðu meðal annars Scythe og Wingspan og önnur glæsileg spil. Náttúruval er því í einkar góðum höndum og ef það eru einhverjar spurningar um ferlið er hægt að ná í okkur á Gamefound síðunni.</p>
+                        <Col className='col-md-2 col-lg-4'>
+                            <Row>
+                                <Col>
+                                    <img src={back}/>
+                                </Col>
+                            </Row>
                         </Col>
+
                     </Row>
                 </div>
             </section>
             <div className="leaf-action" style={{ backgroundImage: `url(${leaf})` }}>
-                    <a name="textstring" className="call_to_action_button_text_2" href={textstringData[0]['en'].gamefoundurl} >Check it out!</a>
+                    <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'>Check it out!</a>
                 </div>
         </div >
     );
