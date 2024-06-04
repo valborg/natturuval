@@ -89,13 +89,15 @@
 }
 
 .App-gamefound{
-  background-color:   rgb(218, 224, 215);
+  background-color: rgb(222, 230, 219);
   padding: 2em;
   align-items: center;
   border-radius: 2%;
 }
 
-
+.socials img{
+  padding-bottom: 2em;
+}
 
 .logoFiller img {
   height: 1em;

@@ -70,7 +70,7 @@ const App = () => {
                         <Nav.Item>
                             {/* U+1F1EC U+1F1E7	&#127468 &#127463 English flag
                         U+1F1EE U+1F1F8	&#127470 &#127480 Icelandic flag */}
-                            <Nav.Link onClick={changeLanguages} className="nav_flag" name="textstring" >🇬🇧</Nav.Link>
+                            <Nav.Link onClick={changeLanguages} className="nav_flag" name="textstring" >🇮🇸</Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
@@ -79,8 +79,7 @@ const App = () => {
             <section id="main" className='App-main'>
                 <Container>
                     <img src={logoWithTagline} width="100%" height="auto" alt="logo" />
-                    <p className="someFont main_subtext" name="textstring" >We are proud to present our game Náttúruval that brings joy, laughter and science to anyone who plays it.
-                        The game is being funded via Gamefound and you can make your pledge there to secure a copy for you, yours and even an educational center if you are feeling charitable.</p>
+                    <p className="someFont main_subtext" name="textstring" >We are proud to present our game Náttúruval, a great game for the whole family. The game is based on real life information of over 100 animals and is composed of an elegant deck of cards and custome dice. The game is about competition between the animals and the winner might surprise you. The game is funded via crowdfunding on the Gamefound platform, please visit it at <a href={gamefoundurl}>{gamefoundurl}</a></p>
                         <img
                             src={videostill}
                             alt="pic id code"
@@ -107,7 +106,7 @@ const App = () => {
                             <CardBody className="d-flex flex-column">
                                 <CardTitle>Valborg Sturludóttir
                                 </CardTitle>
-                                <CardText className="valborg_text" name="textstring">Between fighting dragons and solving sudokus this bird mama tried to catch them all. This is the loadest person who will never ever ever stop talking no matter what and then you will just know if shes in the vincinity because of the shrill laughter
+                                <CardText className="valborg_text" name="textstring">A mother, a programmer, a teacher, a nerd, a lover of nature and a she can quote Mel Brook's Spaceballs at the most opportune moments. This project organically fit to her interest; creativity, games, spending time with her kids and datasets.
                                 </CardText>
                                 <Button variant="outline-success" className='btn valborg_button mt-auto' href="https://github.com/valborg" name="textstring">Go on a nerdy adventure</Button>
                             </CardBody>
@@ -118,7 +117,7 @@ const App = () => {
                             <CardImg src={justin} width="100%" height="auto" className="card-img-top" alt="Justin smiling professionally straight into the camera" ></CardImg>
                             <CardBody className="d-flex flex-column">
                                 <CardTitle>Justin Richer</CardTitle>
-                                <CardText className="justin_text" name="textstring">The top dog behind the project and when he's not out walking he's on the trail of securty breaches. He comes from a place down by the lake and he makes stuff crust pizas when he's not at all afraid of a few sentences about him online because and this is key he's never heard of greinamerki
+                                <CardText className="justin_text" name="textstring">Software security expert by day, and a musician by night. He has published the game about the thrill of Boston traffic, Gridlocked. He has also made several expansions to the popular game Cards Against humanity called Cards Against Identity, his expertise and interest do lie in cyber security.
                                     </CardText>
                                     <Button href="https://bspk.io" variant="outline-success" className="btn justin_button mt-auto" name="textstring">Go safely</Button>
                             </CardBody >
@@ -129,7 +128,7 @@ const App = () => {
                             <CardImg src={rokkvi} width="100%" height="auto" className="card-img-top" alt="Rökkvi Þór apprehensive about formal dresswear"></CardImg>
                             <CardBody className="d-flex flex-column">
                             <CardTitle>Rökkvi Þór</CardTitle>
-                            <CardText className="rokkvi_text" name="textstring">This young man's favorite scientist is David Attenborogh, and he can't wait to tell you facts about animals you've never heard of.
+                            <CardText className="rokkvi_text" name="textstring">A young man who can't wait to tell you facts about animals, and likely one you've not heard of. He is ten years old. His main interests are animals and badminton.
                             </CardText>
                                         <Button href="" variant="outline-success" className="btn rokkvi_button mt-auto" name="textstring" >Go get my game!</Button>
                             </CardBody>
@@ -140,7 +139,7 @@ const App = () => {
                             <CardImg src={kate} width="100%" height="auto" className="card-img-top" alt="Kate really impressed either by their ability to attract bugs or the bug itself"></CardImg>
                             <CardBody className="d-flex flex-column">
                             <CardTitle>Kate Estrop</CardTitle>
-                            <CardText className="kate_text" name="textstring">This bug has been buzzing around the look and feel of the project, and possibly even smell. Same goes here we know this there is a text and a subtext and then some undertones even and motivs and leitmotivs and what we're saying is kate would love to do a musical about bugs 
+                            <CardText className="kate_text" name="textstring">A designer from Boston who has been doing all sorts of design work, from teaching to commissions. But this is the first game that they work on from the start. Because Kate is a specialist at drawing animals, and especially insects, this project intrigued them. Their Mola mola got a big role in the campaign as soon as it came off the drawing board.
                             </CardText>
                                     <Button href="https://kateestrop.com/" variant="outline-success" className="btn kate_button mt-auto" name="textstring">Go bug them</Button>
                             </CardBody>
@@ -191,16 +190,24 @@ const App = () => {
             </section>
             <section className='App-gamefound'>
                 <h1 name="textstring" className="crowdfunding_title">How crowdfunding works</h1>
+                <Row>
+                    <Col className="socials">
+                    <img src={socials} width="100%" height="auto" alt="old-card-2.0" />
+                    </Col>
+                    <Col>
                 <div className="gamefound">
                     <p name="textstring" className="crowdfunding_text_1" >Crowdfunding gives amateurs a chance to make commercial products without a large upfront investment. So instead of designing a product, producing it and then shipping it to stores, people can give others a chance to pledge to buy something that is offered in the crowdfundin project. It could be only the game or more copies and some exclusive items. By doing this people are saying that they promise to buy the product only if it gets fully funded and produced. In our campaign the basic reward is one copy of the game. However if the campaign succeeds beyond the original goal the base rewards are all made better, like by adding glow in the dark dice or extra components.</p>
+                    
                     <p name="textstring" className="crowdfunding_text_2" >So when we decided on the venue for our crowdfunding adventure we decided to go with Gamefound. They specialize in games, are international and trusted. Justin has published a game before using Gamwfound. Gamefound reallizes that amatuers can make great games.</p>
                     <p name="textstring" className="crowdfunding_text_3" >Náttúruval is printed by the same solid company that made Scythe, Wingspan and other elegant games, Panda Game Manufacturing. So the project publishing pipeline is with reputable companies, and if you have any questions or comments you can reach out to us through Gamefound</p>
                 </div>
+                    </Col>
+                </Row>
 
 
             </section>
             <div className="leaf-action" style={{ backgroundImage: `url(${leaf})` }}>
-                    <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'>Check it out!</a>
+                    <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'>Gamefound!</a>
                 </div>
         </div >
     );
