@@ -9,6 +9,11 @@
   font-family: Arial, sans-serif;
 }
 
+.App-main {
+  padding-top: 6em;
+  padding-bottom: 2em;
+}
+
 .leaf-action {
   text-align: center;
   margin-top: 2.2rem;
@@ -50,17 +55,14 @@
 
 }
 
-.card {
-  margin: 0.6em;
-}
-
 .card-group card {
   padding: 0.2em;
   border: #333;
+  margin: 0.6em;
 }
 
 .card-img-top {
-  width: 100%;
+
   max-height: 15vw;
   min-height: 20em;
   object-fit: cover;
@@ -80,17 +82,10 @@
   margin-inline: 1em;
 }
 
-.firstHistory img {
-  border-radius: 5%;
-}
-
-.secondHistory img {
-  border-radius: 2%;
-}
-
 .App-history img {
   width: 100%;
   max-height: min-content;
+  border-radius: 5%;
 }
 
 .App-gamefound{
@@ -100,18 +95,7 @@
   border-radius: 2%;
 }
 
-/* .gamefoundBorder{
-  position: absolute;
-} */
 
-.gamefound{
-  position: relative;
-}
-
-.App-main {
-  padding-top: 6em;
-  padding-bottom: 2em;
-}
 
 .logoFiller img {
   height: 1em;

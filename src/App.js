@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -18,10 +17,6 @@ import prototypeArt from '../public/prototypeArt.jpg'
 import prototypeComparison from '../public/OldAndNewDiceAndBox.jpg'
 import basicLayout from '../public/basicLayout.jpg'
 import grass from '../public/GrassPattern.svg'
-import pattern from '../public/multiColorPattern.png'
-import back from '../public/back.svg'
-import version1 from '../public/oldcardsWithHand.jpg'
-import border from '../public/Border.svg'
 import videostill from '../public/videostill.jpeg'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -157,54 +152,39 @@ const App = () => {
                 <h1 name="textstring" className="history_title">The story behind the game</h1>
                 <div className="firstHistory">
                     <Row className="d-flex justify-content-center">
-                        <Col className='col-sm-12 col-md-12 col-lg-4'>
+                        <Col className='col-sm-12 col-md-4 col-lg-4'>
                             <img src={basicLayout} width="100%" height="auto" alt="old-card-1.0" />
                         </Col>
-                        <Col className='col-sm-12 col-md-12 col-lg-5'>
-                            <p name="textstring" className="history_origin">Rökkvi Þór, who's favorite scientist is Sir David Frederick Attenborough, asked his mother one day to create \"little cards\" with information about animals. Valborg, his mother, started collecting data about the animals he wanted to learn about. Mind you this kid at age five in a game of twenty questions thought about the Atlantic fur seal. The datapoints were to be numerical, like length, wingspan, weight, average amount of sleep, distance traveled, speed, amount of eyes and other things that were measurable. But the stats needed to be collectable for all animals so many of those categories were unrealistic ( or uninteresting like the unchanging amount of eyes).</p>
+                        <Col className='col-sm-12 col-md-8 col-lg-8'>
+                            <p name="textstring" className="history_origin">Rökkvi Þór, who's favorite scientist is Sir David Frederick Attenborough, asked his mother one day to create \"little cards\" with information about animals. Valborg, his mother, started collecting data about the animals he wanted to learn about. Mind you this kid at age five in a game of twenty questions thought about the Atlantic fur seal. The datapoints were to be numerical, like length, wingspan, weight, average amount of sleep, distance traveled, speed, amount of eyes and other things that were measurable. But the stats needed to be collectable for all animals so many of those categories were unrealistic ( or uninteresting like the amount of eyes).</p>
                         </Col>
                     </Row>
                     <Row className="d-flex">
                         <Col className=' d-flex'>
-                            <img src={grass} width="100%" height="1%" alt="old-card-2.0" />
+                            <img src={grass} width="100%" height="1%" alt="grassy pattern" />
                         </Col>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col className='col-sm-12 col-md-12 col-lg-5'>
-                        <p name="textstring" className="history_decisions">
-                        The categories that were chosen were the length of an adult head to toe, average amount of offspring at a time, and average lifespan in nature. Subsequently two easily aquired categories were introduced. Both because then you could roll a six sided die to randomly select a category and because a 4 sided die did not exist in the home at that point. Those were the amount of legs the creature has (of a healthy adult, the average amount would always be lower) and how many symbols in its scientific name. At that point they started printing out cards with pictures with CC licences and started playing. They didn't have more than 13 cards when they multiple ways playing. Then slowly they added more cards, 9 at a time to fill one a4 sheet of paper.
+                        <Col className='col-sm-12 col-md-8 col-lg-8'>
+                        <p name="textstring" className="history_decisions">The categories that were chosen were the length of an adult head to toe, average amount of offspring at a time, and average lifespan in the wild. Subsequently two easily aquired categories were introduced. Both because then you could roll a six sided die to randomly select a category and because a 4 sided die did not exist in the home at that point. Those were the amount of legs the creature has (of a healthy adult, the average amount would always be lower) and how many letters are in its scientific name. At that point they started printing out cards, pictures with CC licences, and started playing. They didn't have more than 13 cards when they had multiple ways of playing. Then slowly they added more cards, 9 at a time to fill one a4 sheet of paper.
                             </p>
                         </Col>
-                        <Col className='col-sm-12 col-md-12 col-lg-4'>
-                            <img src={version1} width="100%" height="1%" alt="old-card-2.0" />
+                        <Col className='col-sm-12 col-md-4 col-lg-4'>
+                            <img src={prototypeArt}alt="old-card-2.0" />
                         </Col>
                     </Row>
                     <Row className="d-flex justify-content-center">
                         <Col className=' d-flex'>
-                            <img src={grass} width="100%" height="1%" alt="old-card-2.0" />
+                            <img src={grass} width="100%" height="auto" alt="grassy pattern" className='img-flip'/>
                         </Col>
                     </Row>
                     <Row className='d-flex justify-content-center'>
-                        <Col className='col-sm-12 col-md-12 col-lg-5'>
-                            <p name="textstring" className="history_version_1">
-                            One day Justin and his wife came over for a visit and Rökkvi showed them the game. Justin thought it had a lot of potential inspite the raw inkscape design. So when he went back home to Boston he decided to improve on the design thouroughly and print a prototype in English and Icelandic. He sent a copy to the duo in Iceland. However the prototype with that printer wasn't really a viable option because the retail value would have to be around 50USD and that dream was crushed essentially. Justin didn't give up so easily and contacted another trusted printer which gave us the ability to retail the game at only 20USD. That's when he said that even his excellent prototype wasn't enough for a commercial product and that they should consult a professional. That is how Kate got involved and elevated the project to great hights.</p>
-                        </Col>
-                        <Col className='col-sm-12 col-md-12 col-lg-4'>
-                            <img src={prototypeArt} width="100%" height="auto" alt="old-card-2.0" />
-                        </Col>
-                    </Row>
-                </div>
-                {/* <div className="logoFiller">
-                    <img src={grass} height="auto" width="100%" alt="logo" />
-                </div> */}
-                <div className='secondHistory'>
-                    <Row className="d-flex justify-content-center">
-                        <Col className='col-sm-12 col-md-12 col-lg-2 d-flex'>
+                      <Col className='col-sm-12 col-md-4 col-lg-4'>
                             <img src={prototypeComparison} width="100%" height="auto" alt="old-card-2.0" />
                         </Col>
-                        <Col className='col-sm-12 col-md-12 col-lg-7 d-flex'>
-                            <p name="textstring" className="history_part_2">Justin could see potential in the game already, but had doubts about Valborg's inkscape graphic design. He was already a publisher of a few other games and knew what he was getting himself into. He got in touch with one of his previous contacts in the printing buisness and got them to do a prototype of the game, one for him in English and one for Valborg and Rökkvi in Icelandic, but with a much better design, better size and better paper. When the game arrived the news was that each box would need to retail at about 50$ for it to be viable, which was the end of that. But wait, there is more. Justin didn't just give up like that, he contacted other sources and got quotes and there was a chance for this happening and for as little as 20$ and that was a number they could work with. Justin had done an amazing job at redesigning the cards but thought it would be best to bring in a professional. Kate Estrop was that professional, they are a designer that specializes in animal, and more specifically bug, illustrations and they were excited to be on this team, and dare we say made even Justin's fancy card design look like yesterday's news. 
-                            </p>
+                        <Col className='col-sm-12 col-md-8 col-lg-8'>
+                            <p name="textstring" className="history_version_1">
+                            One day Justin and his wife came over for a visit and Rökkvi showed them the game. Justin thought it had a lot of potential inspite the raw inkscape design. So when he went back home to Boston he decided to improve on the design thouroughly and print a prototype in English and Icelandic. He sent a copy to the duo in Iceland. However the prototype with that printer wasn't really a viable option because the retail value would have to be around 50USD and that dream was crushed essentially. Justin didn't give up so easily and contacted another trusted printer which gave us the ability to retail the game at only 20USD. That's when he said that even his excellent prototype wasn't enough for a commercial product and that they should consult a professional. That is how Kate got involved and elevated the project to great hights.</p>
                         </Col>
                     </Row>
                 </div>
@@ -212,37 +192,12 @@ const App = () => {
             <section className='App-gamefound'>
                 <h1 name="textstring" className="crowdfunding_title">How crowdfunding works</h1>
                 <div className="gamefound">
-                    <Row className='justify-content-center'>
-                        <Col className='col-sm-12 col-md-12 col-lg-4 d-flex'>
-                            <img src={socials} width="100%" height="auto" alt="gamefound reward" />
-                        </Col>
-                        <Col className='col-sm-12 col-md-12 col-lg-5 d-flex'>
-                            <p name="textstring" className="crowdfunding_text_1" >Hópfjármögnun gefur áhugafólki kost á að fara úti í gjörninga sem venjulega krefjast töluverðs fjármagns í upphafi. Svo í staðinn fyrir að búa til vöru og framleiða, til dæmis gefa út bók eða geisladisk, þá getur fólk sett verkefnið inn í hópfjármögnun og gefið fólki kost á að heita á verkefnið með ákveðnu fjármagni sem gefur þeim ákveðin verðlaun, sem gæti þá verið spilið eða fleiri eintök og eitthvað sem fæst ekki annarsstaðar. Með þessu móti getur fólk lofað að kaupa vöruna ef hún kemst þá í útgáfu, ef hún gerir það ekki þá fellur áheitið um sig sjáft. Svo ef þú hefur mikinn áhuga á því sem þú hefur heitt á þá segirðu sem flestum frá því. Þau verkefnið sem hafa náð ákveðinni lágmarksfjármögnun er enn hægt að heita á, því með auknu fjármagni er hægt að gera útgáfuna betri. Til að mynda mun grunnumbun í þessari fjármögnun vera spilið sjálft og öll þau sem hafa kosið sér þá umbun munu fá hana þegar markmiðinu er náð. Ef fjármögnunin fer fram úr þeim lágmarkskröfum sem settar voru þá er hægt að bæta við umbunina hjá öllum þeim sem höfðu þegar heitið á, og fyrsta sem við settum þar á lista voru teningar sem lýsa í myrkri og svo þar fram eftir götum."</p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className='col-sm-12 col-md-10 col-lg-8'>
-                            <Row className='justify-content-center'>
-                                <Col className=''>
-                                    <p name="textstring" className="crowdfunding_text_2" >Þannig að þegar kom að því að velja vettvang fyrir hópfjármögnunina varð gamefound fyrir valinu. Þau sérhæfa sig í spilum og leikjum, eru alþjóðleg og traust. Justin hefur reynslu af því að setja verkefni í hópfjármögnun og hefur gefið út önnur spil sem fóru þá leið. Gamefound er fyrirtæki sem gerir sér grein fyrir því að áhugafólk getur gert ótrúlega mögnuð spil, og spilatengd verkefni.</p>
-                                </Col>
-                            </Row>
-                            <Row className='justify-content-center'>
-                                <Col className=''>
-                                    <p name="textstring" className="crowdfunding_text_3" >Prentarinn sem við erum búin að gera samning við hefur áður unnið með verkefni sem fóru í gegnum hópfjármögnun, Panda Game Manufacturing. Þau gerðu meðal annars Scythe og Wingspan og önnur glæsileg spil. Náttúruval er því í einkar góðum höndum og ef það eru einhverjar spurningar um ferlið er hægt að ná í okkur á Gamefound síðunni.</p>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col className='col-md-2 col-lg-4'>
-                            <Row>
-                                <Col>
-                                    <img src={back}/>
-                                </Col>
-                            </Row>
-                        </Col>
-
-                    </Row>
+                    <p name="textstring" className="crowdfunding_text_1" >Crowdfunding gives amateurs a chance to make commercial products without a large upfront investment. So instead of designing a product, producing it and then shipping it to stores, people can give others a chance to pledge to buy something that is offered in the crowdfundin project. It could be only the game or more copies and some exclusive items. By doing this people are saying that they promise to buy the product only if it gets fully funded and produced. In our campaign the basic reward is one copy of the game. However if the campaign succeeds beyond the original goal the base rewards are all made better, like by adding glow in the dark dice or extra components.</p>
+                    <p name="textstring" className="crowdfunding_text_2" >So when we decided on the venue for our crowdfunding adventure we decided to go with Gamefound. They specialize in games, are international and trusted. Justin has published a game before using Gamwfound. Gamefound reallizes that amatuers can make great games.</p>
+                    <p name="textstring" className="crowdfunding_text_3" >Náttúruval is printed by the same solid company that made Scythe, Wingspan and other elegant games, Panda Game Manufacturing. So the project publishing pipeline is with reputable companies, and if you have any questions or comments you can reach out to us through Gamefound</p>
                 </div>
+
+
             </section>
             <div className="leaf-action" style={{ backgroundImage: `url(${leaf})` }}>
                     <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'>Check it out!</a>
