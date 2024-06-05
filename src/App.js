@@ -139,7 +139,7 @@ const App = () => {
                             <CardImg src={kate} width="100%" height="auto" className="card-img-top" alt="Kate really impressed either by their ability to attract bugs or the bug itself"></CardImg>
                             <CardBody className="d-flex flex-column">
                             <CardTitle>Kate Estrop</CardTitle>
-                            <CardText className="kate_text" name="textstring">A designer from Boston who has been doing all sorts of design work, from teaching to commissions. But this is the first game that they work on from the start. Because Kate is a specialist at drawing animals, and especially insects, this project intrigued them. Their Mola mola got a big role in the campaign as soon as it came off the drawing board.
+                            <CardText className="kate_text" name="textstring">An artist from Boston who has been doing all sorts of work, from teaching to freelance graphic design. But this is the first game that they have worked on from the start. Because Kate is a specialist at drawing animals, and especially insects, this project intrigued them. Their Mola mola got a big role in the campaign as soon as it was sketched into being.
                             </CardText>
                                     <Button href="https://kateestrop.com/" variant="outline-success" className="btn kate_button mt-auto" name="textstring">Go bug them</Button>
                             </CardBody>
