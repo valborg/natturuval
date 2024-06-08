@@ -193,7 +193,6 @@ const App = () => {
                     <Col>
                 <div className="gamefound">
                     <p name="textstring" className="crowdfunding_text_1" ></p>
-                    
                     <p name="textstring" className="crowdfunding_text_2" ></p>
                     <p name="textstring" className="crowdfunding_text_3" ></p>
                 </div>
