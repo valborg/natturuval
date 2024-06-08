@@ -10,7 +10,7 @@ import leaf from '../public/Leaf.svg'
 import logoWithTagline from '../public/NattLockupWithTagline.svg'
 import justin from '../public/justin.jpeg'
 import valborg from '../public/valborgS2.jpeg'
-import rokkvi from '../public/rokkvi12.jpeg'
+import rokkvi from '../public/snailRokkvi.jpeg'
 import kate from '../public/kate.jpg'
 import socials from '../public/socials.jpeg'
 import prototypeArt from '../public/prototypeArt.jpg'
@@ -41,8 +41,9 @@ function changeLanguages() {
 }
 
 
+
 const App = () => {
-    const [currLang, setLang] = useState('en')
+    const [currLang, setLang] = useState('is')
     useEffect( () => {
         changeLanguages()
     }, [currLang])
@@ -184,7 +185,7 @@ const App = () => {
                     </Row>
                 </div>
             </section>
-            <section className='App-gamefound'>
+            <section className='App-gamefound' id="crowdfunding">
                 <h1 name="textstring" className="crowdfunding_title"></h1>
                 <Row>
                     <Col className="socials">
@@ -205,6 +206,7 @@ const App = () => {
                     <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'></a>
                 </div>
         </div >
+
     );
 }
 
