@@ -97,7 +97,7 @@ const App = () => {
                 </Container>
                 <div className="App-action">
                 </div >
-                <div className="leaf-action" style={{ backgroundImage: `url(${leaf})` }}>
+                <div className="leaf-action" onClick={() => window.open(gamefoundurl)}>
                     <a name="textstring" className="call_to_action_button_text_1" href={gamefoundurl} target='#'></a>
                 </div>
             </section>
@@ -198,7 +198,7 @@ const App = () => {
                 </div>
                 </Container>
             </section>
-            <div className="leaf-action" style={{ backgroundImage: `url(${leaf})` }}>
+            <div className="leaf-action" onClick={() => window.open(gamefoundurl)}>
                 <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'></a>
             </div>
         </div >
