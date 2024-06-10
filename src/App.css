@@ -18,21 +18,29 @@
   text-align: center;
   margin-top: 2.2rem;
   margin-bottom: 2.7em;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 2em;
   padding-bottom: 2em;
   background-position: center;
   background-size: cover;
   position: relative;
+  background-color: #00a54e;
+  color: white;
+  border-top-left-radius: 4em;
+  border-bottom-right-radius: 4em;
+  max-width: 80%;
+  cursor: pointer;
 }
 
 .leaf-action a {
+  color: white;
   font-size: x-large;
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgb(0, 0, 0);
 }
 
 .App h1 {
