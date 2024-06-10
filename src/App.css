@@ -39,6 +39,8 @@
   text-align: center;
   padding-top: 0.5em;
   padding-bottom: 0.3em;
+  margin-top: 0.3em;
+  margin-bottom: 0.1em;
 }
 
 .App-about {
@@ -80,6 +82,8 @@
 .App-history p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin-inline: 1em;
+  padding-top: 1em;
+  padding-bottom: 0.2em;
 }
 
 .App-history img {
@@ -88,11 +92,28 @@
   border-radius: 5%;
 }
 
+.grass-img {  
+  height: 50px;
+}
+
 .App-gamefound{
-  background-color: rgb(222, 230, 219);
   padding: 2em;
   align-items: center;
   border-radius: 2%;
+  position: relative;
+}
+
+.App-gamefound .container-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+}
+.App-gamefound .content {
+  position: relative;
+  z-index: 1;
 }
 
 .socials img{
@@ -108,4 +129,12 @@
 .img-flip {
   transform: rotateY(180deg);
   transform: rotateX(180deg);
+}
+
+@media (min-width: 400px) and (max-width: 4000px) {
+  .App-history p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
 }

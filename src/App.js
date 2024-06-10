@@ -18,6 +18,7 @@ import prototypeComparison from '../public/OldAndNewDiceAndBox.jpg'
 import basicLayout from '../public/basicLayout.jpg'
 import grass from '../public/GrassPattern.svg'
 import videostill from '../public/videostill.jpeg'
+import leafPattern from '../public/LeafPattern.png'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -150,61 +151,56 @@ const App = () => {
                 <h1 name="textstring" className="history_title"></h1>
                 <div className="firstHistory">
                     <Row className="d-flex justify-content-center">
-                        <Col className='col-sm-12 col-md-4 col-lg-4'>
+                        <Col className='col-sm-12 col-md-4 col-lg-6'>
                             <img src={basicLayout} width="100%" height="auto" alt="old-card-1.0" />
                         </Col>
-                        <Col className='col-sm-12 col-md-8 col-lg-8'>
+                        <Col className='col-sm-12 col-md-8 col-lg-6'>
                             <p name="textstring" className="history_origin"></p>
                         </Col>
                     </Row>
                     <Row className="d-flex">
-                        <Col className=' d-flex'>
-                            <img src={grass} width="100%" height="1%" alt="grassy pattern" />
+                        <Col className='grass-img d-flex'>
+                            <img src={grass} width="100%" height="50px" alt="grassy pattern" />
                         </Col>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col className='col-sm-12 col-md-8 col-lg-8'>
+                        <Col className='col-sm-12 col-md-8 col-lg-6'>
                         <p name="textstring" className="history_decisions"></p>
                         </Col>
-                        <Col className='col-sm-12 col-md-4 col-lg-4'>
+                        <Col className='col-sm-12 col-md-4 col-lg-6'>
                             <img src={prototypeArt}alt="old-card-2.0" />
                         </Col>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col className=' d-flex'>
-                            <img src={grass} width="100%" height="auto" alt="grassy pattern" className='img-flip'/>
+                        <Col className='grass-img d-flex'>
+                            <img src={grass} width="100%" height="50px" alt="grassy pattern" className='img-flip'/>
                         </Col>
                     </Row>
                     <Row className='d-flex justify-content-center'>
-                      <Col className='col-sm-12 col-md-4 col-lg-4'>
+                      <Col className='col-sm-12 col-md-4 col-lg-6'>
                             <img src={prototypeComparison} width="100%" height="auto" alt="old-card-2.0" />
                         </Col>
-                        <Col className='col-sm-12 col-md-8 col-lg-8'>
+                        <Col className='col-sm-12 col-md-8 col-lg-6'>
                             <p name="textstring" className="history_version_1"></p>
                         </Col>
                     </Row>
                 </div>
             </section>
-            <section className='App-gamefound' id="crowdfunding">
+            <section className='App-gamefound' id="crowdfunding"  >
+                <Container className='container-background' style={{ backgroundImage: `url(${leafPattern})`}}>
+                </Container>
+                <Container className='content'>
                 <h1 name="textstring" className="crowdfunding_title"></h1>
-                <Row>
-                    <Col className="socials">
-                    <img src={socials} width="100%" height="auto" alt="old-card-2.0" />
-                    </Col>
-                    <Col>
                 <div className="gamefound">
                     <p name="textstring" className="crowdfunding_text_1" ></p>
                     <p name="textstring" className="crowdfunding_text_2" ></p>
                     <p name="textstring" className="crowdfunding_text_3" ></p>
                 </div>
-                    </Col>
-                </Row>
-
-
+                </Container>
             </section>
             <div className="leaf-action" style={{ backgroundImage: `url(${leaf})` }}>
-                    <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'></a>
-                </div>
+                <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'></a>
+            </div>
         </div >
 
     );
