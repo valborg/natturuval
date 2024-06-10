@@ -198,7 +198,7 @@ const App = () => {
                 </div>
                 </Container>
             </section>
-            <div className="leaf-action">
+            <div className="leaf-action" onClick={() => window.open(gamefoundurl)}>
                 <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'></a>
             </div>
         </div >
