@@ -1,0 +1,234 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+  canvas.addEventListener("click", onClick, false);
+
+  var context;
+  var drawspeed = 3;
+  var speed = 2;
+  var rad = 10, maxrad = 100;
+  var xs = [], ys = [], dxs = [], dys = [], colors = [], alpha = [], rads = [], active = [], inc = [], dead = [];
+  var numballs = 10;
+  var target = 1;
+  var numactive = 0;
+  var width = 600;
+  var height = 500;
+  var mousex, mousey, clicks = 0, mouserad = 20;
+  var level = 0;
+  var levelstart = true;
+  var textdelay = 200;
+  var alphatext = 1.0;
+  var alphasmiley = 0.0;
+  var good = true;
+  // Setup
+  function addball(xpos, ypos, actstate){
+    xs.push(xpos);
+    ys.push(ypos);
+    dxs.push(Math.random()*speed);
+    dys.push(Math.random()*speed);
+    var r = Math.floor(Math.random() * (254)),
+        g = Math.floor(Math.random() * (254)),
+        b = Math.floor(Math.random() * (254));
+    colors.push(r+","+g+","+b+",");
+    alpha.push(1.0);
+    rads.push(rad);
+    inc.push(true);
+    active.push(actstate);
+    dead.push(false);
+  }
+
+  function nextlevel(){
+    level += 1;
+    clicks = 0;
+    textdelay = 200;
+    numballs = Math.min(80,5*Math.floor((level-1)/5) + 10);
+    alphatext = 1.0;
+    alphasmiley = 1.0;
+    if(numballs < 30){
+      target = Math.floor(Math.min(0.8,((((level-1)%5)+1)/5.0))*numballs);
+    }
+    else{
+      target = Math.max(numballs/2,Math.floor((((level%10)+1)/10.0)*numballs));
+    }
+
+    xs = [], ys = [], dxs = [], dys = [], colors = [], alpha = [], rads = [], active = [], inc = [], dead = [];
+    numactive = 0;
+    for(var i = 0; i<numballs; i++){
+      var xrand = Math.floor((Math.random()*(width-2*rad))+rad),
+          yrand = Math.floor((Math.random()*(height-2*rad))+rad);
+      addball(xrand, yrand, false);
+    }
+  }
+
+  function draw(){
+    context= canvas.getContext('2d');
+    context.clearRect(0,0,600,500);
+    if(textdelay > 100){
+      textdelay-=drawspeed;
+      showText("Level "+level+" - Pop at least "+target+" out of "+numballs+" balls",20,0,height,alphatext);
+    }
+    else if(textdelay > 0 && alphatext > 0.0){
+      alphatext -= 0.01*drawspeed;
+      textdelay-= drawspeed;
+      showText("Level "+level+" - Pop at least "+target+" out of "+numballs+" balls",20,0,height,alphatext);
+    }
+    else{
+      showText(numactive+" / "+target,20,0,height,1.0);
+    }
+    if(alphasmiley>0.0){
+      if(good && level <= 10){
+        showText(":)",100,width/2-50,height/2,alphasmiley);
+      }
+      else if(good && level <= 20){
+        showText(":D",100,width/2-50,height/2,alphasmiley);
+      }
+      else if(good && level > 20){
+        showText(":'D",100,width/2-50,height/2,alphasmiley);
+      }
+      else{
+        showText(":'(",100,width/2-50,height/2,alphasmiley);
+      }
+      alphasmiley-=0.01*drawspeed;
+    }
+
+    if(levelstart){
+      levelstart = false;
+      nextlevel();
+    }
+    // Update active balls
+    for(var i=0; i<numballs; i++){
+      if(clicks > 0 && !active[i] && !dead[i]){
+        for(var j=0; j<numballs; j++){
+          if(active[j] && rads[j] > 0 && Math.sqrt((xs[i]-xs[j])*(xs[i]-xs[j]) + (ys[i]-ys[j])*(ys[i]-ys[j])) < rads[i]+rads[j]){
+            active[i] = true;
+            numactive += 1;
+            break;
+          }
+        }
+      }
+    }
+    for(var i=0; i<numballs; i++){
+      context.beginPath();
+      context.fillStyle="rgba("+colors[i]+alpha[i]+")";
+      context.arc(xs[i],ys[i],rads[i],0,Math.PI*2,true);
+      context.closePath();
+      context.fill();
+      if(!active[i]){
+        if( xs[i]<rad || xs[i]>600-rad)
+          dxs[i]=-dxs[i];
+        if( ys[i]<rad || ys[i]>500-rad)
+          dys[i]=-dys[i];
+        xs[i]+=dxs[i]*drawspeed;
+        ys[i]+=dys[i]*drawspeed;
+      }
+      else{
+        if(inc[i]){
+          rads[i] += drawspeed;
+          if(rads[i] > maxrad){
+            inc[i] = false
+          }
+        }
+        else if(rads[i] > 0){
+          rads[i] -= drawspeed;
+          rads[i] = Math.max(rads[i],0);
+          if(alpha[i] > 0.0)
+            alpha[i] -= 0.01*drawspeed;
+          alpha[i] = Math.max(alpha[i],0.0);
+        }
+        else if(rads[i] < 1){
+          active[i] = false;
+          dead[i] = true;
+        }
+      }
+    }
+    // Check if game ended
+    if(clicks > 0){
+      var anyactive = false;
+      for(var k=0; k<numballs; k++){
+        if(active[k]){
+          anyactive = true;
+          break;
+        }
+      }
+      if(!anyactive && numactive < target){
+        level = 0;
+        good = false;
+        levelstart = true;
+      }
+      else if(!anyactive && numactive >= target){
+        levelstart = true;
+        good = true;
+      }
+    }
+  }
+  setInterval(draw,drawspeed*10);
+
+  // Utilities
+  function findPos(obj) {
+    var curleft = 0, curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+        return { x: curleft, y: curtop };
+    }
+    return undefined;
+  }
+
+  function onClick(e) {
+    if(clicks < 1){
+      clicks += 1
+
+      var element = canvas;
+      var offsetX = 0, offsetY = 0
+      if (element.offsetParent) {
+        do {
+          offsetX += element.offsetLeft;
+          offsetY += element.offsetTop;
+        } while ((element = element.offsetParent));
+      }
+
+      mousex = e.pageX - offsetX;
+      mousey = e.pageY - offsetY;
+
+      addball(mousex,mousey,true);
+      numballs += 1
+    }
+  }
+
+  function showText(input_text,size, posy, posx,a) {
+    context.fillStyle = "rgba(41,37,28,"+a+")";
+    context.font = "bold "+size+"px sans-serif";
+    context.textBaseline = 'bottom';
+    context.fillText(input_text, posy, posx);
+  }
+});
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pop'em all!</title>
+<style type="text/css">
+<!--
+body { background-color:#ededed; font:normal 12px/18px Arial, Helvetica, sans-serif; }
+h1 { display:block; width:600px; margin:20px auto; padding-bottom:10px; font:bold 40px/52px Helvetica, sans-serif; color:#333;}
+#container { width:600px; margin:0 auto; }
+#canvas { background:#fff; border:1px solid #cbcbcb; }
+#nav { display:block; width:100%; text-align:center; }
+#nav li { display:block; font-weight:bold; line-height:21px; text-shadow:1px 1px 1px #fff; width:100px; height:21px; padding:5px; margin:0 10px; background:#e0e0e0; border:1px solid #ccc; -moz-border-radius:4px;-webkit-border-radius:4px; border-radius:4px; float:left; }
+#nav li a { color:#000; display:block; text-decoration:none; width:100%; height:100%; }
+-->
+</style>
+</head>
+<body>
+  <center><h1>Pop'em all!</h1></center>
+<div id="container">
+
+	<canvas id="canvas" width="600" height="500"></canvas>
+
+</div>
+
+</body>
+</html>
