@@ -83,7 +83,9 @@ const App = () => {
             <section id="main" className='App-main'>
                 <Container>
                     <img src={logoWithTagline} width="100%" height="auto" alt="logo" />
-                    <p className="someFont main_subtext" name="textstring" ></p>
+                    <div>
+                        <p className="someFont main_subtext" name="textstring" ></p>
+                    </div>
                     <img
                         src={videostill}
                         alt="pic id code"
