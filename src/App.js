@@ -12,13 +12,15 @@ import justin from '../public/justin.jpeg'
 import valborg from '../public/valborgS2.jpeg'
 import rokkvi from '../public/xsR2.jpeg'
 import kate from '../public/katep2.jpeg'
-import socials from '../public/socials.jpeg'
 import prototypeArt from '../public/prototypeArt.jpg'
 import prototypeComparison from '../public/OldAndNewDiceAndBox.jpg'
 import basicLayout from '../public/basicLayout.jpg'
 import grass from '../public/GrassPattern.svg'
 import videostill from '../public/videostill.jpeg'
 import leafPattern from '../public/LeafPattern.png'
+import instagram from '../public/instagram.svg'
+import tumblr from '../public/tumblr.svg'
+import tiktok from '../public/tiktok.svg'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -30,6 +32,9 @@ console.log(textstringData)
 
 let CURR_LANG = "en"
 let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
+let instasocial = 'https://www.instagram.com/natturuval/'
+let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
+let tiktoksocial = 'https://www.tiktok.com/@natturuval'
 
 function changeLanguages() {
     CURR_LANG = CURR_LANG === 'en' ? 'is' : 'en'
@@ -97,10 +102,23 @@ const App = () => {
                         height="auto"
                     />
                 </Container>
+                <div className='social-media d-flex'>
+                    <h4 className="social_media" name="textstring"></h4>
+                    <div className="social-media-icon" onClick={() => window.open(instasocial)}>
+                        <img src={instagram} width="100%" height="50px" alt="instagram social icon" />
+                    </div>
+                    <div className="social-media-icon" onClick={() => window.open(tiktoksocial)}>
+                        <img src={tiktok} width="100%" height="50px" alt="tiktok social icon" />
+                    </div>
+                    <div className="social-media-icon" onClick={() => window.open(tumblrsocial)}>
+                        <img src={tumblr} width="100%" height="50px" alt="tumblr social icon" />
+                    </div>
+                </div>
                 <div className="App-action">
                 </div >
-                <div className="leaf-action" onClick={() => window.open(gamefoundurl)}>
-                    <a name="textstring" className="call_to_action_button_text_1" href={gamefoundurl} target='#'></a>
+                <div className="leaf-action" onClick={() => window.open(gamefoundurl)} target='#'>
+                    <h3 name="textstring" className="call_to_action_button_text_1"></h3>
+                    <p name="textstring" className="call_to_action_button_text_1_short"></p>
                 </div>
             </section>
             <section className="App-about" id="team">
@@ -200,8 +218,9 @@ const App = () => {
                 </div>
                 </Container>
             </section>
-            <div className="leaf-action" onClick={() => window.open(gamefoundurl)}>
-                <a name="textstring" className="call_to_action_button_text_2" href={gamefoundurl}  target='#'></a>
+            <div className="leaf-action" onClick={() => window.open(gamefoundurl)} target='#'>
+                <h3 name="textstring" className="call_to_action_button_text_2" ></h3>
+                <p name="textstring" className="call_to_action_button_text_2_short"></p>
             </div>
         </div >
 
