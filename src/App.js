@@ -33,7 +33,7 @@ console.log()
 const locale = new URL(document.location)
 const langIsSet = locale.searchParams.has('lang')
 if(langIsSet){
-    let start_lang = 'en'
+    start_lang = 'en'
     localStorage.setItem('lang', start_lang)
     window.location = 'https://natturuval.is'
 }
@@ -43,16 +43,8 @@ let instasocial = 'https://www.instagram.com/natturuval/'
 let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
 let tiktoksocial = 'https://www.tiktok.com/@natturuval'
 
-function getCurrentLanguage () {
-    let curr_lang = localStorage.getItem('lang')
-    if(curr_lang === null){
-        return 'is'
-    }
-    return curr_lang
-}
-
 function changeLanguages() {
-    let curr_lang = getCurrentLanguage()
+    let curr_lang = curr_lang === 'en' ? 'is' : 'en'
     const collection = document.getElementsByName("textstring")
     for (const item of collection) {
         const identifier = item.className.split(' ').find(word => word.includes('_') || '')
@@ -64,7 +56,7 @@ function changeLanguages() {
 
 
 const App = () => {
-    const [currLang, setLang] = useState(getCurrentLanguage())
+    const [currLang, setLang] = useState(localStorage.getItem('lang') || 'is')
     useEffect( () => {
         changeLanguages()
     }, [currLang])
