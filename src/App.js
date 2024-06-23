@@ -28,15 +28,19 @@ import './App.css';
 
 import textstringData from './strings.json'
 import { CardBody, CardImg, CardText, CardTitle } from 'react-bootstrap';
-console.log()
 
 const locale = new URL(document.location)
-const langIsSet = locale.searchParams.has('lang')
-if(langIsSet){
-    start_lang = 'en'
-    localStorage.setItem('lang', start_lang)
-    window.location = 'https://natturuval.is'
+let curr_lang = ''
+
+
+if(locale.searchParams.has('lang')){
+    curr_lang = 'en'
+    window.location = 'https://natturuval.is/'
 }
+else {
+    curr_lang = 'is'
+}
+localStorage.setItem('lang', curr_lang)
 
 let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
 let instasocial = 'https://www.instagram.com/natturuval/'
@@ -44,7 +48,7 @@ let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
 let tiktoksocial = 'https://www.tiktok.com/@natturuval'
 
 function changeLanguages() {
-    let curr_lang = curr_lang === 'en' ? 'is' : 'en'
+    curr_lang = curr_lang === 'en' ? 'is' : 'en'
     const collection = document.getElementsByName("textstring")
     for (const item of collection) {
         const identifier = item.className.split(' ').find(word => word.includes('_') || '')
@@ -52,8 +56,6 @@ function changeLanguages() {
         document.getElementsByClassName(identifier)[0].innerHTML = replacement
     }
 }
-
-
 
 const App = () => {
     const [currLang, setLang] = useState(localStorage.getItem('lang') || 'is')
