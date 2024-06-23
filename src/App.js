@@ -28,20 +28,35 @@ import './App.css';
 
 import textstringData from './strings.json'
 import { CardBody, CardImg, CardText, CardTitle } from 'react-bootstrap';
-console.log(textstringData)
+console.log()
 
-let CURR_LANG = "en"
+const locale = new URL(document.location)
+const langIsSet = locale.searchParams.has('lang')
+if(langIsSet){
+    let start_lang = 'en'
+    localStorage.setItem('lang', start_lang)
+    window.location = 'https://natturuval.is'
+}
+
 let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
 let instasocial = 'https://www.instagram.com/natturuval/'
 let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
 let tiktoksocial = 'https://www.tiktok.com/@natturuval'
 
+function getCurrentLanguage () {
+    let curr_lang = localStorage.getItem('lang')
+    if(curr_lang === null){
+        return 'is'
+    }
+    return curr_lang
+}
+
 function changeLanguages() {
-    CURR_LANG = CURR_LANG === 'en' ? 'is' : 'en'
+    let curr_lang = getCurrentLanguage()
     const collection = document.getElementsByName("textstring")
     for (const item of collection) {
         const identifier = item.className.split(' ').find(word => word.includes('_') || '')
-        const replacement = textstringData[0][CURR_LANG][identifier]
+        const replacement = textstringData[0][curr_lang][identifier]
         document.getElementsByClassName(identifier)[0].innerHTML = replacement
     }
 }
@@ -49,7 +64,7 @@ function changeLanguages() {
 
 
 const App = () => {
-    const [currLang, setLang] = useState('is')
+    const [currLang, setLang] = useState(getCurrentLanguage())
     useEffect( () => {
         changeLanguages()
     }, [currLang])
