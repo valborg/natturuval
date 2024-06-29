@@ -1,0 +1,90 @@
+Náttúruval - lygilega ófyrirsjánleg lífsbarátta
+
+Í kassanum eru 108 spil og tveir sérmerktir teningar. 
+
+Hvert spil er einstakt, með mynd og upplýsingar um eina dýrategund. Efst er nafn dýrsins og undir því er alþjóðlegt fræðiheiti dýrsins sem má nota til að fletta upp frekari upplýsingum um dýrið á hvaða tungumáli sem er. Svo eru 6 flokkar sem allir hafa tölulegt gildi. 
+
+Efsti flokkurinn er "og "fræðiheiti" talan þar jafngildir bókstöfum í fræðiheitinu.
+Næst er "afkvæmi" sem inniheldur tölu fyrir hversu mörg afkvæmi dýrategundin eignast í einu, hvort sem þeim er verpt eða þau fædd.
+Þriðji er "líftími" sem er meðallíftími dýrssins í náttúrunni.
+Fjórði "fætur", er fjöldi fóta sem dýrið er með.
+Fimmti er þyngd, sem er alltaf gefin upp í kílógrömmum, kg, svo það þarf bara að bera saman tölurnar en ekki færa á milli mælieininga.
+Sá sjötti og síðasti er lengd, sem er alltaf gefin upp í metrum, m. Þessi flokkur er erfiður viðureignar þegar kemur að því hvernig eigi að staðla hann. Við höfum það sem lengd frá toppi til táar (ekki vænghaf, ekki rófa).
+
+Allt eru þessar tölur meðaltöl sem eiga við um fullorðna einstaklinga tegundarinnar.
+
+Teningarnir eru tveir, annar er með sömu táknum eins og fyrir framan nöfnin á flokkunum, í sömu litum og ræður því hvaða flokk á að skoða.
+Hinn teningurinn er með þrjár hliðum með grænum +, sem þýðir að hærra gildið vinnur, og þrjár með rauðum mínus, sem þýðir að lægra gildið vinnur.
+
+En hvernig á að spila?
+
+Til eru margar leiðir, byrjaðu á þeirru fyrstu til að fá tilfinningu fyrir spilinum og prófaðu svo einhverja aðra.
+
+1. Aðalreglurnar (henta allri fjölskyldunni)
+Hver spilari tekur sér 5 spil á hendi og teningunum er kastað. Hver spilari velur sér spil af hendi og setur á borð á grúfu og allir spilarar sýna spilin sín á sama tíma. Sá sem hefur vinningsspilið fær að setja dýrategundina, þannig að hún snúi upp til sýnis, fyrir framan sig sem er núna orðið stig. Hin spilin fara í kast bunka. Svona er spilað þar til bunkinn klárast og sá spilari sem er með flest spil fyrir framan sig vinnur. Ef það kemur td. plús þyngd og þrjú eru að spila, og aðeins eitt þeirra spilar hval þá vinnur viðkomandi. Segjum hinsvegar að upp kom mínus afkvæmi og þessi sömu þrjú spiluðu öll spendýrum, sem eignast flest eitt eða eitt til tvö afkvæmi. Það skiptir ekki máli hvort að eitt þeirra hafi verið með 1-3 og hin bara 1, það er jafntefli. Til þess að skera úr um jafnteflið þá er teningunum kastað aftur fyrir þessi þrjú dýr sem var búið að spila. Svo dregur hver spilari aftur upp í fimm spil á hendi
+
+2. Partýdýrin - reglur sem henta þeim sem vilja heldur leikræna takta en tölulegar upplýsingar (hentar stórum sem smáum hópum)
+Tvær útgáfur af þessum reglum hafa notið vinsælda, hver hópur fyrir sig þarf bara að sammælast um hvað þeim finnst skemmtilegast, en í grunnin er það þannig að farið er inn á https://valborg.github.io/Dyrastokksspilid/ (qr kóði) og smellt á takka og þá birtist einhver fullyrðing á borð við "Dýrið sem getur þagað lengst í bíó". Hver spilari er þá með eitt eða fleiri spil á hendi, spilið gengur hraðar og er yfirleitt fyndnara ef fólk er bara með eitt spil en það er smekksatriði. Og hér koma útgáfurnar:
+- Eitt í einu fær hvert ykkar fær kastljósið á sig og þá færið þið rök fyrir því hvers vegna dýrategundin ykkar er vissulega dýrið sem þessi lýsing á best við (td. er stóri túkaninn lang líklegastur til að þegja í bíó, þar sem hann er a. með gogginn svo troðfullan af poppi að það kæmi ekki frá honum hljóð og b. þar sem hann fer eingöngu í bíó, sem hann gerir töluvert oft, til að heyra bakgrunnshljóðin. Sjáðu til allir stórir túkanar hafa verið að leita að týnda bróðurnum í nokkrar kynslóðir og þessi kynslóð er að fara stafræna leitarleið.) Svo þegar þið eruð öll búin með ykkar röksemdarfærslu þá má rétt stuttlega segja hvað einhverjum fannst fyndið eða skemmtilegt, fáranlegt og krúttlegt, en bara mjög stutt því það á ekki að fara í neinar söluræður. Svo setja öll olnbogana upp á borð telja upp á þrjá og þá kjósa öll með því að benda á spilarann sem kom með svarið sem þeim fannst best. Ef það er jafntefli má rífast um það í smá stund og kjósa svo aftur. Að benda á sig sjálf hef engin áhrif, eins og 0 atkvæði (en þá kaustu allavega ekkert af hinum dýrunum!).
+- Eitt í einu fær hvert ykkar að færa rök fyrir máli sínu, en aðrir við borðið fá að taka þátt í röksemdarfærslunni og spyrja spurninga eða draga hana í efa. Svo þegar þið eruð öll búin að tjá ykkur geta samræður haldið áfram þangað til að þið eruð annað hvort búin að sannfæra hvert annað um einhvern einn tiltekinn, þá augljósan eða þvingaðan, sigurvegara. Ef það gerðist ekki á lífrænan máta, eða með frekju, skal kjósa á sambærilegan máta og í fyrstu útgáfu.
+
+3. Langavitleysa (hentar ekki eldri en 10 ára)
+Allir spilarar fá bunka, draga efsta spilið og kasta teningum. Ákvarða sigurvegarann sem fær þá öll spilin undir bunkann sinn. Ef um jafntefli er að ræða draga spilarar, sem jafnteflið um ræðir, annað spil og leggja ofan á hin sem keppa þá í sama teningakasti og áðan. Þetta er kallað púkk, slagurinn heldur áfram að stækka á meðan er ennþá verið að reyna að skera úr um jafnteflið. Púkkslagurinn fer þá allur undir bunkann hjá sigurvegaranum.
+
+4. Tveggja manna miðjumoð (hentar eldri börnum og fullorðnum)
+Tveir spilarar fá fimm spil á hendi, teningunum er kastað og efsta spilið úr stokknum er lagt á grúfu á borðið. Til þess að vinna slaginn þarf að vera með dýrið sem er á milli hinna tveggja. Segjum að upp komi plús fætur og spilari A setur út flugu og B setur út ref en úr stokknum kom fiskur. Þá vinnur spilari B og leggur spilið fyrir framan sig til sýnis. Hinsvegar hefði komið þúsundfætla úr stokknum þá hefði spilari A unnið. Svo ef það hefði komið mús úr stokknum þá hefði verið jafntefli og þá þyrfti að kasta teningunum aftur. Stokkurinn fær til sín þau spil sem vinna slagi, sem eru þá lögð til hliðar til sýnis eins og stig hjá spilurunum. Spilið klárast þegar síðasta spilið er dregið úr stokknum, þó svo að spilarar gætu verið spil á hendi.
+
+5. Engir teningar (hentar allri fjölskyldunni)
+Spilarar taka sér fimm spil á hendi og yngsti byrjar og velur sér eitthvað spil á hendi og velur flokk og hvort sé verið að keppa í hæstu eða lægstu tölunni. Hver spilari velur spil að setja út í slaginn. Sigurvegarinn fær til sín vinningsspilið og næsta umferð hefst á spilaranum til vinstri við þann sem byrjaði umferðina á undan.
+Þetta hentar allri fjölskyldunni því að það þarf ekki að hafa góða þekkingu á stokknum til að geta spilað, bara að geta horft á tölu og hugsað vá þetta er lítið, eða mikið.
+Útgáfur:
+-Fyrst til að setja út snúa spilinu upp og öll spil þar á eftir eru sett á borðið svo þau sem eiga eftir að gera sjá hvað er búið að setja út.
+-Sem byrjar segir bara flokkinn og horfir á hin spilin þegar þau eru lögð niður og út setur ekki niður fyrr en það er komið aftir að sér til þess að viðkomandi get verið viss um að þetta sé vissulega vinningsspilið og ef ekki að halda því þá eftir og segja þennan flokk aftur seinna.
+
+6. Hjálpumst að (fyrir yngri börn)
+Hér er í raun ekkert verið að spila fyrir stig heldur snýst þetta um að læra á tölur, bera saman, lesa og kynnast dýrum.
+- Sitjið með barninu og skoðið spilin, þetta eru falleg spil með litríkum myndum úr dýraríkinu því fyrsta skrefið í að hafa gaman af því að spila, eða gera nokkuð, er að líða vel.
+- Takið eitt spjald í einu og segið barninu hvað dýrið heitir og fáið barnið til að benda á dálk, kasta teningnum eða veljið sjálf dálk og segið barninu frá tölunni (ekki endilega töluna sjálfa, meira eins og vá gíraffinn er þyngri en bíllinn okkar eða vá jarfinn er með svo stutt nafn þitt er svo langt en hans er svo stutt) 
+- Réttið barninu spjald og biðjið það um að segja hver er áhugaverðasta talan, og hjálpið svo barninu að segja hana.
+- Leyfið barninu að kasta + - teningunum og sýnið því svo tvö spil, það á þá að velja hvort dýrið vinnur, sem er dýrið sem því finnst vera + stærra eða - minna. Barnið fær svo stig til sín ef það vill það.
+- Notið teninginn, hjálpið barninu að finna þann dálk sem teningurinn segir til um á tveimur spilum og fá það til að meta hvort því finnist þessi tala vera stærri eða minni eða af hverju.
+- Réttið barni sem hefur áhuga á lestri spil sem eru með einföldum þægilegum hljóðum eins og jarfi(11) lundinn (57), svanurinn (63), emúinn(91) en ekki endilega dýr sem barnið þekkir eins og ljónið (76). Svo er hægt að fara út í lestur á einhverju eins og kyrrahafs bananasnigillinn (1). 
+- Hjálpið barninu að kynnast dýraríkinu með því að fá það til að flokka í tvo bunka. Td. fuglar og ekki fuglar, eða mér finnst það stórt eða ekki. Með þessu móti fær barnið bein áhrif á það sem er að gerast í spilinu og æfir sig í ákvörðunartöku þar sem er mjög lítið í húfi.
+
+7. Ég vona að ég vinni (hentar allri fjölskyldunni, helst að hafa að minnsta kosti þrír spilara)
+Gott er að eitthvert annað en yngsta byrji hérna. Hver spilari tekur sér eitt spil án þess að horfa á það og heldur því við ennið á sér þannig að allir hinir spilarnir sjái það. Sá sem á að gera horfir á hin spilin vandlega og segir svo flokk og stefnu og allir spilarar setja spilin sín niður og svo hægt sé að ákvarða sigurvegara. Stigin eru geymd eins og í öðrum afbrigðum. Spilið klárast þegar stokkurinn klárast.
+
+8. Hraðar hendur (hentar þeim sem hafa lágan blóðþrýsing)
+Þrjú spil eru sett niður, látin snúa upp, þar sem allir spilarar sjá þau. Svo er teningunum kastað og sá spilari sem er sneggstur að átta sig á því hvert þessara þriggja spila hefur sigurinn hrifsar það til sín og á sem stig. Spilarinn sem fékk stigið fær þá verkefnið að fylla á svo það séu aftur þrjú spil í borði og kasta svo teningunum.
+- Það er hægt að spila þetta sem kapp við tíma, sjá hversu mörg stig er hægt að fá á til dæmis mínútu.
+
+9. Gúrka (hentar þeim sem hafa úthald)
+Spilarar velja í sameiningu flokk og annað hvort + eða - og stilla teningunum upp þannig að þeir séu auðsjánlegir og þeir eru ekki snertir aftur. Þegar því er lokið þá fá allir spilarar 10 spil á hendi. Ef þið kannist við reglurnar í gúrku sem spilað er á 52 spil þá eru þær það sem er verið að útfæra hérna. Sá spilari sem setur út fyrsta spilið fyrir slaginn setur tóninn. Segjum að verið sé að spila plús líftími, og fyrsta spilið sem sett er í slaginn er 6 ár, næsta spil þarf þá að vera jafnhátt eða hærra. Hver spilari setur út spil í slaginn eftir þessum reglum, og ef viðkomandi getur ekki sett spil sem er jafn hátt eða hærra verður hann að setja út lægsta spilið sitt af hendi. Svo þegar allir spilarar hafa sett út í þennan slag eitt spil þá er hann settur í kast bunka og spilarinn sem setti út hæsta spilið byrjar næsta slag. Þannig gengur þetta koll af kolli þar til bara eitt spil er eftir. Sá spilari sem byrjar slaginn er í betri stöðu því ef eitthvað spil er jafnhátt sem kemur á eftir þá er það spilið sem vann slaginn. Hæsta spilið í síðasta slagnum er þá orðið að refsistigi fyrir þann spilara sem vann það. Það er fyrsta umferðin, svo eru 9 aðrar umferðir spilaðar þar sem er alltaf einu færra spili gefið á hverja hönd í upphafi, síðasta umferðin er bara spiluð með einu spili. Þegar síðasta umferðin er búin eru refsistigin talin og sá spilari sem var með flest, tapar og hinir vinna.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -155,19 +155,30 @@
   padding-top: 0.3em;
 }
 
+.coolfishcol{
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coolfish {
+  width: 100%
+}
+
+.baratta{
+  width: 100%;
+}
+
 @media (min-width: 400px) and (max-width: 4000px) {
   .App-history p {
     padding-left: 10%;
     padding-right: 10%;
   }
-  
-}
-
-@media (max-width: 575px) {
-  .social-media h4 {
-    display: none;
+  p {
+    font-size: large;
   }
-  
 }
 
 @media (max-width: 575px) {
@@ -175,6 +186,12 @@
     display: none;
   }
   .call_to_action_button_text_2{
+    display: none;
+  }
+  p {
+    font-size: medium;
+  }
+  .social-media h4 {
     display: none;
   }
   
@@ -186,5 +203,6 @@
   .call_to_action_button_text_2_short{
     display: none;
   }
+
 }
 

@@ -7,20 +7,28 @@ import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import leaf from '../public/Leaf.svg'
-import logoWithTagline from '../public/NattLockupWithTagline.svg'
+import logoWithTaglineEng from '../public/NattLockupWithTagline.svg'
+import logoWithTaglineIce from '../public/NattLockupWithTagline_is.svg'
 import justin from '../public/justin.jpeg'
 import valborg from '../public/valborgS2.jpeg'
 import rokkvi from '../public/xsR2.jpeg'
+import storyRokkvi from '../public/rokkvi12.jpeg'
 import kate from '../public/katep2.jpeg'
 import prototypeArt from '../public/prototypeArt.jpg'
 import prototypeComparison from '../public/OldAndNewDiceAndBox.jpg'
 import basicLayout from '../public/basicLayout.jpg'
 import grass from '../public/GrassPattern.svg'
-import videostill from '../public/videostill.jpeg'
 import leafPattern from '../public/LeafPattern.png'
 import instagram from '../public/instagram.svg'
 import tumblr from '../public/tumblr.svg'
 import tiktok from '../public/tiktok.svg'
+import krossfiskur from '../public/solblomakrossfiskurinn.png'
+import coolfiskurinn from '../public/coolfiskurinn.png'
+import koala from '../public/koala.png'
+import dice from '../public/dice.png'
+import baratta from '../public/baratta.png'
+import fight from '../public/fight.png'
+import coolstar from '../public/coolstar.png'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -31,16 +39,15 @@ import { CardBody, CardImg, CardText, CardTitle } from 'react-bootstrap';
 
 const locale = new URL(document.location)
 let curr_lang = ''
-
+let logoImage = localStorage.getItem('lang') === 'en' ? logoWithTaglineEng : logoWithTaglineIce
+let fightImage = localStorage.getItem('lang') === 'en' ? fight : baratta
+let coolfish = localStorage.getItem('lang') === 'en' ? coolstar : coolfiskurinn
 
 if(locale.searchParams.has('lang')){
     curr_lang = 'en'
-    window.location = 'https://natturuval.is/'
+    localStorage.setItem('lang', 'en')
+    window.location =   'https://natturuval.is/' // 'http://localhost:9000'// 
 }
-else {
-    curr_lang = 'is'
-}
-localStorage.setItem('lang', curr_lang)
 
 let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
 let instasocial = 'https://www.instagram.com/natturuval/'
@@ -48,7 +55,23 @@ let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
 let tiktoksocial = 'https://www.tiktok.com/@natturuval'
 
 function changeLanguages() {
-    curr_lang = curr_lang === 'en' ? 'is' : 'en'
+    const stored = localStorage.getItem('lang')
+    if(stored && curr_lang === '' && stored !== curr_lang ){
+        curr_lang = 'en'
+    }
+    else if(curr_lang === 'en'){
+        curr_lang = 'is'
+    }
+    else if (curr_lang === 'is'){
+        curr_lang = 'en'
+    }
+    else{
+        curr_lang = 'is'
+    }
+    logoImage = curr_lang === 'en' ?  logoWithTaglineIce : logoWithTaglineEng
+    fightImage = curr_lang === 'en' ? baratta : fight 
+    coolfish = curr_lang === 'en' ? coolfiskurinn : coolstar 
+
     const collection = document.getElementsByName("textstring")
     for (const item of collection) {
         const identifier = item.className.split(' ').find(word => word.includes('_') || '')
@@ -58,9 +81,9 @@ function changeLanguages() {
 }
 
 const App = () => {
-    const [currLang, setLang] = useState(localStorage.getItem('lang') || 'is')
+    const [currLang, setLang] = useState('is')
     useEffect( () => {
-        changeLanguages()
+         changeLanguages()
     }, [currLang])
     return (
         <div className="App">
@@ -74,10 +97,10 @@ const App = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className='mr-auto'>
                         <Nav.Item>
-                            <Nav.Link href="#team" name="textstring" className="nav_team"></Nav.Link>
+                            <Nav.Link href="#history" name="textstring" className="nav_history"></Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link href="#history" name="textstring" className="nav_history"></Nav.Link>
+                            <Nav.Link href="#team" name="textstring" className="nav_team"></Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link href="#crowdfunding" name="textstring" className="nav_crowdfunding"></Nav.Link>
@@ -96,11 +119,28 @@ const App = () => {
             {/* </Container> */}
             <section id="main" className='App-main'>
                 <Container>
-                    <img src={logoWithTagline} width="100%" height="auto" alt="logo" />
+                    <div style={{paddingBottom: "2em"}}>
+                        <img src={logoImage} width="100%" height="auto" alt="logo"/>
+                    </div>
                     <div>
                         <p className="someFont main_subtext" name="textstring" ></p>
                     </div>
-                    <img
+                    <Row className="d-flex justify-items-center ">
+                       
+                    <Col className='col-sm-12 col-md-12 col-lg-7'>
+                            <img src={fightImage} className="baratta"/>
+                        </Col>
+                    <Col className='col-sm-12 col-md-12 col-lg-5 coolfishcol'>
+                        <Row style={{paddingBottom: "1em"}}>
+                            <h3 name="textstring" className="fight_result"></h3>
+                        </Row> 
+                        <Row >
+                            <img src={coolfish} width="100%" className='coolfish'/>  
+                        </Row>     
+          
+                    </Col>
+                    </Row>
+                    {/* <img
                         src={videostill}
                         alt="pic id code"
                         onClick={() => window.open(gamefoundurl)}
@@ -109,7 +149,7 @@ const App = () => {
                         target="#"
                         width="100%" 
                         height="auto"
-                    />
+                    /> */}
                 </Container>
                 <div className='social-media d-flex'>
                     <h4 className="social_media" name="textstring"></h4>
@@ -128,6 +168,45 @@ const App = () => {
                 <div className="leaf-action" onClick={() => window.open(gamefoundurl)} target='#'>
                     <h3 name="textstring" className="call_to_action_button_text_1"></h3>
                     <p name="textstring" className="call_to_action_button_text_1_short"></p>
+                </div>
+            </section>
+            <section className='App-history' id="history">
+                <h1 name="textstring" className="history_title"></h1>
+                <div className="firstHistory">
+                    <Row className="d-flex justify-content-center">
+                        <Col className='col-sm-12 col-md-4 col-lg-6'>
+                            <img src={storyRokkvi} width="100%" height="auto" alt="old-card-1.0" />
+                        </Col>
+                        <Col className='col-sm-12 col-md-8 col-lg-6'>
+                            <p name="textstring" className="history_origin"></p>
+                        </Col>
+                    </Row>
+                    <Row className="d-flex">
+                        <Col className='grass-img d-flex'>
+                            <img src={grass} width="100%" height="50px" alt="grassy pattern" />
+                        </Col>
+                    </Row>
+                    <Row className="d-flex justify-content-center">
+                        <Col className='col-sm-12 col-md-8 col-lg-6'>
+                        <p name="textstring" className="history_decisions"></p>
+                        </Col>
+                        <Col className='col-sm-12 col-md-4 col-lg-6'>
+                            <img src={basicLayout} alt="old-card-2.0" />
+                        </Col>
+                    </Row>
+                    <Row className="d-flex justify-content-center">
+                        <Col className='grass-img d-flex'>
+                            <img src={grass} width="100%" height="50px" alt="grassy pattern" className='img-flip'/>
+                        </Col>
+                    </Row>
+                    <Row className='d-flex justify-content-center'>
+                      <Col className='col-sm-12 col-md-4 col-lg-6'>
+                            <img src={prototypeArt} width="100%" height="auto" alt="old-card-2.0" />
+                        </Col>
+                        <Col className='col-sm-12 col-md-8 col-lg-6'>
+                            <p name="textstring" className="history_version_1"></p>
+                        </Col>
+                    </Row>
                 </div>
             </section>
             <section className="App-about" id="team">
@@ -176,45 +255,7 @@ const App = () => {
                     </Col>
                 </Row>
             </section>
-            <section className='App-history' id="history">
-                <h1 name="textstring" className="history_title"></h1>
-                <div className="firstHistory">
-                    <Row className="d-flex justify-content-center">
-                        <Col className='col-sm-12 col-md-4 col-lg-6'>
-                            <img src={basicLayout} width="100%" height="auto" alt="old-card-1.0" />
-                        </Col>
-                        <Col className='col-sm-12 col-md-8 col-lg-6'>
-                            <p name="textstring" className="history_origin"></p>
-                        </Col>
-                    </Row>
-                    <Row className="d-flex">
-                        <Col className='grass-img d-flex'>
-                            <img src={grass} width="100%" height="50px" alt="grassy pattern" />
-                        </Col>
-                    </Row>
-                    <Row className="d-flex justify-content-center">
-                        <Col className='col-sm-12 col-md-8 col-lg-6'>
-                        <p name="textstring" className="history_decisions"></p>
-                        </Col>
-                        <Col className='col-sm-12 col-md-4 col-lg-6'>
-                            <img src={prototypeArt}alt="old-card-2.0" />
-                        </Col>
-                    </Row>
-                    <Row className="d-flex justify-content-center">
-                        <Col className='grass-img d-flex'>
-                            <img src={grass} width="100%" height="50px" alt="grassy pattern" className='img-flip'/>
-                        </Col>
-                    </Row>
-                    <Row className='d-flex justify-content-center'>
-                      <Col className='col-sm-12 col-md-4 col-lg-6'>
-                            <img src={prototypeComparison} width="100%" height="auto" alt="old-card-2.0" />
-                        </Col>
-                        <Col className='col-sm-12 col-md-8 col-lg-6'>
-                            <p name="textstring" className="history_version_1"></p>
-                        </Col>
-                    </Row>
-                </div>
-            </section>
+           
             <section className='App-gamefound' id="crowdfunding"  >
                 <Container className='container-background' style={{ backgroundImage: `url(${leafPattern})`}}>
                 </Container>
