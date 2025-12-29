@@ -9,9 +9,72 @@
   font-family: Arial, sans-serif;
 }
 
+/* Mobile text alignment fix */
+@media (max-width: 768px) {
+  .App {
+    text-align: left;
+  }
+
+  .App p,
+  .App .card-text,
+  .App .text-justify {
+    text-align: left !important;
+  }
+
+  /* Keep certain elements centered on mobile */
+  .App h1,
+  .App h2,
+  .App h3,
+  .text-center {
+    text-align: center !important;
+  }
+}
+
+/* Mobile text alignment fixes */
+@media (max-width: 768px) {
+
+  /* Force left-aligned text on mobile for better readability */
+  p,
+  li,
+  .text-justify,
+  .card-text,
+  .lead {
+    text-align: left !important;
+  }
+
+  /* Keep centered text only for headings and specific elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .text-center {
+    text-align: center !important;
+  }
+
+  /* Ensure form inputs work properly */
+  input::placeholder {
+    opacity: 0.6;
+  }
+
+  input:focus::placeholder {
+    opacity: 0.3;
+  }
+}
+
 .App-main {
-  padding-top: 6em;
+  padding-top: 120px;
+  /* Account for fixed navbar */
   padding-bottom: 2em;
+}
+
+@media (max-width: 768px) {
+  .App-main {
+    padding-top: 100px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .leaf-action {
@@ -100,11 +163,11 @@
   border-radius: 5%;
 }
 
-.grass-img {  
+.grass-img {
   height: 50px;
 }
 
-.App-gamefound{
+.App-gamefound {
   padding: 2em;
   align-items: center;
   border-radius: 2%;
@@ -119,12 +182,13 @@
   left: 0;
   opacity: 0.4;
 }
+
 .App-gamefound .content {
   position: relative;
   z-index: 1;
 }
 
-.socials img{
+.socials img {
   padding-bottom: 2em;
 }
 
@@ -149,13 +213,13 @@
   padding-right: 1em;
 }
 
-.social-media-icon{
+.social-media-icon {
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding-top: 0.3em;
 }
 
-.coolfishcol{
+.coolfishcol {
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;
@@ -167,7 +231,7 @@
   width: 100%
 }
 
-.baratta{
+.baratta {
   width: 100%;
 }
 
@@ -176,6 +240,7 @@
     padding-left: 10%;
     padding-right: 10%;
   }
+
   p {
     font-size: large;
   }
@@ -185,24 +250,446 @@
   .call_to_action_button_text_1 {
     display: none;
   }
-  .call_to_action_button_text_2{
+
+  .call_to_action_button_text_2 {
     display: none;
   }
+
   p {
     font-size: medium;
   }
+
   .social-media h4 {
     display: none;
   }
-  
+
 }
+
 @media (min-width: 575px) {
   .call_to_action_button_text_1_short {
     display: none;
   }
-  .call_to_action_button_text_2_short{
+
+  .call_to_action_button_text_2_short {
     display: none;
   }
 
 }
 
+/* Enhanced Mobile Responsiveness */
+
+/* Main sections spacing */
+.App-main {
+  padding-top: 120px;
+  /* Account for fixed navbar */
+  padding-bottom: 2em;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .App-main {
+    padding-top: 100px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .social-media {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+
+  .social-media-icon {
+    margin: 0 0.5rem;
+  }
+
+  .leaf-action {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .baratta,
+  .coolfish {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Typography adjustments for mobile */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .App-main {
+    padding-top: 90px;
+  }
+
+  .leaf-action {
+    border-radius: 2rem;
+    margin: 1rem 0.5rem;
+  }
+
+  /* Hide long text on very small screens */
+  .call_to_action_button_text_1 {
+    display: none;
+  }
+
+  .call_to_action_button_text_2 {
+    display: none;
+  }
+
+  /* Show short text instead */
+  .call_to_action_button_text_1_short,
+  .call_to_action_button_text_2_short {
+    display: block;
+  }
+}
+
+@media (min-width: 577px) {
+
+  /* Hide short text on larger screens */
+  .call_to_action_button_text_1_short,
+  .call_to_action_button_text_2_short {
+    display: none;
+  }
+}
+
+/* Enhanced card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section padding consistency */
+section {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* Navbar transparency fix for mobile */
+.navbar-light {
+  background-color: rgba(248, 249, 250, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Image responsiveness */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Rounded corners for all components */
+.rounded,
+.card,
+.btn,
+.form-control,
+.alert,
+.badge,
+.accordion-item,
+.modal-content,
+.modal-header {
+  border-radius: 0.5rem !important;
+}
+
+/* Consistent heading styles */
+.section-heading {
+  display: inline-block;
+  border: 2px solid #198754;
+  color: #198754;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+/* Section heading styles with dice logo */
+.section-heading-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.section-heading-container h1,
+.section-heading-container h2,
+.section-heading-container h3 {
+  margin: 0;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid #198754;
+  border-radius: 0.5rem;
+  color: #198754;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-heading-container img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Mobile adjustments for section headings */
+@media (max-width: 768px) {
+
+  .section-heading-container h1,
+  .section-heading-container h2,
+  .section-heading-container h3 {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .section-heading-container img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Rating circle styles for card info */
+.rating-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #198754;
+  transition: all 0.3s ease;
+  margin-right: 6px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rating-circle.filled {
+  background-color: #198754;
+  border-color: #146c43;
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px rgba(25, 135, 84, 0.3);
+}
+
+.rating-circle:hover {
+  transform: scale(1.2);
+  border-color: #146c43;
+}
+
+/* Add a subtle glow effect for filled circles */
+.rating-circle.filled::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: radial-gradient(circle, rgba(25, 135, 84, 0.2) 0%, transparent 60%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Color-coded rating circles based on level */
+.rating-circle.level-1.filled {
+  background-color: #dc3545;
+  border-color: #b02a37;
+}
+
+.rating-circle.level-2.filled {
+  background-color: #fd7e14;
+  border-color: #e8690c;
+}
+
+.rating-circle.level-3.filled {
+  background-color: #ffc107;
+  border-color: #e6ac00;
+}
+
+.rating-circle.level-4.filled {
+  background-color: #20c997;
+  border-color: #1aa080;
+}
+
+.rating-circle.level-5.filled {
+  background-color: #198754;
+  border-color: #146c43;
+}
+
+.rating-circle.level-1.filled::before {
+  background: radial-gradient(circle, rgba(220, 53, 69, 0.2) 0%, transparent 60%);
+}
+
+.rating-circle.level-2.filled::before {
+  background: radial-gradient(circle, rgba(253, 126, 20, 0.2) 0%, transparent 60%);
+}
+
+.rating-circle.level-3.filled::before {
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.2) 0%, transparent 60%);
+}
+
+.rating-circle.level-4.filled::before {
+  background: radial-gradient(circle, rgba(32, 201, 151, 0.2) 0%, transparent 60%);
+}
+
+.rating-circle.level-5.filled::before {
+  background: radial-gradient(circle, rgba(25, 135, 84, 0.2) 0%, transparent 60%);
+}
+
+/* Mobile adjustments for rating circles */
+@media (max-width: 768px) {
+  .rating-circle {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Placeholder styles for card images */
+.card-img-placeholder,
+.img-placeholder {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Mobile responsiveness for cards */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .card-img-placeholder,
+  .img-placeholder {
+    height: 150px !important;
+    font-size: 0.9rem;
+  }
+}
+
+/* Button group styles for generators */
+.btn-group .btn {
+  border-radius: 0.375rem !important;
+  margin: 0.25rem;
+}
+
+/* Modal improvements for mobile */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* Social media hover effects */
+.social-media-icon {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social-media-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive improvements for navigation */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+}
+
+/* Form improvements */
+.form-control:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Rounded corners for consistency */
+.rounded {
+  border-radius: 0.5rem !important;
+}
+
+/* Ensure proper spacing in sections */
+section {
+  scroll-margin-top: 100px;
+  /* Account for fixed navbar */
+}
+
+/* Image hover effects */
+.img-fluid:hover {
+  transition: transform 0.2s ease;
+}
+
+/* Text readability improvements */
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* Ensure consistent green theme */
+.text-success {
+  color: #198754 !important;
+}
+
+.border-success {
+  border-color: #198754 !important;
+}
+
+.btn-success {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.btn-outline-success {
+  color: #198754;
+  border-color: #198754;
+}
+
+.btn-outline-success:hover {
+  background-color: #198754;
+  border-color: #198754;
+}

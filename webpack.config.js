@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    clean: true,
   },
   module: {
     rules: [
@@ -14,6 +15,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
         },
       },
       {
@@ -21,30 +25,36 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.s[ac]ss$/,
-        use: ['sass-loader'],
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader', 
+          'sass-loader'
+        ],
       },
       {
-        test: /\.(jpe?g|png|gif|woff|woff2|otf|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-        use: [
-            {
-                loader: 'url-loader',
-                options: {
-                    limit: 1000,
-                    name : '[name].[ext]'
-                }
-            }
-        ]
-    }
-
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]'
+        }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
+        }
+      }
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
+      favicon: './public/Leaf.svg'
     }),
   ],
   devServer: {
@@ -53,5 +63,8 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    hot: true,
+    open: true,
+    historyApiFallback: true
   },
 };
