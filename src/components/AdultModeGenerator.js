@@ -3,11 +3,41 @@ import { Container, Row, Col, Card, Button, Alert } from 'react-bootstrap';
 import plusIcon from '../../public/plus.svg';
 import minusIcon from '../../public/minus.svg';
 
+// Import condition arrays
+import { weirdConditions as weirdConditionsEn } from '../conditions/weird_en.js';
+import { weirdConditions as weirdConditionsIs } from '../conditions/weird_is.js';
+import { realisticConditions as realisticConditionsEn } from '../conditions/realistic_en.js';
+import { realisticConditions as realisticConditionsIs } from '../conditions/realistic_is.js';
+import { absurdConditions as absurdConditionsEn } from '../conditions/absurd_en.js';
+import { absurdConditions as absurdConditionsIs } from '../conditions/absurd_is.js';
+import { fanMadeConditions as fanMadeConditionsEn } from '../conditions/fanMade_en.js';
+import { fanMadeConditions as fanMadeConditionsIs } from '../conditions/fanMade_is.js';
+
 const AdultModeGenerator = ({ currLang }) => {
     const [selectedCondition, setSelectedCondition] = useState('');
     const [selectedConditionTypes, setSelectedConditionTypes] = useState([]);
     const [isGenerating, setIsGenerating] = useState(false);
     const [expandedRule, setExpandedRule] = useState(null);
+
+    // Function to get conditions based on language and category
+    const getConditions = (language, category) => {
+        const conditionsMap = {
+            en: {
+                weird: weirdConditionsEn,
+                realistic: realisticConditionsEn,
+                absurd: absurdConditionsEn,
+                fanMade: fanMadeConditionsEn
+            },
+            is: {
+                weird: weirdConditionsIs,
+                realistic: realisticConditionsIs,
+                absurd: absurdConditionsIs,
+                fanMade: fanMadeConditionsIs
+            }
+        };
+
+        return conditionsMap[language]?.[category] || [];
+    };
 
     const content = {
         en: {
@@ -15,8 +45,10 @@ const AdultModeGenerator = ({ currLang }) => {
             subtitle: "Spice up your game night with creative challenges!",
             description: "This party version adds humor and creativity to the game. Players must convince others that their animal fits the randomly generated condition.",
             conditionTypes: {
-                funny: "Funny & Weird Conditions",
-                realistic: "Literal & Realistic Conditions"
+                weird: "Weird & Quirky",
+                realistic: "Realistic & Factual",
+                absurd: "Absurd & Impossible",
+                fanMade: "Fan Made"
             },
             howToPlay: {
                 title: "How to Play Party Mode",
@@ -57,41 +89,17 @@ const AdultModeGenerator = ({ currLang }) => {
                     }
                 ]
             },
-            generateButton: "Generate New Condition",
-            conditions: {
-                funny: [
-                    "Most likely to start a dance revolution",
-                    "Would definitely get kicked out of a library",
-                    "Most likely to become a social media influencer",
-                    "Would win at hide and seek in a grocery store",
-                    "Most likely to accidentally start a forest fire",
-                    "Would be terrible at keeping secrets",
-                    "Most likely to become a professional wrestler",
-                    "Would definitely get lost in their own home",
-                    "Most likely to panic in an elevator",
-                    "Would be the worst roommate ever"
-                ],
-                realistic: [
-                    "Has the strongest bite force",
-                    "Can survive the longest without water",
-                    "Has the best night vision",
-                    "Can run the fastest over short distances",
-                    "Has the most sensitive hearing",
-                    "Can hold their breath the longest",
-                    "Has the strongest grip strength",
-                    "Can jump the highest relative to body size",
-                    "Has the thickest skin or fur",
-                    "Can survive in the coldest temperatures"
-                ]
-            }
+            generateButton: "Generate New Condition"
         },
         is: {
             title: "Partýreglur",
             subtitle: "Kryddaðu leikjakvöldið með skapandi áskorunum!",
             description: "Þessi partýútgáfa bætir húmor og sköpunargleði við leikinn. Spilarar verða að sannfæra aðra um að þeirra dýr passi við handahófskenndu skilyrðin.",
             conditionTypes: {
-                funny: "Fyndin og furðuleg skilyrði",
-                realistic: "Bókstafleg og raunhæf skilyrði"
+                weird: "Furðulegt & Skrítið",
+                realistic: "Raunhæft & Staðreyndir",
+                absurd: "Fáránlegt & Ómögulegt",
+                fanMade: "Aðdáendargerð"
             },
             howToPlay: {
                 title: "Hvernig á að spila partýham",
@@ -135,33 +143,7 @@ const AdultModeGenerator = ({ currLang }) => {
                     }
                 ]
             },
-            generateButton: "Búa til nýtt skilyrði",
-            conditions: {
-                funny: [
-                    "Líklegast til að byrja dansbylgingu",
-                    "Myndi örugglega vera hent úr bókasafni",
-                    "Líklegast til að verða áhrifavaldur á samfélagsmiðlum",
-                    "Myndi vinna í feluleik í matvöruverslun",
-                    "Líklegast til að kveikja skógareld fyrir slysni",
-                    "Myndi vera hræðilegur í að geyma leyndarmál",
-                    "Líklegast til að verða atvinnuglímumaður",
-                    "Myndi örugglega villast í eigin húsi",
-                    "Líklegast til að örvænta í lyftu",
-                    "Myndi vera versti herbergisfélagi allra tíma"
-                ],
-                realistic: [
-                    "Hefur sterkasta bitstyrkinn",
-                    "Getur lifað lengst án vatns",
-                    "Hefur bestu nætursjónina",
-                    "Getur hlaupið hraðast yfir stuttar vegalengdir",
-                    "Hefur næmstu heyrnina",
-                    "Getur haldið önduninni lengst",
-                    "Hefur sterkasta gripstyrk",
-                    "Getur stökkva hæst miðað við líkamsstærð",
-                    "Hefur þykkastu húð eða feld",
-                    "Getur lifað af í köldustu hitastigum"
-                ]
-            }
+            generateButton: "Búa til nýtt skilyrði"
         }
     };
 
@@ -215,7 +197,7 @@ const AdultModeGenerator = ({ currLang }) => {
         setTimeout(() => {
             // Get random type from selected types
             const randomType = selectedConditionTypes[Math.floor(Math.random() * selectedConditionTypes.length)];
-            const conditions = text.conditions[randomType];
+            const conditions = getConditions(lang, randomType);
             const randomIndex = Math.floor(Math.random() * conditions.length);
             setSelectedCondition(conditions[randomIndex]);
             setIsGenerating(false);

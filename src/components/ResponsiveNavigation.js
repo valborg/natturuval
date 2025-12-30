@@ -44,7 +44,7 @@ const ResponsiveNavigation = ({ currLang, onLanguageChange, onSectionChange }) =
         if (onSectionChange) {
             onSectionChange(sectionId);
         }
-        
+
         // Smooth scroll to section
         const element = document.getElementById(sectionId);
         if (element) {
@@ -83,29 +83,35 @@ const ResponsiveNavigation = ({ currLang, onLanguageChange, onSectionChange }) =
     }, [text.sections]);
 
     return (
-        <Navbar 
-            bg="light" 
-            expand="lg" 
-            fixed="top" 
+        <Navbar
+            bg="light"
+            expand="lg"
+            fixed="top"
             className="shadow-sm"
             expanded={expanded}
             onToggle={setExpanded}
         >
             <Container>
-                <Navbar.Brand 
-                    href="#home" 
+                <Navbar.Brand
+                    href="#home"
                     className="d-flex align-items-center"
                     onClick={() => handleNavClick('home')}
                 >
                     <img src={leaf} width="40" height="40" alt="leaf" className="me-2" />
                     <span className="fw-bold text-success d-none d-sm-inline">Náttúruval</span>
                 </Navbar.Brand>
-                
-                <Navbar.Toggle 
+
+                <Navbar.Toggle
                     aria-controls="responsive-navbar-nav"
                     className="border-0"
+                    style={{
+                        outline: 'none',
+                        boxShadow: 'none',
+                        border: 'none'
+                    }}
+
                 />
-                
+
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         {text.sections.map((section) => (
@@ -122,7 +128,7 @@ const ResponsiveNavigation = ({ currLang, onLanguageChange, onSectionChange }) =
                             </Nav.Link>
                         ))}
                     </Nav>
-                    
+
                     <Nav>
                         <Nav.Link
                             onClick={handleLanguageToggle}
@@ -152,20 +158,6 @@ const ResponsiveNavigation = ({ currLang, onLanguageChange, onSectionChange }) =
                 .navbar-nav .nav-link:hover {
                     color: #198754 !important;
                     background-color: rgba(25, 135, 84, 0.1);
-                }
-                
-                @media (max-width: 991.98px) {
-                    .navbar-nav .nav-link {
-                        text-align: center;
-                        padding: 0.75rem 1rem;
-                        margin: 2px 0;
-                    }
-                    
-                    .navbar-collapse {
-                        margin-top: 1rem;
-                        padding-top: 1rem;
-                        border-top: 1px solid #dee2e6;
-                    }
                 }
             `}</style>
         </Navbar>
