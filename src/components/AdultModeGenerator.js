@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button, Alert, ButtonGroup } from 'react-bootstrap';
-import dice from '../../public/dice.png';
+import { Container, Row, Col, Card, Button, Alert } from 'react-bootstrap';
+import plusIcon from '../../public/plus.svg';
+import minusIcon from '../../public/minus.svg';
 
 const AdultModeGenerator = ({ currLang }) => {
     const [selectedCondition, setSelectedCondition] = useState('');
-    const [selectedConditionTypes, setSelectedConditionTypes] = useState(['funny', 'realistic']); // Start with both selected
+    const [selectedConditionTypes, setSelectedConditionTypes] = useState([]);
     const [isGenerating, setIsGenerating] = useState(false);
+    const [expandedRule, setExpandedRule] = useState(null);
 
     const content = {
         en: {
-            title: "Adult Mode - Party Rules",
+            title: "Party Rules",
             subtitle: "Spice up your game night with creative challenges!",
             description: "This party version adds humor and creativity to the game. Players must convince others that their animal fits the randomly generated condition.",
             conditionTypes: {
@@ -18,12 +20,41 @@ const AdultModeGenerator = ({ currLang }) => {
             },
             howToPlay: {
                 title: "How to Play Party Mode",
-                steps: [
-                    "Each player draws one card",
-                    "Generate a random condition using the button below",
-                    "Players take turns convincing others their animal fits the condition",
-                    "Vote for the most convincing argument",
-                    "Winner gets both cards!"
+                intro: {
+                    paragraphs: [
+                        "This creative version is for imaginative players who enjoy storytelling and humor. Players choose questions that they then subjectively evaluate, such as:"
+                    ],
+                    examples: [
+                        "Which animal would be late to the airport?",
+                        "Which animal lies the most often?",
+                        "Which animal would make the news for charity work?"
+                    ],
+                    conclusion: [
+                        "Questions can be silly or practical, realistic or absurd.",
+                        "You can use the button below for fun suggestions, or if you're creative enough, make them up on the spot."
+                    ]
+                },
+                modes: [
+                    {
+                        name: "Classic Party Mode",
+                        description: "Traditional party gameplay with creative arguments",
+                        rules: {
+                            setup: "Each player draws five cards, one player generates a condition and then all players put, face down, a card that they think is a contender for that condition.",
+                            gameplay: "Players then take turns making creative arguments for why their animal fits the condition.",
+                            winning: "Vote for the most convincing argument and that person keeps their winning card face up on the table in front of them.",
+                            endGame: "When the deck has been exhausted the player with the most cards in front of them wins."
+                        }
+                    },
+                    {
+                        name: "Speed Party Mode",
+                        description: "Quick party rounds with time limits for arguments",
+                        rules: {
+                            setup: "Same as Classic Party Mode setup.",
+                            gameplay: "Players make creative arguments for why their animal fits the condition with a 30-second time limit.",
+                            winning: "Vote for the most convincing argument within the time limit.",
+                            endGame: "Same winning conditions as Classic Party Mode."
+                        }
+                    }
                 ]
             },
             generateButton: "Generate New Condition",
@@ -55,7 +86,7 @@ const AdultModeGenerator = ({ currLang }) => {
             }
         },
         is: {
-            title: "Fullorðinshamur - Partýreglur",
+            title: "Partýreglur",
             subtitle: "Kryddaðu leikjakvöldið með skapandi áskorunum!",
             description: "Þessi partýútgáfa bætir húmor og sköpunargleði við leikinn. Spilarar verða að sannfæra aðra um að þeirra dýr passi við handahófskenndu skilyrðin.",
             conditionTypes: {
@@ -64,12 +95,44 @@ const AdultModeGenerator = ({ currLang }) => {
             },
             howToPlay: {
                 title: "Hvernig á að spila partýham",
-                steps: [
-                    "Hver spilari dregur eitt spil",
-                    "Búðu til handahófskennt skilyrði með takkanum hér að neðan",
-                    "Spilarar skiptast á að sannfæra aðra um að þeirra dýr passi við skilyrðið",
-                    "Kjósið um sannfærandustu röksemmdina",
-                    "Sigurvegarinn fær bæði spilin!"
+                intro: {
+                    paragraphs: [
+                        "Þetta afbrigði er fyrir skapandi fólk sem hefur gaman af sögum og spuna. Spilarar velja spurningar sem þeir leggja svo huglægt mat á, eins og þessar:"
+                    ],
+                    examples: [
+                        "Hvaða dýr yrði seint á flugvöllinn?",
+                        "Hvaða dýr leggur sig oftast?",
+                        "Hvaða dýr komst í fréttirnar fyrir góðgerðarstarf?"
+                    ],
+                    conclusion: [
+                        "Spurningar mega vera kjánalegar eða hagnýtar, raunsæjar eða furðulegar.",
+                        "Þið getið notað takkann hérna til að fá skemmtilegar uppástungur, en ef þið eruð nógu skapandi getið þið búið þær til á staðnum."
+                    ]
+                },
+                modes: [
+                    {
+                        name: "Dómari!",
+                        description: "Hefðbundinn partýleikur með skapandi röksemdafærslu",
+                        rules: {
+                            setup: "Allir spilarar draga fimm spil. Í hverri umferð er einn spilari í hlutverki dómarans.",
+                            gameplay: "Dómarinn ræður spurningu umferðarinnar. Hver spilari velur sér spil af hendi sem þeim finnst passa best við spurninguna.",
+                            arguments: "Þegar allir hafa valið spil færa spilarar rök fyrir því hvers vegna þeirra dýr passi best við spurninguna.",
+                            judging: "Dómarinn ræður hver fær stigið og setur viðkomandi það fyrir framan sig sem stig.",
+                            nextRound: "Hinum spilunum er hent í kastbunkann og allir draga upp í fimm spil á hendi.",
+                            endGame: "Sigurvegarinn er sá spilari sem er fyrstur til að ná tilteknum fjölda stiga, eins og í grunnspilinu."
+                        }
+                    },
+                    {
+                        name: "Lýðræði!",
+                        description: "Skjótar partýumferðir með tímamörkum fyrir röksemdafærslu",
+                        rules: {
+                            setup: "Sama og í Dómari, nema núna fá spilarar að þræta um það saman hvaða skilyrði á að vera fyrir valinu.",
+                            gameplay: "Þegar búið er að finna skilyrði færa spilarar rök fyrir sínu dýri og þegar allir hafa fengið að tjá sig hefjast umræður.",
+                            judging: "Spilið sem fær flest atkvæði (eða öll) vinnur. Kosning gæti verið samtímis, leynileg eða langdregin umræða. Hvernig sem hópurinn vill hafa það.",
+                            timing: "Ef spilari fer yfir valin tímamörk fær næsti strax að byrja sína rullu",
+                            endGame: "Sömu sigurskilyrði og áður, fer eftir fjölda spilara eins og kemur fram í reglum grunnspilsins"
+                        }
+                    }
                 ]
             },
             generateButton: "Búa til nýtt skilyrði",
@@ -108,8 +171,8 @@ const AdultModeGenerator = ({ currLang }) => {
     const toggleConditionType = (type) => {
         setSelectedConditionTypes(prev => {
             if (prev.includes(type)) {
-                // Remove type if it's already selected (but keep at least one)
-                return prev.length > 1 ? prev.filter(t => t !== type) : prev;
+                // Remove type if it's already selected
+                return prev.filter(t => t !== type);
             } else {
                 // Add type if not selected
                 return [...prev, type];
@@ -117,9 +180,37 @@ const AdultModeGenerator = ({ currLang }) => {
         });
     };
 
+    // Helper function to format rule keys
+    const formatRuleKey = (key, lang) => {
+        const keyMappings = {
+            en: {
+                setup: 'Setup',
+                gameplay: 'Gameplay',
+                arguments: 'Arguments',
+                winning: 'Winning',
+                endGame: 'End Game',
+                judging: 'Judging',
+                nextRound: 'Next Round',
+                timing: 'Timing'
+            },
+            is: {
+                setup: 'Uppsetning',
+                gameplay: 'Leikgangur',
+                arguments: 'Röksemdafærsla',
+                winning: 'Sigur',
+                endGame: 'Leikslok',
+                judging: 'Dómgæsla',
+                nextRound: 'Næsta umferð',
+                timing: 'Tímastjórnun'
+            }
+        };
+
+        return keyMappings[lang][key] || key;
+    };
+
     const generateCondition = () => {
         if (selectedConditionTypes.length === 0) return;
-        
+
         setIsGenerating(true);
         setTimeout(() => {
             // Get random type from selected types
@@ -131,56 +222,150 @@ const AdultModeGenerator = ({ currLang }) => {
         }, 500);
     };
 
+    const handleRuleClick = (index, event) => {
+        event.stopPropagation();
+        setExpandedRule(expandedRule === index ? null : index);
+    };
+
+    const handleOutsideClick = (event) => {
+        if (event.target.closest('.party-rule-card')) return;
+        setExpandedRule(null);
+    };
+
     return (
-        <section className="adult-mode py-5 bg-dark text-white" id="adult-mode">
+        <section className="adult-mode py-5" id="adult-mode" style={{
+            backgroundColor: '#f5f5f5',
+            backgroundImage: 'radial-gradient(circle, #e0e0e0 1px, transparent 1px)',
+            backgroundSize: '20px 20px',
+            backgroundPosition: '0 0, 10px 10px'
+        }}>
             <Container>
                 <Row className="justify-content-center mb-5">
                     <Col xs={12} className="text-center">
                         <div className="section-heading-container d-inline-flex align-items-center">
-                            <h2 className="mb-0 text-white border border-white rounded px-3 py-2 d-flex align-items-center">
+                            <h2 className="mb-0 text-dark border border-dark rounded px-3 py-2 d-flex align-items-center" style={{ backgroundColor: 'white' }}>
                                 {text.title}
-                                <img src={dice} width="24" height="24" alt="dice" className="ms-2" style={{filter: 'invert(1)'}} />
+                                <img src={minusIcon} width="24" height="24" alt="minus" className="ms-2" />
                             </h2>
                         </div>
                     </Col>
                 </Row>
-                <p className="text-center text-muted mb-5">{text.subtitle}</p>
 
                 <Row>
-                    <Col lg={8} className="mx-auto">
-                        <Card className="bg-secondary border-0 mb-4 rounded">
+                    <Col lg={10} className="mx-auto">
+                        {/* <Card className="bg-white border-0 mb-4 rounded shadow-sm">
                             <Card.Body>
-                                <p className="text-white text-start">{text.description}</p>
+                                <p className="text-dark text-start">{text.description}</p>
                             </Card.Body>
-                        </Card>
+                        </Card> */}
 
-                        <Card className="bg-dark border-success mb-4 rounded">
-                            <Card.Header className="bg-success text-white rounded-top">
-                                <h4 className="mb-0">{text.howToPlay.title}</h4>
+                        <Card className="bg-white border-secondary mb-4 rounded shadow-sm">
+                            <Card.Header className="rounded-top" style={{ backgroundColor: '#d4edda', color: '#155724', border: 'none' }}>
+                                <h4 className="mb-0" style={{ fontSize: '1.5rem' }}>{text.howToPlay.title}</h4>
                             </Card.Header>
-                            <Card.Body className="text-white">
-                                <ol className="text-start">
-                                    {text.howToPlay.steps.map((step, index) => (
-                                        <li key={index} className="mb-2">{step}</li>
+                            <Card.Body className="text-dark">
+                                <div className="text-start">
+                                    {text.howToPlay.intro.paragraphs.map((paragraph, index) => (
+                                        <p key={index}>{paragraph}</p>
                                     ))}
-                                </ol>
+
+                                    <ul>
+                                        {text.howToPlay.intro.examples.map((example, index) => (
+                                            <li key={index}><em>{example}</em></li>
+                                        ))}
+                                    </ul>
+
+                                    {text.howToPlay.intro.conclusion.map((paragraph, index) => (
+                                        <p key={index}>{paragraph}</p>
+                                    ))}
+                                </div>
+
+                                {/* Expandable Rules Section */}
+                                <div className="mt-4" onClick={handleOutsideClick}>
+                                    <h6 className="text-secondary mb-3">Game Variations:</h6>
+                                    <Row>
+                                        {text.howToPlay.modes.map((mode, index) => (
+                                            <Col
+                                                key={index}
+                                                sm={12}
+                                                md={expandedRule === index ? 12 : 6}
+                                                className={`mb-3 ${expandedRule === index ? 'expanded-rule' : ''}`}
+                                                style={{
+                                                    transition: 'all 0.3s ease',
+                                                    zIndex: expandedRule === index ? 10 : 1,
+                                                    position: 'relative'
+                                                }}
+                                            >
+                                                <Card
+                                                    className={`border-secondary h-100 rounded party-rule-card ${expandedRule === index ? 'shadow-lg' : 'cursor-pointer'}`}
+                                                    onClick={(e) => handleRuleClick(index, e)}
+                                                    style={{
+                                                        cursor: 'pointer',
+                                                        transform: expandedRule === index ? 'scale(1.02)' : 'scale(1)',
+                                                        transition: 'all 0.3s ease',
+                                                        backgroundColor: expandedRule === index ? '#f8f9fa' : 'white'
+                                                    }}
+                                                >
+                                                    <Card.Body className="p-3">
+                                                        <Card.Title className="h6 text-secondary mb-3 d-flex justify-content-between align-items-center">
+                                                            {mode.name}
+                                                            <span className="text-muted" style={{ fontSize: '0.7rem' }}>
+                                                                {expandedRule === index ? '- ' : '+ '}
+                                                            </span>
+                                                        </Card.Title>
+
+                                                        {expandedRule === index ? (
+                                                            <div>
+                                                                <Card.Text className="text-start mb-3" style={{ fontSize: '0.9rem', lineHeight: '1.5' }}>
+                                                                    <strong>{mode.description}</strong>
+                                                                </Card.Text>
+                                                                <hr className="my-3" />
+                                                                <div className="text-start" style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+                                                                    <h6 className="text-secondary mb-3">Detailed Rules:</h6>
+                                                                    <div>
+                                                                        {Object.entries(mode.rules).map(([key, value]) => (
+                                                                            <div key={key} className="mb-3">
+                                                                                <strong>{formatRuleKey(key, lang)}: </strong>
+                                                                                <span>{value}</span>
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        ) : (
+                                                            <Card.Text className="text-start" style={{ fontSize: '0.8rem' }}>
+                                                                {mode.description}
+                                                            </Card.Text>
+                                                        )}
+                                                    </Card.Body>
+                                                </Card>
+                                            </Col>
+                                        ))}
+                                    </Row>
+                                </div>
                             </Card.Body>
                         </Card>
 
-                        <Card className="bg-dark border-warning rounded">
-                            <Card.Header className="bg-warning text-dark rounded-top">
-                                <h4 className="mb-0">🎲 {lang === 'en' ? 'Condition Generator' : 'Skilyrðagjafi'}</h4>
+                        <Card className="bg-white border-secondary rounded shadow-sm">
+                            <Card.Header className="rounded-top" style={{ backgroundColor: '#d4edda', color: '#155724', border: 'none' }}>
+                                <h4 className="mb-0" style={{ fontSize: '1.5rem' }}>
+                                    {lang === 'en' ? 'Condition Generator' : 'Skilyrðagerð'}
+                                </h4>
                             </Card.Header>
-                            <Card.Body className="text-center">
+                            <Card.Body className="text-dark">
                                 <div className="mb-4">
                                     <div className="d-flex flex-wrap justify-content-center gap-2">
                                         {Object.entries(text.conditionTypes).map(([key, label]) => (
                                             <Button
                                                 key={key}
-                                                variant={selectedConditionTypes.includes(key) ? "warning" : "outline-warning"}
                                                 onClick={() => toggleConditionType(key)}
                                                 className="rounded"
-                                                style={{minWidth: '120px'}}
+                                                style={{
+                                                    minWidth: '120px',
+                                                    backgroundColor: selectedConditionTypes.includes(key) ? '#155724' : 'transparent',
+                                                    borderColor: '#155724',
+                                                    color: selectedConditionTypes.includes(key) ? 'white' : '#155724'
+                                                }}
                                             >
                                                 {label}
                                             </Button>
@@ -188,21 +373,27 @@ const AdultModeGenerator = ({ currLang }) => {
                                     </div>
                                 </div>
 
-                                <Button 
-                                    variant="warning" 
-                                    size="lg" 
-                                    onClick={generateCondition}
-                                    disabled={isGenerating}
-                                    className="mb-4 rounded"
-                                >
-                                    {isGenerating ? '🎲 ...' : `🎲 ${text.generateButton}`}
-                                </Button>
+                                <div className="text-center">
+                                    <Button
+                                        size="lg"
+                                        onClick={generateCondition}
+                                        disabled={isGenerating || selectedConditionTypes.length === 0}
+                                        className="mb-4 rounded"
+                                        style={{
+                                            backgroundColor: selectedConditionTypes.length === 0 ? '#ccc' : '#155724',
+                                            borderColor: selectedConditionTypes.length === 0 ? '#ccc' : '#155724',
+                                            color: 'white'
+                                        }}
+                                    >
+                                        {isGenerating ? '...' : text.generateButton}
+                                    </Button>
 
-                                {selectedCondition && (
-                                    <Alert variant="light" className="p-4 rounded">
-                                        <h5 className="text-dark mb-0">"{selectedCondition}"</h5>
-                                    </Alert>
-                                )}
+                                    {selectedCondition && (
+                                        <Alert className="p-4 rounded" style={{ backgroundColor: '#d4edda', borderColor: '#155724', color: '#155724' }}>
+                                            <h5 className="mb-0" style={{ color: '#155724' }}>"{selectedCondition}"</h5>
+                                        </Alert>
+                                    )}
+                                </div>
                             </Card.Body>
                         </Card>
                     </Col>

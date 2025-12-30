@@ -7,6 +7,98 @@
 .App {
   text-align: justify;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Global responsive fixes */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure containers don't overflow on mobile */
+.container,
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent Bootstrap row overflow */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+.col,
+[class*="col-"] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .container,
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .col,
+  [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  /* Fix gap utility on mobile to prevent overflow */
+  .gap-4 {
+    gap: 0.75rem !important;
+  }
+
+  .gap-3 {
+    gap: 0.5rem !important;
+  }
+
+  .gap-2 {
+    gap: 0.25rem !important;
+  }
+
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix button width on mobile */
+  .btn {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  /* Social media specific fixes */
+  .social-media-icon {
+    flex-shrink: 0;
+  }
+
+  /* Prevent text overflow */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
 
 /* Mobile text alignment fix */
@@ -75,227 +167,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-}
-
-.leaf-action {
-  text-align: center;
-  margin-top: 2.2rem;
-  margin-bottom: 2.7em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  background-position: center;
-  background-size: cover;
-  /* position: relative; */
-  background-color: #00a54e;
-  color: white;
-  border-top-left-radius: 4em;
-  border-bottom-right-radius: 4em;
-  max-width: 80%;
-  max-height: 80px;
-  cursor: pointer;
-}
-
-.leaf-action h3 {
-  color: white;
-  font-size: x-large;
-  text-align: center;
-  margin-bottom: 0.1em;
-  /* position: absolute; */
-  /* transform: translate(-50%, -50%); */
-}
-
-.App h1 {
-  text-align: center;
-  padding-top: 0.5em;
-  padding-bottom: 0.3em;
-  margin-top: 0.3em;
-  margin-bottom: 0.1em;
-}
-
-.App-about {
-  padding: 20px;
-  background-color: #f0f0f0;
-}
-
-.App-about h2 {
-  color: #333;
-}
-
-.App-about p {
-  color: #555;
-
-}
-
-.card-group card {
-  padding: 0.2em;
-  border: #333;
-  margin: 0.6em;
-}
-
-.card-img-top {
-
-  max-height: 15vw;
-  min-height: 20em;
-  object-fit: cover;
-}
-
-.card-group button {
-  margin-top: auto;
-}
-
-.App-history div {
-  padding: 0.3em;
-  align-items: center;
-}
-
-.App-history p {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-inline: 1em;
-  padding-top: 1em;
-  padding-bottom: 0.2em;
-}
-
-.App-history img {
-  width: 100%;
-  max-height: min-content;
-  border-radius: 5%;
-}
-
-.grass-img {
-  height: 50px;
-}
-
-.App-gamefound {
-  padding: 2em;
-  align-items: center;
-  border-radius: 2%;
-  position: relative;
-}
-
-.App-gamefound .container-background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.4;
-}
-
-.App-gamefound .content {
-  position: relative;
-  z-index: 1;
-}
-
-.socials img {
-  padding-bottom: 2em;
-}
-
-.logoFiller img {
-  height: 1em;
-  mask-repeat: repeat;
-  height: 3%;
-}
-
-.img-flip {
-  transform: rotateY(180deg);
-  transform: rotateX(180deg);
-}
-
-.social-media {
-  justify-content: center;
-  padding-top: 1em;
-}
-
-.social-media h4 {
-  margin-top: auto;
-  padding-right: 1em;
-}
-
-.social-media-icon {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.3em;
-}
-
-.coolfishcol {
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.coolfish {
-  width: 100%
-}
-
-.baratta {
-  width: 100%;
-}
-
-@media (min-width: 400px) and (max-width: 4000px) {
-  .App-history p {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-
-  p {
-    font-size: large;
-  }
-}
-
-@media (max-width: 575px) {
-  .call_to_action_button_text_1 {
-    display: none;
-  }
-
-  .call_to_action_button_text_2 {
-    display: none;
-  }
-
-  p {
-    font-size: medium;
-  }
-
-  .social-media h4 {
-    display: none;
-  }
-
-}
-
-@media (min-width: 575px) {
-  .call_to_action_button_text_1_short {
-    display: none;
-  }
-
-  .call_to_action_button_text_2_short {
-    display: none;
-  }
-
-}
-
-/* Enhanced Mobile Responsiveness */
-
-/* Main sections spacing */
-.App-main {
-  padding-top: 120px;
-  /* Account for fixed navbar */
-  padding-bottom: 2em;
-}
-
-/* Mobile-first responsive design */
-@media (max-width: 768px) {
-  .App-main {
-    padding-top: 100px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 
   .social-media {
     flex-direction: column !important;
-    gap: 1rem;
   }
 
   .social-media-icon {
@@ -354,6 +228,7 @@
   .call_to_action_button_text_1_short,
   .call_to_action_button_text_2_short {
     display: block;
+    text-align: center !important;
   }
 }
 
@@ -363,6 +238,46 @@
   .call_to_action_button_text_1_short,
   .call_to_action_button_text_2_short {
     display: none;
+  }
+
+  /* Show long text and center it on larger screens */
+  .call_to_action_button_text_1,
+  .call_to_action_button_text_2 {
+    text-align: center !important;
+  }
+}
+
+/* Ensure call-to-action button text is always centered */
+.call_to_action_button_text_1,
+.call_to_action_button_text_2,
+.call_to_action_button_text_1_short,
+.call_to_action_button_text_2_short {
+  text-align: center !important;
+  display: block;
+}
+
+/* Final call-to-action button styling - make it behave like social media button */
+.btn.btn-outline-success {
+  text-align: center !important;
+  display: block !important;
+}
+
+/* Social media and final button consistent styling */
+@media (max-width: 768px) {
+  .btn.btn-outline-success {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 1rem auto !important;
+    padding: 12px 24px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .btn.btn-outline-success {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 2rem auto !important;
+    padding: 12px 24px !important;
   }
 }
 
@@ -383,12 +298,12 @@ html {
 
 /* Section padding consistency */
 section {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 }
 
@@ -432,7 +347,7 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.4rem;
 }
 
 .section-heading-container h1,
@@ -692,4 +607,64 @@ section {
 .btn-outline-success:hover {
   background-color: #198754;
   border-color: #198754;
+}
+
+/* Reduce section spacing on mobile */
+@media (max-width: 768px) {
+
+  /* Reduce padding between major sections */
+  .py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Reduce margin bottom for section headings */
+  .mb-5 {
+    margin-bottom: 1rem !important;
+  }
+
+  .mt-5 {
+    margin-top: 1rem !important;
+  }
+
+  /* Reduce gap between social media elements */
+  .gap-3 {
+    gap: 0.75rem !important;
+  }
+
+  /* Ensure call-to-action button has proper spacing */
+  .social-media .btn {
+    margin-top: 1rem;
+    min-height: 48px;
+    /* Minimum touch target size */
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Desktop spacing adjustments */
+@media (min-width: 769px) {
+  .social-media .btn {
+    margin-top: 0;
+  }
+}
+
+/* Desktop social media layout fixes */
+@media (min-width: 769px) {
+  .social-media .d-flex.flex-md-row {
+    justify-content: space-between !important;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .social-media .d-flex.flex-md-row>* {
+    flex: 0 0 auto;
+  }
+
+  /* Button should not take full width on desktop */
+  .social-media .btn {
+    width: auto !important;
+    max-width: 250px !important;
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import dice from '../../public/dice.png';
+import dice from '../../public/SciName.svg';
 
 const AboutGame = ({ currLang }) => {
     const content = {
@@ -36,15 +36,15 @@ const AboutGame = ({ currLang }) => {
                 },
                 {
                     title: "Fjölskylduvænt",
-                    text: "Fullkomið fyrir spilarar á öllum aldri til að læra og skemmta sér saman"
+                    text: "Fullkomið fyrir spilara á öllum aldri til að læra og skemmta sér saman"
                 },
                 {
-                    title: "Stefnumótandi",
+                    title: "Hugvit og kænska",
                     text: "Veldu bardagana þína skynsamlega - mismunandi dýr skara framúr í mismunandi flokkum"
                 },
                 {
                     title: "Falleg hönnun",
-                    text: "Stórfengleg listaverk kveikja líf í hvert dýr á spilunum"
+                    text: "Dýrin vakna til lífs í litmyndum og hönnunin á spilunum spilar þar stórt hlutverk"
                 }
             ]
         }
@@ -66,11 +66,11 @@ const AboutGame = ({ currLang }) => {
                         </div>
                     </Col>
                 </Row>
-                <Row className="mb-4">
+                {/* <Row className="mb-4">
                     <Col lg={12}>
                         <p className="lead text-start">{text.description}</p>
                     </Col>
-                </Row>
+                </Row> */}
                 <Row>
                     {text.features.map((feature, index) => (
                         <Col key={index} sm={12} md={6} lg={3} className="mb-4">

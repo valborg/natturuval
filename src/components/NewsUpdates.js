@@ -1,48 +1,27 @@
-import React from 'react';
-import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
-import dice from '../../public/dice.png';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Badge, Button } from 'react-bootstrap';
+import dice from '../../public/Weight.svg';
 
 const NewsUpdates = ({ currLang }) => {
+    const [displayedNews, setDisplayedNews] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [expandedNews, setExpandedNews] = useState(null);
+
+    const NEWS_PER_PAGE = 2;
+
     const content = {
         en: {
             title: "News & Updates",
             subtitle: "Stay updated with the latest from Náttúruval",
             news: [
                 {
-                    date: "December 2024",
+                    date: "December 2025",
                     title: "Campaign Milestone Reached!",
-                    content: "We've reached 75% of our funding goal! Thank you to all our amazing backers. New stretch goals have been announced including glow-in-the-dark dice!",
+                    content: "We've gotten a final confirmation from Panda Game Manufacturing about our printing schedule.",
+                    fullContent: "We've gotten a final confirmation from Panda Game Manufacturing about the fulfillment of the order. They are certain they will have all boxes assembeled and ready for shipping in the middle of January 2026, and from there it will get shipped to us. Separately to USA and Iceland. We do not have the estimate for when the shipment arrives or how long it will take to clear customs. As soon as we fo hear anything we will let all our backers know, and keep anyone interested updated.",
                     type: "milestone",
                     status: "new"
                 },
-                {
-                    date: "November 2024",
-                    title: "Production Update",
-                    content: "Our partnership with Panda Game Manufacturing is confirmed. The same company that produced Scythe and Wingspan will bring Náttúruval to life!",
-                    type: "production",
-                    status: ""
-                },
-                {
-                    date: "October 2024",
-                    title: "New Art Reveal",
-                    content: "Kate Estrop has completed the artwork for 50 additional animal cards! Check out the beautiful illustrations on our Gamefound page.",
-                    type: "art",
-                    status: ""
-                },
-                {
-                    date: "September 2024",
-                    title: "Campaign Launch",
-                    content: "Náttúruval crowdfunding campaign is now live on Gamefound! Early bird pricing available for the first 48 hours.",
-                    type: "launch",
-                    status: ""
-                },
-                {
-                    date: "August 2024",
-                    title: "Beta Testing Complete",
-                    content: "Final round of playtesting completed with families across Iceland and Boston. Game balance and rules have been finalized.",
-                    type: "development",
-                    status: ""
-                }
             ],
             types: {
                 milestone: { color: "success", icon: "🎉" },
@@ -57,39 +36,12 @@ const NewsUpdates = ({ currLang }) => {
             subtitle: "Haltu þér upplýstum um það nýjasta frá Náttúruvali",
             news: [
                 {
-                    date: "Desember 2024",
-                    title: "Fjármögnunarmarkmiði náð!",
-                    content: "Við höfum náð 75% af fjármögnunarmarkmiðinu okkar! Takk fyrir til allra ótrúlegu bakhjarlanna okkar. Ný teygjanleg markmið hafa verið tilkynnt þar á meðal ljómandi teningur!",
+                    date: "Desember 2025",
+                    title: "Stórum áfanga náð!",
+                    content: "Við höfum fengið endanlega staðfestingu frá Panda Game Manufacturing varðandi prentunartímaáætlun okkar.",
+                    fullContent: "Við höfum fengið endanlega staðfestingu frá Panda Game Manufacturing varðandi prentunartímaáætlun okkar. Þau eru viss um að allir kassar verði saman settir og tilbúnir til sendingar í miðjum janúar 2026. Þaðan mun það verða sent til okkar, annarsvegar til Íslands og hinsvegar til Bandaríkjana. Við höfum ekki staðfestingu um hvenær sendingin kemur eða hversu lengi það mun taka að komast í gegnum tollinn. Um leið og við fáum einhverjar upplýsingar munum við láta alla bakhjarla okkar vita og halda öllum áhugasömum uppfærðum.",
                     type: "milestone",
                     status: "new"
-                },
-                {
-                    date: "Nóvember 2024",
-                    title: "Framleiðsluuppfærsla",
-                    content: "Samstarf okkar við Panda Game Manufacturing er staðfest. Sama fyrirtæki og framleið Scythe og Wingspan mun koma Náttúruvali til lífs!",
-                    type: "production",
-                    status: ""
-                },
-                {
-                    date: "Október 2024",
-                    title: "Ný listaverk opinberuð",
-                    content: "Kate Estrop hefur lokið við listaverk fyrir 50 viðbótar dýraspil! Kíktu á falleg myndin á Gamefound síðunni okkar.",
-                    type: "art",
-                    status: ""
-                },
-                {
-                    date: "September 2024",
-                    title: "Herferðaropnun",
-                    content: "Hópfjármögnunarherferð Náttúruvals er nú í gangi á Gamefound! Snemma fugl verðlagning í boði fyrstu 48 klukkustundirnar.",
-                    type: "launch",
-                    status: ""
-                },
-                {
-                    date: "Ágúst 2024",
-                    title: "Beta prófunum lokið",
-                    content: "Lokaumferð leikprófana lokið með fjölskyldum víða um Ísland og Boston. Jafnvægi leiks og reglur hafa verið frágengnar.",
-                    type: "development",
-                    status: ""
                 }
             ],
             types: {
@@ -105,6 +57,22 @@ const NewsUpdates = ({ currLang }) => {
     const lang = currLang || 'is';
     const text = content[lang];
 
+    // Initialize displayed news with first 2 items
+    useEffect(() => {
+        setDisplayedNews(text.news.slice(0, NEWS_PER_PAGE));
+        setCurrentIndex(NEWS_PER_PAGE);
+    }, [lang]);
+
+    const showMoreNews = () => {
+        const nextNews = text.news.slice(currentIndex, currentIndex + NEWS_PER_PAGE);
+        setDisplayedNews(prevNews => [...prevNews, ...nextNews]);
+        setCurrentIndex(prevIndex => prevIndex + NEWS_PER_PAGE);
+    };
+
+    const toggleNewsExpansion = (index) => {
+        setExpandedNews(expandedNews === index ? null : index);
+    };
+
     return (
         <section className="news-updates py-5 bg-light" id="news">
             <Container>
@@ -118,17 +86,16 @@ const NewsUpdates = ({ currLang }) => {
                         </div>
                     </Col>
                 </Row>
-                <p className="text-start text-muted mb-5">{text.subtitle}</p>
 
                 <Row>
                     <Col lg={10} className="mx-auto">
                         <div className="timeline">
-                            {text.news.map((item, index) => (
-                                <Card key={index} className="mb-4 border-0 shadow-sm rounded">
+                            {displayedNews.map((item, index) => (
+                                <Card key={index} className="mb-4 border-0 shadow-sm rounded cursor-pointer" onClick={() => toggleNewsExpansion(index)}>
                                     <Card.Body>
                                         <div className="d-flex align-items-start">
                                             <div className="flex-shrink-0 me-3">
-                                                <div 
+                                                <div
                                                     className={`rounded-circle bg-${text.types[item.type].color} text-white d-flex align-items-center justify-content-center`}
                                                     style={{ width: '50px', height: '50px', fontSize: '1.5rem' }}
                                                 >
@@ -140,26 +107,64 @@ const NewsUpdates = ({ currLang }) => {
                                                     <h5 className="mb-1">
                                                         {item.title}
                                                         {item.status === 'new' && (
-                                                            <Badge bg="danger" className="ms-2 animate__animated animate__pulse rounded">
+                                                            <Badge bg="danger" className="ms-1 animate__animated animate__pulse rounded" style={{ fontSize: '0.5rem' }}>
                                                                 {lang === 'en' ? 'NEW' : 'NÝTT'}
                                                             </Badge>
                                                         )}
                                                     </h5>
-                                                    <small className="text-muted">{item.date}</small>
+                                                    <small className="text-muted" style={{ fontSize: '0.75rem' }}>{item.date}</small>
                                                 </div>
-                                                <p className="mb-2 text-start">{item.content}</p>
-                                                <Badge bg={text.types[item.type].color} variant="light" className="rounded">
-                                                    {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
-                                                </Badge>
+
+                                                <p className="mb-2 text-start">
+                                                    {expandedNews === index ? item.fullContent : item.content}
+                                                    {expandedNews !== index && item.fullContent && item.fullContent.length > item.content.length && (
+                                                        <span className="text-muted">...</span>
+                                                    )}
+                                                </p>
+                                                <div className="d-flex justify-content-between align-items-center">
+                                                    <Badge bg={text.types[item.type].color} variant="light" className="rounded">
+                                                        {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                                                    </Badge>
+                                                    {item.fullContent && item.fullContent.length > item.content.length && (
+                                                        <small className="text-primary">
+                                                            {expandedNews === index ?
+                                                                (lang === 'en' ? '-' : '-') :
+                                                                (lang === 'en' ? '-' : '+')
+                                                            }
+                                                        </small>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </Card.Body>
                                 </Card>
                             ))}
                         </div>
+
+                        {currentIndex < text.news.length && (
+                            <div className="text-center mt-4">
+                                <Button
+                                    variant="outline-success"
+                                    onClick={showMoreNews}
+                                    className="rounded"
+                                >
+                                    {lang === 'en' ? 'Load More News' : 'Sýna fleiri fréttir'}
+                                </Button>
+                            </div>
+                        )}
                     </Col>
                 </Row>
             </Container>
+
+            <style jsx>{`
+                .cursor-pointer {
+                    cursor: pointer;
+                    transition: transform 0.2s ease;
+                }
+                .cursor-pointer:hover {
+                    transform: translateY(-2px);
+                }
+            `}</style>
         </section>
     );
 };

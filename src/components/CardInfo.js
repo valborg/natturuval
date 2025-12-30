@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal } from 'react-bootstrap';
-import dice from '../../public/dice.png';
+import dice from '../../public/Offspring.svg';
 import cardData from '../16nov2024card_data.json';
 
 const CardInfo = ({ currLang }) => {
@@ -293,7 +293,6 @@ const CardInfo = ({ currLang }) => {
                         </div>
                     </Col>
                 </Row>
-                <p className="text-start text-muted mb-5">{text.subtitle}</p>
 
                 <Row>
                     <Col lg={10} className="mx-auto">

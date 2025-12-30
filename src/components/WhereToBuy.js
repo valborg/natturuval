@@ -1,23 +1,24 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import dice from '../../public/dice.png';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import dice from '../../public/plus.svg';
 
 const WhereToBuy = ({ currLang }) => {
+    const [showShippingInfo, setShowShippingInfo] = useState(false);
     const content = {
         en: {
             title: "Where to Buy",
             subtitle: "Get your copy of Náttúruval",
             crowdfunding: {
-                title: "Crowdfunding Campaign",
-                description: "Currently available through our Gamefound crowdfunding campaign. Support us to bring this educational game to life!",
-                price: "$20 USD",
-                includes: "Includes full card deck, custom dice, and rulebook in English and Icelandic",
-                buttonText: "Support on Gamefound",
-                availability: "Campaign active until fully funded"
+                title: "Availability",
+                description: "Currently available through our Gamefound crowdfunding campaign with late pledges, soon to be available in stores",
+                price: "$22 USD",
+                includes: "Includes full card deck, custom dice, and rulebook in English or Icelandic",
+                buttonText: "Buy online",
+                availability: ""
             },
             retailInfo: {
                 title: "Future Retail",
-                description: "After successful crowdfunding, the game will be available through select retailers and our online store.",
+                description: "The game will be available through select retailers and online",
                 notifyText: "Sign up to be notified when retail sales begin",
                 buttonText: "Join Waiting List"
             },
@@ -25,22 +26,21 @@ const WhereToBuy = ({ currLang }) => {
                 title: "Shipping Information",
                 details: [
                     "Worldwide shipping available",
-                    "Estimated delivery: 3-6 months after campaign ends",
-                    "Free shipping on orders over $50",
-                    "Multiple language versions available"
+                    "Estimated delivery: 3-4 weeks after production",
+                    "Free shipping costs are calculated per order"
                 ]
             }
         },
         is: {
-            title: "Hvar á að kaupa",
+            title: "Hvar á að kaupa spilið",
             subtitle: "Fáðu þitt eintak af Náttúruvali",
             crowdfunding: {
-                title: "Hópfjármögnunarherferð",
-                description: "Núna fáanlegt í gegnum Gamefound hópfjármögnunarherferðina okkar. Styrktu okkur til að koma þessu fræðandi spili á markað!",
-                price: "$20 USD (um 2800 kr)",
-                includes: "Inniheldur fullan spilastokk, sérhönnuð teningur og regluhandbók á ensku og íslensku",
-                buttonText: "Styrkja á Gamefound",
-                availability: "Herferð virk þar til fullfjármögnuð"
+                title: "Hvernig á að nálgast það",
+                description: "Núna fáanlegt í gegnum hópfjármögnun á Karolinafund. Verður bráðlega selt í A4 og Hagkaup",
+                price: "2800 kr",
+                includes: "Inniheldur stærðarinnar spilastokk, sérhannaða teninga og regluhandbók á íslensku, eða ensku",
+                buttonText: "Kaupa á netinu",
+                availability: ""
             },
             retailInfo: {
                 title: "Framtíðarsala",
@@ -52,9 +52,8 @@ const WhereToBuy = ({ currLang }) => {
                 title: "Sendingarupplýsingar",
                 details: [
                     "Sending um allan heim möguleg",
-                    "Áætlaður afhendingartími: 3-6 mánuðir eftir lok herferðar",
-                    "Ókeypis sending á pöntunum yfir $50",
-                    "Margar tungumálaútgáfur fáanlegar"
+                    "Áætlaður afhendingartími: 3-4 vikur eftir framleiðslu",
+                    "Sendingarkostnaður er reiknaður fyrir hverja pöntun",
                 ]
             }
         }
@@ -77,7 +76,6 @@ const WhereToBuy = ({ currLang }) => {
                         </div>
                     </Col>
                 </Row>
-                <p className="text-start text-muted mb-5">{text.subtitle}</p>
 
                 <Row>
                     <Col lg={8} className="mx-auto">
@@ -88,7 +86,50 @@ const WhereToBuy = ({ currLang }) => {
                             <Card.Body>
                                 <Row>
                                     <Col md={8}>
-                                        <p className="text-start">{text.crowdfunding.description}</p>
+                                        <p className="text-start">
+                                            {text.crowdfunding.description}
+                                            <span
+                                                onClick={() => setShowShippingInfo(!showShippingInfo)}
+                                                style={{
+                                                    cursor: 'pointer',
+                                                    marginLeft: '5px',
+                                                    color: '#007bff',
+                                                    fontWeight: 'bold',
+                                                    fontSize: '1.2em'
+                                                }}
+                                                title={lang === 'is' ? "Smelltu fyrir sendingarupplýsingar" : "Click for shipping information"}
+                                            >
+                                                ℹ️
+                                            </span>
+                                        </p>
+
+                                        {showShippingInfo && (
+                                            <div
+                                                className="alert alert-info rounded mb-3"
+                                                style={{
+                                                    fontSize: '0.9rem',
+                                                    backgroundColor: '#d1ecf1',
+                                                    borderColor: '#bee5eb',
+                                                    color: '#0c5460'
+                                                }}
+                                            >
+                                                <h6 className="mb-2">{text.shipping.title}</h6>
+                                                <ul className="mb-0 text-start">
+                                                    {text.shipping.details.map((detail, index) => (
+                                                        <li key={index}>{detail}</li>
+                                                    ))}
+                                                </ul>
+                                                <div className="mt-2 text-end">
+                                                    <small
+                                                        onClick={() => setShowShippingInfo(false)}
+                                                        style={{ cursor: 'pointer', color: '#0c5460', textDecoration: 'underline' }}
+                                                    >
+                                                        {lang === 'is' ? 'Loka' : 'Close'}
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        )}
+
                                         <p className="mb-2 text-start"><strong>{text.crowdfunding.includes}</strong></p>
                                         <p className="text-muted small text-start">{text.crowdfunding.availability}</p>
                                     </Col>
@@ -96,9 +137,9 @@ const WhereToBuy = ({ currLang }) => {
                                         <div className="price-box p-3 bg-light rounded mb-3">
                                             <h3 className="text-success mb-0">{text.crowdfunding.price}</h3>
                                         </div>
-                                        <Button 
-                                            variant="success" 
-                                            size="lg" 
+                                        <Button
+                                            variant="success"
+                                            size="lg"
                                             onClick={() => window.open(gamefoundurl)}
                                             className="w-100 rounded"
                                         >
@@ -110,7 +151,7 @@ const WhereToBuy = ({ currLang }) => {
                         </Card>
 
                         <Row>
-                            <Col md={6}>
+                            {/* <Col md={6}>
                                 <Card className="h-100 border-secondary rounded">
                                     <Card.Body>
                                         <Card.Title>{text.retailInfo.title}</Card.Title>
@@ -121,9 +162,9 @@ const WhereToBuy = ({ currLang }) => {
                                         </Button>
                                     </Card.Body>
                                 </Card>
-                            </Col>
-                            
-                            <Col md={6}>
+                            </Col> */}
+
+                            {/* <Col md={6}>
                                 <Card className="h-100 border-info rounded">
                                     <Card.Body>
                                         <Card.Title>{text.shipping.title}</Card.Title>
@@ -136,7 +177,7 @@ const WhereToBuy = ({ currLang }) => {
                                         </ul>
                                     </Card.Body>
                                 </Card>
-                            </Col>
+                            </Col> */}
                         </Row>
                     </Col>
                 </Row>
