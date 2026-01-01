@@ -630,6 +630,22 @@ section {
   }
 }
 
+/* Extra small screens - prevent social media icons from wrapping */
+@media (max-width: 400px) {
+  .social-media-icon {
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 0.25rem !important;
+    flex-shrink: 1;
+  }
+  
+  .social-media-icon img,
+  .social-media-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
 /* Min-width: 769px desktop */
 @media (min-width: 769px) {
 

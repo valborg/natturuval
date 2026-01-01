@@ -9,13 +9,14 @@ const tumblr = '/images/tumblr.svg';
 // Placeholder for Facebook icon - add facebook.svg to public folder
 // const facebook = '/facebook.svg';
 
-let instasocial = 'https://www.instagram.com/natturuval/'
-let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
-let tiktoksocial = 'https://www.tiktok.com/@natturuval'
-let facebooksocial = 'https://www.facebook.com/natturuval'
-let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
 
 const HeroSection = ({ currLang }) => {
+    let instasocial = 'https://www.instagram.com/natturuval/'
+    let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
+    let tiktoksocial = 'https://www.tiktok.com/@natturuval'
+    let facebooksocial = currLang === 'is' ? 'https://www.facebook.com/people/N%C3%A1tt%C3%BAruval/61566334469444/' : ''
+    let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
+
     const logoImage = currLang === 'is' ? logoWithTaglineIce : logoWithTaglineEng;
     return (
         <section id="home" className='App-main'>
@@ -53,23 +54,10 @@ const HeroSection = ({ currLang }) => {
                                         <img src={tumblr} width="40" height="40" alt="tumblr social icon" />
                                     </div>
                                     {/* Facebook placeholder */}
-                                    <div className="social-media-icon" onClick={() => window.open(facebooksocial)}>
-                                        <div style={{
-                                            width: '40px',
-                                            height: '40px',
-                                            backgroundColor: '#1877f2',
-                                            borderRadius: '6px',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            color: 'white',
-                                            fontWeight: 'bold',
-                                            fontSize: '18px',
-                                            cursor: 'pointer'
-                                        }}>
-                                            f
-                                        </div>
+                                    {facebooksocial && <div className="social-media-icon" onClick={() => window.open(facebooksocial)}>
+                                        <img src='https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg' width="40" height="40" alt="facebook social icon" />
                                     </div>
+                                    }
                                 </div>
                                 <Button
                                     variant="outline-success"
