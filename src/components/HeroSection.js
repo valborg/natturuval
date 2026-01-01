@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-const logoWithTaglineEng = '/NattLockupWithTagline.svg';
-const logoWithTaglineIce = '/NattLockupWithTagline_is.svg';
-const instagram = '/instagram.svg';
-const tiktok = '/tiktok.svg';
-const tumblr = '/tumblr.svg';
+const logoWithTaglineEng = '/images/NattLockupWithTagline.svg';
+const logoWithTaglineIce = '/images/NattLockupWithTagline_is.svg';
+const instagram = '/images/instagram.svg';
+const tiktok = '/images/tiktok.svg';
+const tumblr = '/images/tumblr.svg';
 // Placeholder for Facebook icon - add facebook.svg to public folder
 // const facebook = '/facebook.svg';
 
