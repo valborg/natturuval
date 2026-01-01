@@ -4,12 +4,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import storyRokkvi from '../../public/rokkvi12.jpeg';
-import basicLayout from '../../public/basicLayout.jpg';
-import prototypeArt from '../../public/prototypeArt.jpg';
 import grass from '../../public/GrassPattern.svg';
+
 import lifeIcon from '../../public/Lifespan.svg';
+import videostill from '../../public/videostill.jpeg';
+import coolstar from '../../public/coolstar.png'
+import coolfish from '../../public/coolfiskurinn.png';
 
 const History = ({ currLang }) => {
+
+    const starfish = currLang === 'is' ? coolfish : coolstar;
+
     const content = {
         en: {
             title: "The story behind the game",
@@ -58,7 +63,7 @@ const History = ({ currLang }) => {
 
                     <Row className="align-items-center mb-4">
                         <Col xs={12} md={4} className="order-md-2 mb-4 mb-md-0">
-                            <img src={basicLayout} className="img-fluid rounded shadow" style={{ maxHeight: '300px', objectFit: 'cover' }} alt="old-card-2.0" />
+                            <img src={starfish} className="img-fluid rounded shadow" style={{ maxHeight: '300px', objectFit: 'cover' }} alt="old-card-2.0" />
                         </Col>
                         <Col xs={12} md={8} className="order-md-1">
                             <p className="history_decisions text-start">{text.history_decisions}</p>
@@ -71,7 +76,7 @@ const History = ({ currLang }) => {
 
                     <Row className='align-items-center'>
                         <Col xs={12} md={4} className="mb-4 mb-md-0">
-                            <img src={prototypeArt} className="img-fluid rounded shadow" style={{ maxHeight: '300px', objectFit: 'cover' }} alt="prototype art" />
+                            <img src={videostill} className="img-fluid rounded shadow" style={{ maxHeight: '300px', objectFit: 'cover' }} alt="still from video" />
                         </Col>
                         <Col xs={12} md={8}>
                             <p className="history_version_1 text-start">{text.history_version_1}</p>

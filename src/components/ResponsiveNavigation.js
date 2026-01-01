@@ -15,7 +15,7 @@ const ResponsiveNavigation = ({ currLang, onLanguageChange, onSectionChange }) =
                 { id: "where-to-buy", label: "Where to Buy" },
                 { id: "adult-mode", label: "Party Mode" },
                 { id: "news", label: "News" },
-                { id: "cards", label: "Card Info" },
+                { id: "cards", label: "The Animals" },
                 { id: "history", label: "Story" },
                 { id: "team", label: "Team" }
             ]
@@ -28,7 +28,7 @@ const ResponsiveNavigation = ({ currLang, onLanguageChange, onSectionChange }) =
                 { id: "where-to-buy", label: "Hvar á að kaupa" },
                 { id: "adult-mode", label: "Partýhamur" },
                 { id: "news", label: "Fréttir" },
-                { id: "cards", label: "Spilupplýsingar" },
+                { id: "cards", label: "Dýrin" },
                 { id: "history", label: "Saga" },
                 { id: "team", label: "Teymi" }
             ]

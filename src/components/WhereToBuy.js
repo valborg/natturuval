@@ -11,7 +11,7 @@ const WhereToBuy = ({ currLang }) => {
             crowdfunding: {
                 title: "Availability",
                 description: "Currently available through our Gamefound crowdfunding campaign with late pledges, soon to be available in stores",
-                price: "$22 USD",
+                price: "",
                 includes: "Includes full card deck, custom dice, and rulebook in English or Icelandic",
                 buttonText: "Buy online",
                 availability: ""
@@ -37,7 +37,7 @@ const WhereToBuy = ({ currLang }) => {
             crowdfunding: {
                 title: "Hvernig á að nálgast það",
                 description: "Núna fáanlegt í gegnum hópfjármögnun á Karolinafund. Verður bráðlega selt í A4 og Hagkaup",
-                price: "2800 kr",
+                price: "",
                 includes: "Inniheldur stærðarinnar spilastokk, sérhannaða teninga og regluhandbók á íslensku, eða ensku",
                 buttonText: "Kaupa á netinu",
                 availability: ""
