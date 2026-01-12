@@ -35,10 +35,12 @@ import WhereToBuy from './components/WhereToBuy';
 import AdultModeGenerator from './components/AdultModeGenerator';
 import NewsUpdates from './components/NewsUpdates';
 import CardInfo from './components/CardInfo';
+import CardCorrections from './components/CardCorrections';
 import History from './components/History';
 import MeetTheTeam from './components/MeetTheTeam';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 //import Fan from './components/Fan';
 
@@ -108,6 +110,7 @@ const App = () => {
             <AboutGame currLang={currLang} />
             <HowToPlay currLang={currLang} />
             <WhereToBuy currLang={currLang} />
+            <CardCorrections currLang={currLang} />
             <AdultModeGenerator currLang={currLang} />
             <NewsUpdates currLang={currLang} />
             <CardInfo currLang={currLang} />

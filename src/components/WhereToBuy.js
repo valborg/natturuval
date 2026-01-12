@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import dice from '../../public/plus.svg';
 
 const WhereToBuy = ({ currLang }) => {
@@ -11,7 +11,7 @@ const WhereToBuy = ({ currLang }) => {
             crowdfunding: {
                 title: "Availability",
                 description: "Currently available through our Gamefound crowdfunding campaign with late pledges, soon to be available in stores",
-                price: "",
+                price: "25 USD",
                 includes: "Includes full card deck, custom dice, and rulebook in English or Icelandic",
                 buttonText: "Buy online",
                 availability: ""
@@ -29,16 +29,17 @@ const WhereToBuy = ({ currLang }) => {
                     "Estimated delivery: 3-4 weeks after production",
                     "Free shipping costs are calculated per order"
                 ]
-            }
+            },
+            WhereToBuyUrl: "https://gamefound.com/en/projects/bespoke-games/natturuval"
         },
         is: {
             title: "Hvar á að kaupa spilið",
             subtitle: "Fáðu þitt eintak af Náttúruvali",
             crowdfunding: {
                 title: "Hvernig á að nálgast það",
-                description: "Núna fáanlegt í gegnum hópfjármögnun á Karolinafund. Verður bráðlega selt í A4 og Hagkaup",
-                price: "",
-                includes: "Inniheldur stærðarinnar spilastokk, sérhannaða teninga og regluhandbók á íslensku, eða ensku",
+                description: "Núna fáanlegt í gegnum markaðstorg á Karolinafund. Verður bráðlega selt í A4 og Hagkaup.",
+                price: "3300 kr.",
+                includes: "Inniheldur stærðarinnar spilastokk, sérhannaða teninga og regluhandbók á íslensku.",
                 buttonText: "Kaupa á netinu",
                 availability: ""
             },
@@ -55,13 +56,13 @@ const WhereToBuy = ({ currLang }) => {
                     "Áætlaður afhendingartími: 3-4 vikur eftir framleiðslu",
                     "Sendingarkostnaður er reiknaður fyrir hverja pöntun",
                 ]
-            }
+            },
+            WhereToBuyUrl: "https://www.karolinafund.com/project/view/6296"
         }
     };
 
     const lang = currLang || 'is';
     const text = content[lang];
-    const gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval";
 
     return (
         <section className="where-to-buy py-5" id="where-to-buy">
@@ -140,7 +141,7 @@ const WhereToBuy = ({ currLang }) => {
                                         <Button
                                             variant="success"
                                             size="lg"
-                                            onClick={() => window.open(gamefoundurl)}
+                                            onClick={() => window.open(text.WhereToBuyUrl, '_blank')}
                                             className="w-100 rounded"
                                         >
                                             {text.crowdfunding.buttonText}
