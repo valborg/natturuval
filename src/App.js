@@ -89,7 +89,7 @@ const App = () => {
             <MeetTheTeam currLang={currLang} />
 
             {/* Final Call to Action Component */}
-            <CallToAction gamefoundurl={currLang === 'is' ? "https://www.karolinafund.com/project/view/6296" : "https://gamefound.com/en/projects/bespoke-games/natturuval"} />
+            <CallToAction WhereToBuyUrl={currLang} />
         </div >
 
     );

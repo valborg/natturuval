@@ -1,7 +1,9 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-const CallToAction = ({ gamefoundurl }) => {
+const CallToAction = ({ currlang }) => {
+    const whereToBuyUrl = currlang === 'is' ? "https://www.karolinafund.com/project/view/6296" : "https://gamefound.com/en/projects/bespoke-games/natturuval";
+
     return (
         <Container className="mt-5 mb-5">
             <Row>
@@ -9,7 +11,7 @@ const CallToAction = ({ gamefoundurl }) => {
                     <div className="d-flex justify-content-center">
                         <Button
                             variant="outline-success"
-                            onClick={() => window.open(gamefoundurl)}
+                            onClick={() => window.open(whereToBuyUrl)}
                             className="rounded btn"
                             style={{
                                 color: 'black',

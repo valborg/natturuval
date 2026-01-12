@@ -15,7 +15,7 @@ const HeroSection = ({ currLang }) => {
     let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
     let tiktoksocial = 'https://www.tiktok.com/@natturuval'
     let facebooksocial = currLang === 'is' ? 'https://www.facebook.com/people/N%C3%A1tt%C3%BAruval/61566334469444/' : ''
-    let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
+    let whereToBuyUrl = currLang === 'is' ? "https://www.karolinafund.com/project/view/6296" : "https://gamefound.com/en/projects/bespoke-games/natturuval";
 
     const logoImage = currLang === 'is' ? logoWithTaglineIce : logoWithTaglineEng;
     return (
@@ -61,7 +61,7 @@ const HeroSection = ({ currLang }) => {
                                 </div>
                                 <Button
                                     variant="outline-success"
-                                    onClick={() => window.open(gamefoundurl)}
+                                    onClick={() => window.open(whereToBuyUrl)}
                                     className="rounded btn d-block mx-auto mx-lg-0 order-3 order-lg-3 hero-cta-button"
                                 >
                                     {/* Show full text when in row layout (lg+), short text when stacked */}
