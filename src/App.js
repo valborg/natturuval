@@ -1,31 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
-// import Container from 'react-bootstrap/Container'
-// import Col from 'react-bootstrap/Col'
-// import Row from 'react-bootstrap/Row'
-// import Nav from 'react-bootstrap/Nav'
-// import Navbar from 'react-bootstrap/Navbar'
 
-// import leaf from '../public/Leaf.svg'
-import logoWithTaglineEng from '../public/NattLockupWithTagline.svg'
-import logoWithTaglineIce from '../public/NattLockupWithTagline_is.svg'
-// import krossfiskur from '../public/solblomakrossfiskurinn.png'
-// import coolfiskurinn from '../public/coolfiskurinn.png'
-// import koala from '../public/koala.png'
-// import dice from '../public/dice.png'
-// import baratta from '../public/baratta.png'
-// import fight from '../public/fight.png'
-// import coolstar from '../public/coolstar.png'
-// import leafPattern from '../public/LeafPattern.png'
-
-import instagram from '../public/instagram.svg'
-import tumblr from '../public/tumblr.svg'
-import tiktok from '../public/tiktok.svg'
-// Placeholder for Facebook icon - add facebook.svg to public folder
-// import facebook from '../public/facebook.svg'
-
-// Import new components
 import ResponsiveNavigation from './components/ResponsiveNavigation';
 import HeroSection from './components/HeroSection';
 import CallToAction from './components/CallToAction';
@@ -54,9 +28,6 @@ if (locale.searchParams.has('lang')) {
     localStorage.setItem('lang', 'en')
     window.location = 'https://natturuval.is/' // 'http://localhost:9000'// 
 }
-
-let gamefoundurl = "https://gamefound.com/en/projects/bespoke-games/natturuval"
-
 
 const App = () => {
     const [currLang, setLang] = useState(() => {
@@ -118,7 +89,7 @@ const App = () => {
             <MeetTheTeam currLang={currLang} />
 
             {/* Final Call to Action Component */}
-            <CallToAction gamefoundurl={gamefoundurl} />
+            <CallToAction gamefoundurl={currLang === 'is' ? "https://www.karolinafund.com/project/view/6296" : "https://gamefound.com/en/projects/bespoke-games/natturuval"} />
         </div >
 
     );
