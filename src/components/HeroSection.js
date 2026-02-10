@@ -1,11 +1,16 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import NattLockupWithTagline from '../../public/NattLockupWithTagline.svg';
+import NattLockupWithTagline_is from '../../public/NattLockupWithTagline_is.svg';
+import InstagramIcon from '../../public/instagram.svg';
+import TiktokIcon from '../../public/tiktok.svg';
+import TumblrIcon from '../../public/tumblr.svg';
 
-const logoWithTaglineEng = '/NattLockupWithTagline.svg';
-const logoWithTaglineIce = '/NattLockupWithTagline_is.svg';
-const instagram = '/instagram.svg';
-const tiktok = '/tiktok.svg';
-const tumblr = '/tumblr.svg';
+const logoWithTaglineEng = NattLockupWithTagline;
+const logoWithTaglineIce = NattLockupWithTagline_is;
+const instagram = InstagramIcon;
+const tiktok = TiktokIcon;
+const tumblr = TumblrIcon;
 // Placeholder for Facebook icon - add facebook.svg to public folder
 // const facebook = '/facebook.svg';
 
