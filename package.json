@@ -6,8 +6,7 @@
     "scripts": {
         "start": "webpack serve --mode development --open",
         "build": "webpack --mode production",
-        "deploy": "npm run build && git subtree push --prefix dist origin gh-pages",
-        "publish": "gh-pages -d dist --cname natturuval.is",
+        "deploy": "npm run build && gh-pages -d dist --cname natturuval.is",
         "clean": "rm -rf node_modules package-lock.json && npm install"
     },
     "dependencies": {
