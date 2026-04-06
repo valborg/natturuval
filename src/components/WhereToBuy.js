@@ -27,7 +27,7 @@ const WhereToBuy = ({ currLang }) => {
                 details: [
                     "Worldwide shipping available",
                     "Estimated delivery: 3-4 weeks after production",
-                    "Free shipping costs are calculated per order"
+                    "Shipping costs are calculated per order"
                 ]
             },
             WhereToBuyUrl: "https://gamefound.com/en/projects/bespoke-games/natturuval"
