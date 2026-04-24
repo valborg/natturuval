@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import dice from '../../public/plus.svg';
+import CollapsibleSection from './CollapsibleSection';
 
 const WhereToBuy = ({ currLang }) => {
     const [showShippingInfo, setShowShippingInfo] = useState(false);
@@ -67,121 +68,123 @@ const WhereToBuy = ({ currLang }) => {
     return (
         <section className="where-to-buy py-5" id="where-to-buy">
             <Container>
-                <Row className="justify-content-center mb-5">
-                    <Col xs={12} className="text-center">
-                        <div className="section-heading-container d-inline-flex align-items-center">
-                            <h2 className="mb-0 text-success border border-success rounded px-3 py-2 d-flex align-items-center">
-                                {text.title}
-                                <img src={dice} width="24" height="24" alt="dice" className="ms-2" />
-                            </h2>
-                        </div>
-                    </Col>
-                </Row>
+                <CollapsibleSection defaultOpen={false}>
+                    <Row className="justify-content-center mb-2">
+                        <Col xs={12} className="text-center">
+                            <div className="section-heading-container">
+                                <h2 className="text-success border-success">
+                                    {text.title}
+                                    <img src={dice} width="24" height="24" alt="dice" className="ms-2" />
+                                </h2>
+                            </div>
+                        </Col>
+                    </Row>
 
-                <Row>
-                    <Col lg={8} className="mx-auto">
-                        <Card className="border-success mb-4 shadow rounded">
-                            <Card.Header className="bg-success text-white rounded-top">
-                                <h4 className="mb-0">{text.crowdfunding.title}</h4>
-                            </Card.Header>
-                            <Card.Body>
-                                <Row>
-                                    <Col md={8}>
-                                        <p className="text-start">
-                                            {text.crowdfunding.description}
-                                            <span
-                                                onClick={() => setShowShippingInfo(!showShippingInfo)}
-                                                style={{
-                                                    cursor: 'pointer',
-                                                    marginLeft: '5px',
-                                                    color: '#007bff',
-                                                    fontWeight: 'bold',
-                                                    fontSize: '1.2em'
-                                                }}
-                                                title={lang === 'is' ? "Smelltu fyrir sendingarupplýsingar" : "Click for shipping information"}
-                                            >
-                                                ℹ️
-                                            </span>
-                                        </p>
+                    <Row>
+                        <Col lg={8} className="mx-auto">
+                            <Card className="border-success mb-4 shadow rounded">
+                                <Card.Header className="bg-success text-white rounded-top">
+                                    <h4 className="mb-0">{text.crowdfunding.title}</h4>
+                                </Card.Header>
+                                <Card.Body>
+                                    <Row>
+                                        <Col md={8}>
+                                            <p className="text-start">
+                                                {text.crowdfunding.description}
+                                                <span
+                                                    onClick={() => setShowShippingInfo(!showShippingInfo)}
+                                                    style={{
+                                                        cursor: 'pointer',
+                                                        marginLeft: '5px',
+                                                        color: '#007bff',
+                                                        fontWeight: 'bold',
+                                                        fontSize: '1.2em'
+                                                    }}
+                                                    title={lang === 'is' ? "Smelltu fyrir sendingarupplýsingar" : "Click for shipping information"}
+                                                >
+                                                    ℹ️
+                                                </span>
+                                            </p>
 
-                                        {showShippingInfo && (
-                                            <div
-                                                className="alert alert-info rounded mb-3"
-                                                style={{
-                                                    fontSize: '0.9rem',
-                                                    backgroundColor: '#d1ecf1',
-                                                    borderColor: '#bee5eb',
-                                                    color: '#0c5460'
-                                                }}
-                                            >
-                                                <h6 className="mb-2">{text.shipping.title}</h6>
-                                                <ul className="mb-0 text-start">
-                                                    {text.shipping.details.map((detail, index) => (
-                                                        <li key={index}>{detail}</li>
-                                                    ))}
-                                                </ul>
-                                                <div className="mt-2 text-end">
-                                                    <small
-                                                        onClick={() => setShowShippingInfo(false)}
-                                                        style={{ cursor: 'pointer', color: '#0c5460', textDecoration: 'underline' }}
-                                                    >
-                                                        {lang === 'is' ? 'Loka' : 'Close'}
-                                                    </small>
+                                            {showShippingInfo && (
+                                                <div
+                                                    className="alert alert-info rounded mb-3"
+                                                    style={{
+                                                        fontSize: '0.9rem',
+                                                        backgroundColor: '#d1ecf1',
+                                                        borderColor: '#bee5eb',
+                                                        color: '#0c5460'
+                                                    }}
+                                                >
+                                                    <h6 className="mb-2">{text.shipping.title}</h6>
+                                                    <ul className="mb-0 text-start">
+                                                        {text.shipping.details.map((detail, index) => (
+                                                            <li key={index}>{detail}</li>
+                                                        ))}
+                                                    </ul>
+                                                    <div className="mt-2 text-end">
+                                                        <small
+                                                            onClick={() => setShowShippingInfo(false)}
+                                                            style={{ cursor: 'pointer', color: '#0c5460', textDecoration: 'underline' }}
+                                                        >
+                                                            {lang === 'is' ? 'Loka' : 'Close'}
+                                                        </small>
+                                                    </div>
                                                 </div>
+                                            )}
+
+                                            <p className="mb-2 text-start"><strong>{text.crowdfunding.includes}</strong></p>
+                                            <p className="text-muted small text-start">{text.crowdfunding.availability}</p>
+                                        </Col>
+                                        <Col md={4} className="text-center">
+                                            <div className="price-box p-3 bg-light rounded mb-3">
+                                                <h3 className="text-success mb-0">{text.crowdfunding.price}</h3>
                                             </div>
-                                        )}
+                                            <Button
+                                                variant="success"
+                                                size="lg"
+                                                onClick={() => window.open(text.WhereToBuyUrl, '_blank')}
+                                                className="w-100 rounded"
+                                            >
+                                                {text.crowdfunding.buttonText}
+                                            </Button>
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
 
-                                        <p className="mb-2 text-start"><strong>{text.crowdfunding.includes}</strong></p>
-                                        <p className="text-muted small text-start">{text.crowdfunding.availability}</p>
-                                    </Col>
-                                    <Col md={4} className="text-center">
-                                        <div className="price-box p-3 bg-light rounded mb-3">
-                                            <h3 className="text-success mb-0">{text.crowdfunding.price}</h3>
-                                        </div>
-                                        <Button
-                                            variant="success"
-                                            size="lg"
-                                            onClick={() => window.open(text.WhereToBuyUrl, '_blank')}
-                                            className="w-100 rounded"
-                                        >
-                                            {text.crowdfunding.buttonText}
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Card.Body>
-                        </Card>
+                            <Row>
+                                {/* <Col md={6}>
+                                    <Card className="h-100 border-secondary rounded">
+                                        <Card.Body>
+                                            <Card.Title>{text.retailInfo.title}</Card.Title>
+                                            <Card.Text className="text-start">{text.retailInfo.description}</Card.Text>
+                                            <p className="text-muted small text-start">{text.retailInfo.notifyText}</p>
+                                            <Button variant="outline-secondary" className="w-100 rounded">
+                                                {text.retailInfo.buttonText}
+                                            </Button>
+                                        </Card.Body>
+                                    </Card>
+                                </Col> */}
 
-                        <Row>
-                            {/* <Col md={6}>
-                                <Card className="h-100 border-secondary rounded">
-                                    <Card.Body>
-                                        <Card.Title>{text.retailInfo.title}</Card.Title>
-                                        <Card.Text className="text-start">{text.retailInfo.description}</Card.Text>
-                                        <p className="text-muted small text-start">{text.retailInfo.notifyText}</p>
-                                        <Button variant="outline-secondary" className="w-100 rounded">
-                                            {text.retailInfo.buttonText}
-                                        </Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col> */}
-
-                            {/* <Col md={6}>
-                                <Card className="h-100 border-info rounded">
-                                    <Card.Body>
-                                        <Card.Title>{text.shipping.title}</Card.Title>
-                                        <ul className="list-unstyled text-start">
-                                            {text.shipping.details.map((detail, index) => (
-                                                <li key={index} className="mb-2">
-                                                    <span className="text-success">✓</span> {detail}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </Card.Body>
-                                </Card>
-                            </Col> */}
-                        </Row>
-                    </Col>
-                </Row>
+                                {/* <Col md={6}>
+                                    <Card className="h-100 border-info rounded">
+                                        <Card.Body>
+                                            <Card.Title>{text.shipping.title}</Card.Title>
+                                            <ul className="list-unstyled text-start">
+                                                {text.shipping.details.map((detail, index) => (
+                                                    <li key={index} className="mb-2">
+                                                        <span className="text-success">✓</span> {detail}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </Card.Body>
+                                    </Card>
+                                </Col> */}
+                            </Row>
+                        </Col>
+                    </Row>
+                </CollapsibleSection>
             </Container>
         </section>
     );

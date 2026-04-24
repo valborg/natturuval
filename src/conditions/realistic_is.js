@@ -91,6 +91,7 @@ export const realisticConditions = [
     "Dýrið sem getur búið til mesta hávaðann",
     "Dýrið sem sér best",
     "Dýrið sem sér best í myrkri",
+    "Dýrið sem sést best í myrkri",
     "Dýrið sem hefur flestar tennur",
     "Dýrið sem hefur fæstar tennur",
     "Dýrið sem getur lifað lengst án vatns",

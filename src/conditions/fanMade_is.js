@@ -99,6 +99,4 @@ export const fanMadeConditions = [
     "Ekki nein læti! Og ekki hreyfa þig, dýrið gæti ________!",
     "Aldrei að segja aldrei! Þetta dýr gæti alveg ________ einn daginn",
     "Ef ________, þá gæti dýrið ________",
-
-
 ];

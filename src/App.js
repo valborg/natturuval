@@ -8,7 +8,7 @@ import HowToPlay from './components/HowToPlay';
 import WhereToBuy from './components/WhereToBuy';
 import AdultModeGenerator from './components/AdultModeGenerator';
 import NewsUpdates from './components/NewsUpdates';
-import CardInfo from './components/CardInfo';
+// import CardInfo from './components/CardInfo'; // Temporarily disabled - logarithmic values not matching cards
 import CardCorrections from './components/CardCorrections';
 import History from './components/History';
 import MeetTheTeam from './components/MeetTheTeam';
@@ -84,12 +84,12 @@ const App = () => {
             <CardCorrections currLang={currLang} />
             <AdultModeGenerator currLang={currLang} />
             <NewsUpdates currLang={currLang} />
-            <CardInfo currLang={currLang} />
+            {/* <CardInfo currLang={currLang} /> */}
             <History currLang={currLang} />
             <MeetTheTeam currLang={currLang} />
 
-            {/* Final Call to Action Component */}
-            <CallToAction WhereToBuyUrl={currLang} />
+            {/* Final Call to Action - temporarily commented out, will be replaced with links */}
+            {/* <CallToAction WhereToBuyUrl={currLang} /> */}
         </div >
 
     );

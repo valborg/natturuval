@@ -10,6 +10,7 @@ import lifeIcon from '../../public/Lifespan.svg';
 import videostill from '../../public/videostill.jpeg';
 import coolstar from '../../public/coolstar.png'
 import coolfish from '../../public/coolfiskurinn.png';
+import CollapsibleSection from './CollapsibleSection';
 
 const History = ({ currLang }) => {
 
@@ -37,17 +38,18 @@ const History = ({ currLang }) => {
     return (
         <section className='App-history bg-light py-5' id="history">
             <Container>
-                <Row className="justify-content-center mb-4">
-                    <Col xs={12} className="text-center">
-                        <div className="section-heading-container d-inline-flex align-items-center">
-                            <h2 className="mb-0 text-success border border-success rounded px-3 py-2  d-flex align-items-center">
-                                {text.title}
-                                <img src={lifeIcon} width="24" height="24" alt="lifespan" className="me-2" />
-                            </h2>
-                        </div>
-                    </Col>
-                </Row>
-                <div className="firstHistory">
+                <CollapsibleSection defaultOpen={false}>
+                    <Row className="justify-content-center mb-2">
+                        <Col xs={12} className="text-center">
+                            <div className="section-heading-container">
+                                <h2 className="text-success border-success">
+                                    {text.title}
+                                    <img src={lifeIcon} width="24" height="24" alt="lifespan" className="me-2" />
+                                </h2>
+                            </div>
+                        </Col>
+                    </Row>
+                    <div className="firstHistory">
                     <Row className="align-items-center mb-4">
                         <Col xs={12} md={4} className="mb-4 mb-md-0">
                             <img src={storyRokkvi} className="img-fluid rounded shadow" style={{ maxHeight: '300px', objectFit: 'cover' }} alt="old-card-1.0" />
@@ -82,7 +84,8 @@ const History = ({ currLang }) => {
                             <p className="history_version_1 text-start">{text.history_version_1}</p>
                         </Col>
                     </Row>
-                </div>
+                    </div>
+                </CollapsibleSection>
             </Container>
         </section>
     );

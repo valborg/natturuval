@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Badge, Button } from 'react-bootstrap';
 import dice from '../../public/Weight.svg';
+import CollapsibleSection from './CollapsibleSection';
 
 const NewsUpdates = ({ currLang }) => {
     const [displayedNews, setDisplayedNews] = useState([]);
@@ -14,13 +15,29 @@ const NewsUpdates = ({ currLang }) => {
             title: "News & Updates",
             subtitle: "Stay updated with the latest from Náttúruval",
             news: [
+
                 {
+                    date: "March 2026",
+                    title: "First contact 👽",
+                    content: "The first box has been delivered to a backer and we are on our way to fulfill it all before summer starts.",
+                    fullContent: "We were lying if we said we didn't expected this sooner but this reminds us of the old adage 'The best time to ship games was twenty years ago, the next best time is today'. This was solely in the US and the deliveries in Icland and EU are arriving soon. ",
+                    type: "steppingStone",
+                    isNew: true
+                },
+               {
+                date: "March 2026",
+                title: "Inaccuracies and how to forgive them 🪰",
+                content: "There were two unfortunate errors that made it into the deck, and we hope it is forgiven because of how easy it is to spot them. First is the artic tern whom we fattened up a bit too much, or 900gr instead of 90gr but the card does point to it's upper limit of 120gr. The other is the housefly, the lightest animal in the deck, so light in fact that you'd have to be a scientist to be writing down its weight and hence it got auto corrected into the exponential form, the number still stands it just stands a bit more scientificly",
+                type: "development",
+                isNew: false
+               },
+                               {
                     date: "December 2025",
                     title: "Campaign Milestone Reached!",
                     content: "We've gotten a final confirmation from Panda Game Manufacturing about our printing schedule.",
                     fullContent: "We've gotten a final confirmation from Panda Game Manufacturing about the fulfillment of the order. They are certain they will have all boxes assembeled and ready for shipping in the middle of January 2026, and from there it will get shipped to us. Separately to USA and Iceland. We do not have the estimate for when the shipment arrives or how long it will take to clear customs. As soon as we fo hear anything we will let all our backers know, and keep anyone interested updated.",
                     type: "milestone",
-                    status: "new"
+                    isNew: false
                 },
             ],
             types: {
@@ -28,28 +45,48 @@ const NewsUpdates = ({ currLang }) => {
                 production: { color: "primary", icon: "🏭" },
                 art: { color: "info", icon: "🎨" },
                 launch: { color: "warning", icon: "🚀" },
-                development: { color: "secondary", icon: "🔧" }
+                development: { color: "secondary", icon: "🔧" },
+                steppingStone: { color: "info", icon: "🐦" }
             }
         },
         is: {
             title: "Fréttir og uppfærslur",
             subtitle: "Haltu þér upplýstum um það nýjasta frá Náttúruvali",
             news: [
+
                 {
+                    date: "Mars 2026",
+                    title: "Þá er fyrsta spilið afhent 😻",
+                    content: "Fyrsta spilið hefur verið afhent bakhjarli og við ætlum að afhenda allt sem við getum áður sumarið byrjar.",
+                    fullContent: "Við værum að ljúga ef við segðum ekki hafa búist við þessu fyrr en þetta minnir okkur á gamla máltækið 'Besti tíminn til að afhenda leiki var fyrir tuttugu árum, næsti besti tíminn er í dag'. Þetta var eingöngu í Bandaríkjunum og sendingarnar til Íslands og ESB að koma fljótlega úr tollafgreiðslu í Reykjavík.",
+                    type: "varða",
+                    isNew: true
+                },
+                {
+                    date: "Mars 2026",
+                    title: "Hvimleiðar innsláttavillur 🪰 ",
+                    content: "Innsláttavillur hrjá okkur öll og tvö dýr eru hlunnfarin!",
+                    fullContent: "Húsflugan og krían komumst í gegnum nálaraugað, flugan með vitlaust form á tölunni en rétta tölu og krían greyið er heldur feit greyið ekki 90gr heldur 900gr en það sést kannski á tölunum á spjaldinu hennar að það gengur ekki upp því hún getur í mesta lagi verið 120gr 🧐 Vonandi skemma þessar villur ekki fyrir og þið njótið spilsins þrátt fyrir þær. Hitt er húsflugan, léttasta dýrið í stokknum, svo létt að það þarf vísindafólk til að skrifa töluna og hún var því óvart umrituð í flutningum á staðalform, talan er rétt en það er aðeins erfiðara að lesa hana 🤓 Það er auðvelt að skrifa inn á spjöldin tvö rétt gildi til að bæta upp fyrir þetta. Miðað við hversu auðvelt er að lagfæra villunar vonum við að það sé auðvelt að fyrirgefa okkur.",
+                    type: "uppgötvun",
+                    isNew: false
+                },
+                                {
                     date: "Desember 2025",
                     title: "Stórum áfanga náð!",
                     content: "Við höfum fengið endanlega staðfestingu frá Panda Game Manufacturing varðandi prentunartímaáætlun okkar.",
                     fullContent: "Við höfum fengið endanlega staðfestingu frá Panda Game Manufacturing varðandi prentunartímaáætlun okkar. Þau eru viss um að allir kassar verði saman settir og tilbúnir til sendingar í miðjum janúar 2026. Þaðan mun það verða sent til okkar, annarsvegar til Íslands og hinsvegar til Bandaríkjana. Við höfum ekki staðfestingu um hvenær sendingin kemur eða hversu lengi það mun taka að komast í gegnum tollinn. Um leið og við fáum einhverjar upplýsingar munum við láta alla bakhjarla okkar vita og halda öllum áhugasömum uppfærðum.",
-                    type: "milestone",
-                    status: "new"
-                }
+                    type: "áfangi",
+                    isNew: false
+                },
+
             ],
             types: {
-                milestone: { color: "success", icon: "🎉" },
+                áfangi: { color: "success", icon: "🎉" },
                 production: { color: "primary", icon: "🏭" },
                 art: { color: "info", icon: "🎨" },
                 launch: { color: "warning", icon: "🚀" },
-                development: { color: "secondary", icon: "🔧" }
+                uppgötvun: { color: "secondary", icon: "🔧" },
+                varða: { color: "info", icon: "🐦" }
             }
         }
     };
@@ -76,10 +113,11 @@ const NewsUpdates = ({ currLang }) => {
     return (
         <section className="news-updates py-5 bg-light" id="news">
             <Container>
-                <Row className="justify-content-center mb-5">
+                <CollapsibleSection defaultOpen={false}>
+                <Row className="justify-content-center mb-2">
                     <Col xs={12} className="text-center">
-                        <div className="section-heading-container d-inline-flex align-items-center">
-                            <h2 className="mb-0 text-success border border-success rounded px-3 py-2 d-flex align-items-center">
+                        <div className="section-heading-container">
+                            <h2 className="text-success border-success">
                                 {text.title}
                                 <img src={dice} width="24" height="24" alt="dice" className="ms-2" />
                             </h2>
@@ -106,7 +144,7 @@ const NewsUpdates = ({ currLang }) => {
                                                 <div className="d-flex justify-content-between align-items-start mb-2">
                                                     <h5 className="mb-1">
                                                         {item.title}
-                                                        {item.status === 'new' && (
+                                                        {item.isNew && (
                                                             <Badge bg="danger" className="ms-1 animate__animated animate__pulse rounded" style={{ fontSize: '0.5rem' }}>
                                                                 {lang === 'en' ? 'NEW' : 'NÝTT'}
                                                             </Badge>
@@ -154,6 +192,7 @@ const NewsUpdates = ({ currLang }) => {
                         )}
                     </Col>
                 </Row>
+                </CollapsibleSection>
             </Container>
 
             <style jsx>{`

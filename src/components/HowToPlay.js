@@ -4,12 +4,17 @@ import coolfiskurinn from '../../public/coolfiskurinn.png';
 import coolstar from '../../public/coolstar.png';
 import fight from '../../public/fight.png';
 import baratta from '../../public/baratta.png';
+import pafuglinn from '../../public/pafuglinn.png';
+import peacock from '../../public/peacock.png';
+import starfishImg from '../../public/starfish.png';
+import solblomakrossfiskurinn from '../../public/solblomakrossfiskurinn.png';
 import sciNameIcon from '../../public/SciName.svg';
 import offspringIcon from '../../public/Offspring.svg';
 import lifespanIcon from '../../public/Lifespan.svg';
 import lengthIcon from '../../public/Length.svg';
 import feetIcon from '../../public/Feet.svg';
 import weightIcon from '../../public/Weight.svg';
+import CollapsibleSection from './CollapsibleSection';
 
 const HowToPlay = ({ currLang }) => {
     const [expandedCard, setExpandedCard] = useState(null);
@@ -199,7 +204,23 @@ const HowToPlay = ({ currLang }) => {
     const lang = currLang || 'is';
     const text = content[lang];
     const coolfish = lang === 'en' ? coolstar : coolfiskurinn;
-    const fightImage = lang === 'en' ? baratta : fight;
+    const fightImage = lang === 'en' ? fight : baratta;
+    const peacockImage = lang === 'en' ? peacock : pafuglinn;
+    const starfishImage = lang === 'en' ? starfishImg : solblomakrossfiskurinn;
+
+    const battleContent = {
+        en: {
+            title: "Example Battle",
+            description: "Here two animals compete in a game of ... having more feet",
+            explanation: "When the category is 'Feet' and the comparison is '+' (highest wins), the sunflower starfish beats the peacock easily — it can have up to 24 feet, way more than a bird with just two 🙀 The sunflower starfish is an obvious winner 😎"
+        },
+        is: {
+            title: "Dæmi um baráttu",
+            description: "Hér sjáum við tvö dýr etja kappi ... um hvort er með fleiri fætur",
+            explanation: "Þegar flokkurinn er 'Fætur' og samanburðurinn er '+' (hæsta gildið vinnur), slær sólblómastjörnufiskurinn páfuglinn auðveldlega út — hann getur verið með allt að 24 fætur - meira en fugl sem er með aðeins tvo 🙀 Sólblómakrossfiskurinn er augljós sigurvegari 😎"
+        }
+    };
+    const battleText = battleContent[lang];
 
     // Category icons mapping
     const categoryIcons = [sciNameIcon, offspringIcon, lifespanIcon, lengthIcon, feetIcon, weightIcon];
@@ -266,49 +287,74 @@ const HowToPlay = ({ currLang }) => {
     return (
         <section className="how-to-play py-5 bg-light" id="how-to-play">
             <Container>
-                <Row className="justify-content-center mb-5">
-                    <Col xs={12} className="text-center">
-                        <div className="section-heading-container d-inline-flex align-items-center">
-                            <h2 className="mb-0 text-success border border-success rounded px-3 py-2 d-flex align-items-center">
-                                {text.title}
-                                <img src={lengthIcon} width="24" height="24" alt="length" className="ms-2" />
-                            </h2>
-                        </div>
-                    </Col>
-                </Row>
+                <CollapsibleSection defaultOpen={false}>
+                    <Row className="justify-content-center mb-2">
+                        <Col xs={12} className="text-center">
+                            <div className="section-heading-container">
+                                <h2 className="text-success border-success">
+                                    {text.title}
+                                    <img src={lengthIcon} width="24" height="24" alt="length" className="ms-2" />
+                                </h2>
+                            </div>
+                        </Col>
+                    </Row>
 
-                <Row>
-                    <Col lg={8} className="mx-auto">
-                        <Accordion defaultActiveKey="0" className="mb-5">
-                            <Accordion.Item eventKey="0" className="rounded">
-                                <Accordion.Header>{text.basicRules.title}</Accordion.Header>
-                                <Accordion.Body>
-                                    <div className="d-flex align-items-start mb-3">
-                                        <img src={lengthIcon} width="60" height="60" alt="length" className="me-3 flex-shrink-0" />
-                                        <ol className="mb-0 text-start">
-                                            {text.basicRules.steps.map((step, index) => (
-                                                <li key={index} className="mb-2">{step}</li>
+                    <Row>
+                        <Col lg={8} className="mx-auto">
+                            <Accordion defaultActiveKey="0" className="mb-5">
+                                <Accordion.Item eventKey="0" className="rounded">
+                                    <Accordion.Header>{text.basicRules.title}</Accordion.Header>
+                                    <Accordion.Body>
+                                        <div className="d-flex align-items-start mb-3">
+                                            <img src={lengthIcon} width="60" height="60" alt="length" className="me-3 flex-shrink-0" />
+                                            <ol className="mb-0 text-start">
+                                                {text.basicRules.steps.map((step, index) => (
+                                                    <li key={index} className="mb-2">{step}</li>
+                                                ))}
+                                            </ol>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+                                <Accordion.Item eventKey="1" className="rounded">
+                                    <Accordion.Header>{text.categories.title}</Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul className="list-unstyled text-start">
+                                            {text.categories.list.map((category, index) => (
+                                                <li key={index} className="mb-3 d-flex align-items-center">
+                                                    <img src={categoryIcons[index]} width="24" height="24" alt={`category ${index + 1}`} className="me-3 flex-shrink-0" />
+                                                    <span>{category}</span>
+                                                </li>
                                             ))}
-                                        </ol>
-                                    </div>
-                                </Accordion.Body>
-                            </Accordion.Item>
+                                        </ul>
+                                    </Accordion.Body>
+                                </Accordion.Item>
 
-                            <Accordion.Item eventKey="1" className="rounded">
-                                <Accordion.Header>{text.categories.title}</Accordion.Header>
-                                <Accordion.Body>
-                                    <ul className="list-unstyled text-start">
-                                        {text.categories.list.map((category, index) => (
-                                            <li key={index} className="mb-3 d-flex align-items-center">
-                                                <img src={categoryIcons[index]} width="24" height="24" alt={`category ${index + 1}`} className="me-3 flex-shrink-0" />
-                                                <span>{category}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </Accordion.Body>
-                            </Accordion.Item>
+                                {/* Battle Example Section */}
+                                <Accordion.Item eventKey="battle" className="rounded">
+                                    <Accordion.Header>{battleText.title}</Accordion.Header>
+                                    <Accordion.Body>
+                                        <h5 className="text-center text-success mb-4">{battleText.description}</h5>
+                                        <Row className="align-items-center justify-content-center mb-4">
+                                            <Col xs={6} md={4} className="text-center mb-3">
+                                                <img src={peacockImage} className="img-fluid rounded shadow" style={{ maxHeight: '250px' }} alt="peacock card" />
+                                            </Col>                                                                                        <Col xs={6} md={4} className="text-center mb-3">
+                                                <img src={starfishImage} className="img-fluid rounded shadow" style={{ maxHeight: '250px' }} alt="starfish card" />
+                                            </Col>
+                                        </Row>
+                                        <Row className="align-items-center justify-content-center mb-3">
+                              <Col xs={6} md={4} className="text-center mb-3">
+                                                <img src={fightImage} className="img-fluid" style={{ maxHeight: '250px' }} alt="battle indicator" />
+                                            </Col>
+                                            <Col xs={6} md={4} className="text-center mb-3">
+                                                <img src={coolfish} className="img-fluid" style={{ maxHeight: '200px' }} alt="cool winner" />
+                                            </Col>
+                                        </Row>
+                                        <p className="text-center ">{battleText.explanation}</p>
+                                    </Accordion.Body>
+                                </Accordion.Item>
 
-                            <Accordion.Item eventKey="2" className="rounded">
+                                <Accordion.Item eventKey="2" className="rounded">
                                 <Accordion.Header>{text.variations.title}</Accordion.Header>
                                 <Accordion.Body>
                                     <div onClick={handleOutsideClick}>
@@ -369,22 +415,8 @@ const HowToPlay = ({ currLang }) => {
                         </Accordion>
                     </Col>
                 </Row>
-                {/* Battle demonstration section */}
-                {/* <Row className=" mb-3">
-                    <Col xs={0} lg={3} className="justify-content-center mb-3 mb-lg-0 d-flex">
-                        <h5></h5>
-                    </Col>
-                    <Col xs={12} lg={3} className="justify-content-center mb-3 mb-lg-0 d-flex">
-                        <img src={fightImage} className="img-fluid" style={{ maxWidth: 'auto', maxHeight: '400px' }} alt="animal battle" />
-                    </Col>
-                    <Col xs={12} lg={3} className="justify-content-center d-flex flex-column">
-                        <h3>{lang === 'en' ? 'Here we have an obvious winner in the battle of leg count' : 'Hér sjáum við augljósan sigurvegara í baráttunni um fótafjölda'}</h3>
-                        <img src={coolfish} className="img-fluid" style={{ maxWidth: 'auto' }} alt="cool animal winner" />
-                    </Col>
-                    <Col xs={0} lg={3} className="justify-content-center mb-3 mb-lg-0 d-flex">
-                        <h5></h5>
-                    </Col>
-                </Row> */}
+                {/* Old battle demonstration section - now in accordion above */}
+                </CollapsibleSection>
             </Container>
 
             <style jsx>{`

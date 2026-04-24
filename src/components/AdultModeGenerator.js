@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Alert } from 'react-bootstrap';
 import plusIcon from '../../public/plus.svg';
 import minusIcon from '../../public/minus.svg';
+import CollapsibleSection from './CollapsibleSection';
 
 // Import condition arrays
 import { weirdConditions as weirdConditionsEn } from '../conditions/weird_en.js';
@@ -222,10 +223,11 @@ const AdultModeGenerator = ({ currLang }) => {
             backgroundPosition: '0 0, 10px 10px'
         }}>
             <Container>
-                <Row className="justify-content-center mb-5">
+                <CollapsibleSection defaultOpen={false}>
+                <Row className="justify-content-center mb-2">
                     <Col xs={12} className="text-center">
-                        <div className="section-heading-container d-inline-flex align-items-center">
-                            <h2 className="mb-0 text-dark border border-dark rounded px-3 py-2 d-flex align-items-center" style={{ backgroundColor: 'white' }}>
+                        <div className="section-heading-container">
+                            <h2 className="text-dark border-dark" style={{ backgroundColor: 'white' }}>
                                 {text.title}
                                 <img src={minusIcon} width="24" height="24" alt="minus" className="ms-2" />
                             </h2>
@@ -380,6 +382,7 @@ const AdultModeGenerator = ({ currLang }) => {
                         </Card>
                     </Col>
                 </Row>
+                </CollapsibleSection>
             </Container>
         </section>
     );

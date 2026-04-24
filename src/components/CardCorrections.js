@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ternImage from './tern.png';
 import houseflyImage from './housefly.png';
+import CollapsibleSection from './CollapsibleSection';
 
 const CardCorrections = ({ currLang }) => {
     const content = {
@@ -31,72 +32,70 @@ const CardCorrections = ({ currLang }) => {
     return (
         <section className="card-corrections py-5" id="card-corrections">
             <Container>
-                <Row className="justify-content-center mb-5">
-                    <Col xs={12} className="text-center">
-                        <h2 className="mb-0 text-warning border border-warning rounded px-3 py-2 d-inline-flex align-items-center">
-                            {text.title}
-                        </h2>
-                    </Col>
-                </Row>
+                <CollapsibleSection defaultOpen={false}>
+                    <Row className="justify-content-center mb-2">
+                        <Col xs={12} className="text-center">
+                            <div className="section-heading-container">
+                                <h2 className="text-warning border-warning">
+                                    {text.title}
+                                </h2>
+                            </div>
+                        </Col>
+                    </Row>
 
-                <Row className="justify-content-center align-items-center position-relative">
-                    {/* Left Image - Tern */}
-                    <Col lg={3} md={4} sm={6} className="text-center mb-4">
-                        <div className="card-image-container position-relative">
-                            <img
-                                src={ternImage}
-                                alt="Tern card"
-                                className="img-fluid rounded shadow"
-                                style={{ maxHeight: '300px', width: 'auto' }}
-                            />
-                        </div>
-                    </Col>
+                    <Row className="justify-content-center align-items-center position-relative">
+                        {/* Left Image - Tern */}
+                        <Col lg={3} md={4} sm={6} className="text-center mb-4">
+                            <div className="card-image-container position-relative">
+                                <img
+                                    src={ternImage}
+                                    alt="Tern card"
+                                    className="img-fluid rounded shadow"
+                                    style={{ maxHeight: '300px', width: 'auto' }}
+                                />
+                            </div>
+                        </Col>
 
-                    {/* Middle Text Column */}
-                    <Col lg={6} md={4} sm={12} className="d-flex flex-column justify-content-between h-100">
-                        {/* Top text for tern (left card) */}
-                        <div className="correction-text-top position-relative mb-5">
-                            <div className="d-flex align-items-start">
-                                <div className="text-warning me-3" style={{ fontSize: '2rem' }}>
-                                    <i className="bi bi-arrow-left"></i>
-                                </div>
-                                <div className="bg-light p-3 rounded border border-warning shadow-sm">
-                                    <p className="mb-0 text-dark"
-                                        style={{ fontSize: '0.95rem', lineHeight: '1.4' }}
-                                        dangerouslySetInnerHTML={{ __html: text.tern.text }}>
-                                    </p>
+                        {/* Middle Text Column */}
+                        <Col lg={6} md={4} sm={12} className="d-flex flex-column justify-content-between h-100">
+                            {/* Top text for tern (left card) */}
+                            <div className="correction-text-top position-relative mb-5">
+                                <div className="d-flex align-items-start">
+                                    <div className="text-warning me-3" style={{ fontSize: '2rem' }}>
+                                        <i className="bi bi-arrow-left"></i>
+                                    </div>
+                                    <div className="bg-light p-3 rounded border border-warning shadow-sm">
+                                        {text.tern.text}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Bottom text for housefly (right card) */}
-                        <div className="correction-text-bottom position-relative">
-                            <div className="d-flex align-items-start justify-content-end">
-                                <div className="bg-light p-3 rounded border border-warning shadow-sm me-3">
-                                    <p className="mb-0 text-dark"
-                                        style={{ fontSize: '0.95rem', lineHeight: '1.4' }}
-                                        dangerouslySetInnerHTML={{ __html: text.housefly.text }}>
-                                    </p>
-                                </div>
-                                <div className="text-warning" style={{ fontSize: '2rem' }}>
-                                    <i className="bi bi-arrow-right"></i>
+                            {/* Bottom text for housefly (right card) */}
+                            <div className="correction-text-bottom position-relative">
+                                <div className="d-flex align-items-start justify-content-end">
+                                    <div className="bg-light p-3 rounded border border-warning shadow-sm me-3">
+{text.housefly.text}
+                                    </div>
+                                    <div className="text-warning" style={{ fontSize: '2rem' }}>
+                                        <i className="bi bi-arrow-right"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </Col>
+                        </Col>
 
-                    {/* Right Image - Housefly */}
-                    <Col lg={3} md={4} sm={6} className="text-center mb-4">
-                        <div className="card-image-container position-relative">
-                            <img
-                                src={houseflyImage}
-                                alt="Housefly card"
-                                className="img-fluid rounded shadow"
-                                style={{ maxHeight: '300px', width: 'auto' }}
-                            />
-                        </div>
-                    </Col>
-                </Row>
+                        {/* Right Image - Housefly */}
+                        <Col lg={3} md={4} sm={6} className="text-center mb-4">
+                            <div className="card-image-container position-relative">
+                                <img
+                                    src={houseflyImage}
+                                    alt="Housefly card"
+                                    className="img-fluid rounded shadow"
+                                    style={{ maxHeight: '300px', width: 'auto' }}
+                                />
+                            </div>
+                        </Col>
+                    </Row>
+                </CollapsibleSection>
             </Container>
 
             <style jsx>{`

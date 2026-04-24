@@ -53,6 +53,9 @@ export const absurdConditions = [
     "Framkvæmdastjóri draumalandsins",
     "Framkvæmdastjóri martraðalandsins",
     "Er teiknað, ekki raunverulegt dýr",
-    "Getur svifið í lofti"
-
+    "Getur svifið í lofti",
+    "Fætur dýrsins eru aldrei blautir, nema þegar þeir eru það þá eru þeir ekki blautir",
+    "Var einu sinni grískur heimspekingur til forna",
+    "Finnst líklega alltaf lykt af dýrinu þegar nýr þríhyrningur er fundinn upp",
+    "Gólfið er hraun, af því að þetta dýr fór á fætur",
 ];
