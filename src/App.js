@@ -78,6 +78,7 @@ const App = () => {
             />
 
             {/* New Components */}
+            <div key={currLang}>
             <AboutGame currLang={currLang} />
             <HowToPlay currLang={currLang} />
             <WhereToBuy currLang={currLang} />
@@ -87,6 +88,7 @@ const App = () => {
             {/* <CardInfo currLang={currLang} /> */}
             <History currLang={currLang} />
             <MeetTheTeam currLang={currLang} />
+            </div>
 
             {/* Final Call to Action - temporarily commented out, will be replaced with links */}
             {/* <CallToAction WhereToBuyUrl={currLang} /> */}

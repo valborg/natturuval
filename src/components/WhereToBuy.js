@@ -11,7 +11,7 @@ const WhereToBuy = ({ currLang }) => {
             subtitle: "Get your copy of Náttúruval",
             crowdfunding: {
                 title: "Availability",
-                description: "Currently available through our Gamefound crowdfunding campaign with late pledges, soon to be available in stores",
+                description: "Currently available through our Gamefound crowdfunding campaign with updates on various pop-up stores and events",
                 price: "25 USD",
                 includes: "Includes full card deck, custom dice, and rulebook in English or Icelandic",
                 buttonText: "Buy online",
@@ -35,11 +35,11 @@ const WhereToBuy = ({ currLang }) => {
         },
         is: {
             title: "Hvar á að kaupa spilið",
-            subtitle: "Fáðu þitt eintak af Náttúruvali",
+            subtitle: "Fáðu þitt eintak af Náttúruval",
             crowdfunding: {
                 title: "Hvernig á að nálgast það",
-                description: "Núna fáanlegt í gegnum markaðstorg á Karolinafund. Verður bráðlega selt í A4 og Hagkaup.",
-                price: "3300 kr.",
+                description: "Fæst í Nexus. Á fleiri stöðum von bráðar 🔜",
+                price: "4495 kr.",
                 includes: "Inniheldur stærðarinnar spilastokk, sérhannaða teninga og regluhandbók á íslensku.",
                 buttonText: "Kaupa á netinu",
                 availability: ""
@@ -54,7 +54,7 @@ const WhereToBuy = ({ currLang }) => {
                 title: "Sendingarupplýsingar",
                 details: [
                     "Sending um allan heim möguleg",
-                    "Áætlaður afhendingartími: 3-4 vikur eftir framleiðslu",
+                    "Áætlaður afhendingartími fer eftir pöntun og staðsetningu",
                     "Sendingarkostnaður er reiknaður fyrir hverja pöntun",
                 ]
             },
@@ -91,7 +91,7 @@ const WhereToBuy = ({ currLang }) => {
                                         <Col md={8}>
                                             <p className="text-start">
                                                 {text.crowdfunding.description}
-                                                <span
+                                                {/* <span
                                                     onClick={() => setShowShippingInfo(!showShippingInfo)}
                                                     style={{
                                                         cursor: 'pointer',
@@ -100,10 +100,10 @@ const WhereToBuy = ({ currLang }) => {
                                                         fontWeight: 'bold',
                                                         fontSize: '1.2em'
                                                     }}
-                                                    title={lang === 'is' ? "Smelltu fyrir sendingarupplýsingar" : "Click for shipping information"}
+                                                    title={lang === 'is' ? "Smelltu til að sjá sendingarupplýsingar" : "Click for shipping information"}
                                                 >
                                                     ℹ️
-                                                </span>
+                                                </span> */}
                                             </p>
 
                                             {showShippingInfo && (
@@ -136,7 +136,7 @@ const WhereToBuy = ({ currLang }) => {
                                             <p className="mb-2 text-start"><strong>{text.crowdfunding.includes}</strong></p>
                                             <p className="text-muted small text-start">{text.crowdfunding.availability}</p>
                                         </Col>
-                                        <Col md={4} className="text-center">
+                                        {/* <Col md={4} className="text-center">
                                             <div className="price-box p-3 bg-light rounded mb-3">
                                                 <h3 className="text-success mb-0">{text.crowdfunding.price}</h3>
                                             </div>
@@ -148,7 +148,7 @@ const WhereToBuy = ({ currLang }) => {
                                             >
                                                 {text.crowdfunding.buttonText}
                                             </Button>
-                                        </Col>
+                                        </Col> */}
                                     </Row>
                                 </Card.Body>
                             </Card>

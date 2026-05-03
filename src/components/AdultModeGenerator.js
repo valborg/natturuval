@@ -65,6 +65,9 @@ const AdultModeGenerator = ({ currLang }) => {
                     conclusion: [
                         "Questions can be silly or practical, realistic or absurd.",
                         "You can use the button below for fun suggestions, or if you're creative enough, make them up on the spot."
+                    ],
+                    variartions: [
+                        "Variations of the party mode"
                     ]
                 },
                 modes: [
@@ -116,6 +119,9 @@ const AdultModeGenerator = ({ currLang }) => {
                     conclusion: [
                         "Spurningar mega vera kjánalegar eða hagnýtar, raunsæjar eða furðulegar.",
                         "Þið getið notað takkann hérna til að fá skemmtilegar uppástungur, en ef þið eruð nógu skapandi getið þið búið þær til á staðnum."
+                    ],
+                    variartions: [
+                        "Mismunandi leiðir til að spila"
                     ]
                 },
                 modes: [
@@ -217,8 +223,8 @@ const AdultModeGenerator = ({ currLang }) => {
 
     return (
         <section className="adult-mode py-5" id="adult-mode" style={{
-            backgroundColor: '#f5f5f5',
-            backgroundImage: 'radial-gradient(circle, #e0e0e0 1px, transparent 1px)',
+            // backgroundColor: '#f5f5f5',
+            // backgroundImage: 'radial-gradient(circle, #e0e0e0 1px, transparent 1px)',
             backgroundSize: '20px 20px',
             backgroundPosition: '0 0, 10px 10px'
         }}>
@@ -227,7 +233,7 @@ const AdultModeGenerator = ({ currLang }) => {
                 <Row className="justify-content-center mb-2">
                     <Col xs={12} className="text-center">
                         <div className="section-heading-container">
-                            <h2 className="text-dark border-dark" style={{ backgroundColor: 'white' }}>
+                            <h2 className="text-dark" >
                                 {text.title}
                                 <img src={minusIcon} width="24" height="24" alt="minus" className="ms-2" />
                             </h2>
@@ -266,7 +272,7 @@ const AdultModeGenerator = ({ currLang }) => {
 
                                 {/* Expandable Rules Section */}
                                 <div className="mt-4" onClick={handleOutsideClick}>
-                                    <h6 className="text-secondary mb-3">Game Variations:</h6>
+                                    <h6 className="text-secondary mb-3">{text.howToPlay.intro.variartions}</h6>
                                     <Row>
                                         {text.howToPlay.modes.map((mode, index) => (
                                             <Col

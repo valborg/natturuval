@@ -271,7 +271,7 @@ const HowToPlay = ({ currLang }) => {
             );
         }
 
-        return <p>No rules available - please add structuredRules</p>;
+        return <p>No rules available - Engar reglur tiltækar</p>;
     };
 
     const handleCardClick = (index, event) => {

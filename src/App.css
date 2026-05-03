@@ -244,7 +244,7 @@ section {
 
 /* Collapsible section spacing - tweak these values to adjust gap between collapsed headings */
 .collapsible-heading {
-  padding: 0.15rem 0;
+  padding: 0;
 }
 
 section .collapsible-heading + div {
@@ -274,7 +274,7 @@ section .collapsible-heading + div {
 .section-heading-container h3 {
   margin: 0 auto;
   padding: 0.75rem 2.5rem;
-  background-color: transparent;
+  background-color: white;
   border: 2px solid currentColor;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -396,6 +396,11 @@ section .collapsible-heading + div {
   .logo-image {
     width: 50%;
     height: auto;
+  }
+
+  section.py-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 
   .social-media .btn {
@@ -623,7 +628,8 @@ section .collapsible-heading + div {
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
     height: 44px;
-    width: 100%;
+    width: 280px;
+    max-width: 90vw;
   }
 
   .section-heading-container img {

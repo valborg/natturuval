@@ -20,7 +20,7 @@ const HeroSection = ({ currLang }) => {
     let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
     let tiktoksocial = 'https://www.tiktok.com/@natturuval'
     let facebooksocial = currLang === 'is' ? 'https://www.facebook.com/people/N%C3%A1tt%C3%BAruval/61566334469444/' : ''
-    let whereToBuyUrl = currLang === 'is' ? "https://www.karolinafund.com/project/view/6296" : "https://gamefound.com/en/projects/bespoke-games/natturuval";
+    //let whereToBuyUrl = currLang === 'is' ? "https://www.karolinafund.com/project/view/6296" : "https://gamefound.com/en/projects/bespoke-games/natturuval";
 
     const logoImage = currLang === 'is' ? logoWithTaglineIce : logoWithTaglineEng;
     return (
@@ -64,15 +64,24 @@ const HeroSection = ({ currLang }) => {
                                     </div>
                                     }
                                 </div>
-                                <Button
+                                {/* <Button
                                     variant="outline-success"
                                     onClick={() => window.open(whereToBuyUrl)}
                                     className="rounded btn d-block mx-auto mx-lg-0 order-3 order-lg-3 hero-cta-button"
                                 >
                                     {/* Show full text when in row layout (lg+), short text when stacked */}
+                                {/*
                                     <span name="textstring" className="call_to_action_button_text_1 d-none d-lg-inline"></span>
                                     <span name="textstring" className="call_to_action_button_text_1_short d-inline d-lg-none"></span>
-                                </Button>
+                                </Button> 
+                                */}
+                                                                {/* Arrow pointing to social icons - desktop only */}
+                                <span className="d-none d-lg-inline mx-auto order-3 order-lg-3" style={{
+                                    fontSize: '2rem',
+                                    color: '#198754',
+                                    transform: 'scaleX(-1)',
+                                    display: 'inline-block'
+                                }}>➜</span>
                             </div>
                         </div>
                     </Col>

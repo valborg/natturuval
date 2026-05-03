@@ -15,14 +15,20 @@ const NewsUpdates = ({ currLang }) => {
             title: "News & Updates",
             subtitle: "Stay updated with the latest from Náttúruval",
             news: [
-
+                {
+                    date: "May 2026",
+                    title: "Delivery in Nexus Glæsibær! 🎉",
+                    content: "Today, May 3rd, we will be handing out to backers their pledges in Nexus in Glæsibær and it will also be available for sale in Nexus from now on.",
+                    type: "milestone",
+                    isNew: true
+                },
                 {
                     date: "March 2026",
                     title: "First contact 👽",
                     content: "The first box has been delivered to a backer and we are on our way to fulfill it all before summer starts.",
                     fullContent: "We were lying if we said we didn't expected this sooner but this reminds us of the old adage 'The best time to ship games was twenty years ago, the next best time is today'. This was solely in the US and the deliveries in Icland and EU are arriving soon. ",
                     type: "steppingStone",
-                    isNew: true
+                    isNew: false
                 },
                {
                 date: "March 2026",
@@ -53,14 +59,20 @@ const NewsUpdates = ({ currLang }) => {
             title: "Fréttir og uppfærslur",
             subtitle: "Haltu þér upplýstum um það nýjasta frá Náttúruvali",
             news: [
-
+                {
+                    date: "Maí 2026",
+                    title: "Afhending í Nexus! 🎉",
+                    content: "Komið í dag, 3. maí, og fáið afhent eða kaupið eintak af Náttúruval í Nexus Glæsibæ milli klukkan 14 og 16.",
+                    type: "áfangi",
+                    isNew: true
+                },
                 {
                     date: "Mars 2026",
                     title: "Þá er fyrsta spilið afhent 😻",
                     content: "Fyrsta spilið hefur verið afhent bakhjarli og við ætlum að afhenda allt sem við getum áður sumarið byrjar.",
                     fullContent: "Við værum að ljúga ef við segðum ekki hafa búist við þessu fyrr en þetta minnir okkur á gamla máltækið 'Besti tíminn til að afhenda leiki var fyrir tuttugu árum, næsti besti tíminn er í dag'. Þetta var eingöngu í Bandaríkjunum og sendingarnar til Íslands og ESB að koma fljótlega úr tollafgreiðslu í Reykjavík.",
                     type: "varða",
-                    isNew: true
+                    isNew: false
                 },
                 {
                     date: "Mars 2026",

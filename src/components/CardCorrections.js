@@ -62,10 +62,10 @@ const CardCorrections = ({ currLang }) => {
                             <div className="correction-text-top position-relative mb-5">
                                 <div className="d-flex align-items-start">
                                     <div className="text-warning me-3" style={{ fontSize: '2rem' }}>
-                                        <i className="bi bi-arrow-left"></i>
+                                        <i className="bi bi-arrow-left d-none d-md-inline"></i>
+                                        <i className="bi bi-arrow-up d-inline d-md-none"></i>
                                     </div>
-                                    <div className="bg-light p-3 rounded border border-warning shadow-sm">
-                                        {text.tern.text}
+                                    <div className="bg-light p-3 rounded border border-warning shadow-sm" dangerouslySetInnerHTML={{ __html: text.tern.text }}>
                                     </div>
                                 </div>
                             </div>
@@ -73,11 +73,11 @@ const CardCorrections = ({ currLang }) => {
                             {/* Bottom text for housefly (right card) */}
                             <div className="correction-text-bottom position-relative">
                                 <div className="d-flex align-items-start justify-content-end">
-                                    <div className="bg-light p-3 rounded border border-warning shadow-sm me-3">
-{text.housefly.text}
+                                    <div className="bg-light p-3 rounded border border-warning shadow-sm me-3" dangerouslySetInnerHTML={{ __html: text.housefly.text }}>
                                     </div>
                                     <div className="text-warning" style={{ fontSize: '2rem' }}>
-                                        <i className="bi bi-arrow-right"></i>
+                                        <i className="bi bi-arrow-right d-none d-md-inline"></i>
+                                        <i className="bi bi-arrow-down d-inline d-md-none"></i>
                                     </div>
                                 </div>
                             </div>

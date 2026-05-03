@@ -6,7 +6,7 @@ const CallToAction = ({ currlang }) => {
 
     return (
         <Container className="mt-5 mb-5">
-            <Row>
+            {/* <Row>
                 <Col xs={12} className="px-3">
                     <div className="d-flex justify-content-center">
                         <Button
@@ -29,7 +29,7 @@ const CallToAction = ({ currlang }) => {
                         </Button>
                     </div>
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
     );
 };
