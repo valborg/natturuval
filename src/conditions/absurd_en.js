@@ -66,4 +66,5 @@ export const absurdConditions = [
     "Has never seen water",
     "Is just a photograph; the animal is an illusion",
     "Made a deal with the moon to be allowed to live on earth"
+    
 ];

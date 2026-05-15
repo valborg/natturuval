@@ -38,7 +38,7 @@ const WhereToBuy = ({ currLang }) => {
             subtitle: "Fáðu þitt eintak af Náttúruval",
             crowdfunding: {
                 title: "Hvernig á að nálgast það",
-                description: "Fæst í Nexus. Á fleiri stöðum von bráðar 🔜",
+                description: "Fæst í Nexus, Spilavinum, Karolinafund.org og vonandi á fleiri stöðum fljótlega 🔜",
                 price: "4495 kr.",
                 includes: "Inniheldur stærðarinnar spilastokk, sérhannaða teninga og regluhandbók á íslensku.",
                 buttonText: "Kaupa á netinu",
@@ -73,8 +73,8 @@ const WhereToBuy = ({ currLang }) => {
                         <Col xs={12} className="text-center">
                             <div className="section-heading-container">
                                 <h2 className="text-success border-success">
+                                    <img src={dice} width="24" height="24" alt="dice" className="me-2" />
                                     {text.title}
-                                    <img src={dice} width="24" height="24" alt="dice" className="ms-2" />
                                 </h2>
                             </div>
                         </Col>

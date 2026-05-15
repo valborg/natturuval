@@ -51,8 +51,8 @@ const MeetTheTeam = ({ currLang }) => {
                         <Col xs={12} className="text-center">
                             <div className="section-heading-container">
                                 <h2 className="text-success border-success">
-                                    {text.title}
                                     <img src={feetIcon} width="24" height="24" alt="feet" className="me-2" />
+                                    {text.title}
                                 </h2>
                             </div>
                         </Col>

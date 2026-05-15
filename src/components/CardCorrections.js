@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ternImage from './tern.png';
 import houseflyImage from './housefly.png';
 import CollapsibleSection from './CollapsibleSection';
+import offspringIcon from '../../public/Offspring.svg';
 
 const CardCorrections = ({ currLang }) => {
     const content = {
@@ -37,6 +38,7 @@ const CardCorrections = ({ currLang }) => {
                         <Col xs={12} className="text-center">
                             <div className="section-heading-container">
                                 <h2 className="text-warning border-warning">
+                                    <img src={offspringIcon} width="24" height="24" alt="offspring" className="me-2" />
                                     {text.title}
                                 </h2>
                             </div>

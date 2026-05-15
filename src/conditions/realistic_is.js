@@ -102,4 +102,13 @@ export const realisticConditions = [
     "Dýrið sem borðar mest af plöntum",
     "Dýrið sem borðar mest af kjöti",
     "Dýrið sem er líklegast til að verða húsdýr",
+    "Dýrið sem kann best við sig í skugga",
+    "Dýrið sem er minnst",
+    "Dýrið sem er stærst",
+    "Dýrið sem er þyngst",
+    "Dýrið sem er léttast",
+    "Dýrið sem getur haldið á mestu",
+    "Dýrið sem kúkar stærsta kúknum",
+    "Dýrið sem er kúkar ljótasta kúknum",
+    "Dýrið sem býr til fallegustu hljóðin",
 ];

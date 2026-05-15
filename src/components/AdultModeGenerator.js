@@ -234,8 +234,8 @@ const AdultModeGenerator = ({ currLang }) => {
                     <Col xs={12} className="text-center">
                         <div className="section-heading-container">
                             <h2 className="text-dark" >
+                                <img src={minusIcon} width="24" height="24" alt="minus" className="me-2" />
                                 {text.title}
-                                <img src={minusIcon} width="24" height="24" alt="minus" className="ms-2" />
                             </h2>
                         </div>
                     </Col>

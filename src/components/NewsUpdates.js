@@ -130,8 +130,8 @@ const NewsUpdates = ({ currLang }) => {
                     <Col xs={12} className="text-center">
                         <div className="section-heading-container">
                             <h2 className="text-success border-success">
+                                <img src={dice} width="24" height="24" alt="dice" className="me-2" />
                                 {text.title}
-                                <img src={dice} width="24" height="24" alt="dice" className="ms-2" />
                             </h2>
                         </div>
                     </Col>

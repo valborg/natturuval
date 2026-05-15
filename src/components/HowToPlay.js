@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Accordion } from 'react-bootstrap';
 import coolfiskurinn from '../../public/coolfiskurinn.png';
 import coolstar from '../../public/coolstar.png';
@@ -18,6 +18,100 @@ import CollapsibleSection from './CollapsibleSection';
 
 const HowToPlay = ({ currLang }) => {
     const [expandedCard, setExpandedCard] = useState(null);
+
+    const TikTokCarousel = ({ videos }) => {
+        const scrollRef = React.useRef(null);
+
+        const scroll = (dir) => {
+            if (scrollRef.current) {
+                scrollRef.current.scrollBy({ left: dir * 360, behavior: 'smooth' });
+            }
+        };
+
+        return (
+            <div style={{ position: 'relative' }}>
+                {/* Left arrow */}
+                <button
+                    onClick={() => scroll(-1)}
+                    aria-label="Scroll left"
+                    style={{
+                        position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)',
+                        zIndex: 10, background: 'rgba(255,255,255,0.9)', border: 'none',
+                        borderRadius: '50%', width: '40px', height: '40px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)', cursor: 'pointer',
+                        fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center'
+                    }}
+                >‹</button>
+
+                {/* Scroll container */}
+                <div
+                    ref={scrollRef}
+                    style={{
+                        display: 'flex',
+                        overflowX: 'auto',
+                        gap: '16px',
+                        padding: '16px 48px',
+                        scrollSnapType: 'x mandatory',
+                        WebkitOverflowScrolling: 'touch',
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                    }}
+                >
+                    {videos.map((video, i) => (
+                        <div
+                            key={i}
+                            style={{
+                                flex: '0 0 auto',
+                                scrollSnapAlign: 'start',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                gap: '8px',
+                            }}
+                        >
+                            {video.label && (
+                                <span style={{
+                                    fontSize: '0.85rem', fontWeight: 600,
+                                    color: '#198754', textAlign: 'center', maxWidth: '325px'
+                                }}>
+                                    {video.label}
+                                </span>
+                            )}
+                            <iframe
+                                src={`https://www.tiktok.com/embed/v2/${video.id}`}
+                                style={{
+                                    width: '325px',
+                                    height: '580px',
+                                    border: 'none',
+                                    borderRadius: '12px',
+                                    boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+                                    display: 'block',
+                                }}
+                                allowFullScreen
+                                allow="encrypted-media"
+                                title={video.label || `TikTok video ${i + 1}`}
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Right arrow */}
+                <button
+                    onClick={() => scroll(1)}
+                    aria-label="Scroll right"
+                    style={{
+                        position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)',
+                        zIndex: 10, background: 'rgba(255,255,255,0.9)', border: 'none',
+                        borderRadius: '50%', width: '40px', height: '40px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)', cursor: 'pointer',
+                        fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center'
+                    }}
+                >›</button>
+
+                <style>{`.tiktok-scroll::-webkit-scrollbar { display: none; }`}</style>
+            </div>
+        );
+    };
 
     const content = {
         en: {
@@ -48,7 +142,16 @@ const HowToPlay = ({ currLang }) => {
             },
             variations: {
                 title: "Game Variations",
-                modes: [
+                video: {
+                    title: "See It in Action",
+                    videos: [
+                        { id: "7381423431465651489", label: "Kids playing Náttúruval" },
+                        { id: "7382336269411536160", label: "Basic Rules Explained" },
+                        { id: "7581855143293979926", label: "Unboxing Náttúruval" },
+                        { id: "7381590105464540448", label: "The amazing Blue whale tribute" }
+                    ]
+                },
+                    modes: [
                     {
                         name: "Basic Mode",
                         description: "The basic rules above with more details",
@@ -137,7 +240,16 @@ const HowToPlay = ({ currLang }) => {
             },
             variations: {
                 title: "Afbrigði",
-                modes: [
+                video: {
+                    title: "Sjáðu leikinn spilaðan",
+                    videos: [
+                        { id: "7381423431465651489", label: "Krakkarnir að spila spilið" },
+                        { id: "7417164366778354976", label: "Grunnreglurnar" },
+                        { id: "7581855143293979926", label: "Náttúruval tekið upp"},
+                        { id: "7418755897343642912", label: "Lítill köttur"}
+                    ]
+                },
+                    modes: [
                     {
                         name: "Hefðbundnar reglur - nánari útskýring",
                         description: "Hefðbundinn leikur með teningakasti til að velja flokka",
@@ -292,8 +404,8 @@ const HowToPlay = ({ currLang }) => {
                         <Col xs={12} className="text-center">
                             <div className="section-heading-container">
                                 <h2 className="text-success border-success">
+                                    <img src={lengthIcon} width="24" height="24" alt="length" className="me-2" />
                                     {text.title}
-                                    <img src={lengthIcon} width="24" height="24" alt="length" className="ms-2" />
                                 </h2>
                             </div>
                         </Col>
@@ -355,63 +467,69 @@ const HowToPlay = ({ currLang }) => {
                                 </Accordion.Item>
 
                                 <Accordion.Item eventKey="2" className="rounded">
-                                <Accordion.Header>{text.variations.title}</Accordion.Header>
-                                <Accordion.Body>
-                                    <div onClick={handleOutsideClick}>
-                                        <Row>
-                                            {text.variations.modes.map((mode, index) => (
-                                                <Col
-                                                    key={index}
-                                                    sm={12}
-                                                    md={expandedCard === index ? 12 : 6}
-                                                    className={`mb-3 ${expandedCard === index ? 'expanded-card' : ''}`}
-                                                    style={{
-                                                        transition: 'all 0.3s ease',
-                                                        zIndex: expandedCard === index ? 10 : 1,
-                                                        position: 'relative'
-                                                    }}
-                                                >
-                                                    <Card
-                                                        className={`border-success h-100 rounded game-variation-card ${expandedCard === index ? 'shadow-lg' : 'cursor-pointer'}`}
-                                                        onClick={(e) => handleCardClick(index, e)}
+                                    <Accordion.Header>{text.variations.title}</Accordion.Header>
+                                    <Accordion.Body>
+                                        <div onClick={handleOutsideClick}>
+                                            <Row>
+                                                {text.variations.modes.map((mode, index) => (
+                                                    <Col
+                                                        key={index}
+                                                        sm={12}
+                                                        md={expandedCard === index ? 12 : 6}
+                                                        className={`mb-3 ${expandedCard === index ? 'expanded-card' : ''}`}
                                                         style={{
-                                                            cursor: 'pointer',
-                                                            transform: expandedCard === index ? 'scale(1.02)' : 'scale(1)',
                                                             transition: 'all 0.3s ease',
-                                                            backgroundColor: expandedCard === index ? '#f8f9fa' : 'white'
+                                                            zIndex: expandedCard === index ? 10 : 1,
+                                                            position: 'relative'
                                                         }}
                                                     >
-                                                        <Card.Body className="p-4">
-                                                            <Card.Title className="h5 text-success mb-3 d-flex justify-content-between align-items-center">
-                                                                {mode.name}
-                                                                <span className="text-muted" style={{ fontSize: '0.8rem' }}>
-                                                                    {expandedCard === index ? '- ' : '+ '}
-                                                                </span>
-                                                            </Card.Title>
+                                                        <Card
+                                                            className={`border-success h-100 rounded game-variation-card ${expandedCard === index ? 'shadow-lg' : 'cursor-pointer'}`}
+                                                            onClick={(e) => handleCardClick(index, e)}
+                                                            style={{
+                                                                cursor: 'pointer',
+                                                                transform: expandedCard === index ? 'scale(1.02)' : 'scale(1)',
+                                                                transition: 'all 0.3s ease',
+                                                                backgroundColor: expandedCard === index ? '#f8f9fa' : 'white'
+                                                            }}
+                                                        >
+                                                            <Card.Body className="p-4">
+                                                                <Card.Title className="h5 text-success mb-3 d-flex justify-content-between align-items-center">
+                                                                    {mode.name}
+                                                                    <span className="text-muted" style={{ fontSize: '0.8rem' }}>
+                                                                        {expandedCard === index ? '- ' : '+ '}
+                                                                    </span>
+                                                                </Card.Title>
 
-                                                            {expandedCard === index ? (
-                                                                <div>
-                                                                    <Card.Text className="text-start mb-3" style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-                                                                        <strong>{mode.description}</strong>
-                                                                    </Card.Text>
-                                                                    <hr className="my-3" />                                                                    <div className="text-start" style={{ fontSize: '0.95rem', lineHeight: '1.7' }}>
+                                                                {expandedCard === index ? (
+                                                                    <div>
+                                                                        <Card.Text className="text-start mb-3" style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+                                                                            <strong>{mode.description}</strong>
+                                                                        </Card.Text>
+                                                                        <hr className="my-3" />                                                                    <div className="text-start" style={{ fontSize: '0.95rem', lineHeight: '1.7' }}>
 
-                                                                        {renderGameRules(mode)}
+                                                                            {renderGameRules(mode)}
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            ) : (
-                                                                <Card.Text className="text-start" style={{ fontSize: '0.9rem' }}>
-                                                                    {mode.description}
-                                                                </Card.Text>
-                                                            )}
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Col>
-                                            ))}
-                                        </Row>
-                                    </div>
-                                </Accordion.Body>
-                            </Accordion.Item>
+                                                                ) : (
+                                                                    <Card.Text className="text-start" style={{ fontSize: '0.9rem' }}>
+                                                                        {mode.description}
+                                                                    </Card.Text>
+                                                                )}
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Col>
+                                                ))}
+                                            </Row>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="video" className="rounded">
+                                    <Accordion.Header>{text.variations.video.title}</Accordion.Header>
+                                    <Accordion.Body className="px-0">
+                                        <TikTokCarousel videos={text.variations.video.videos} />
+                                    </Accordion.Body>
+                                </Accordion.Item>
                         </Accordion>
                     </Col>
                 </Row>

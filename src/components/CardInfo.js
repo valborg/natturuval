@@ -287,8 +287,8 @@ const CardInfo = ({ currLang }) => {
                     <Col xs={12} className="text-center">
                         <div className="section-heading-container d-inline-flex align-items-center">
                             <h2 className="mb-0 text-success border border-success rounded px-3 py-2 d-flex align-items-center">
+                                <img src={dice} width="24" height="24" alt="dice" className="me-2" />
                                 {text.title}
-                                <img src={dice} width="24" height="24" alt="dice" className="ms-2" />
                             </h2>
                         </div>
                     </Col>
