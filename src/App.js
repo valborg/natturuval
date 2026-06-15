@@ -12,6 +12,7 @@ import NewsUpdates from './components/NewsUpdates';
 import CardCorrections from './components/CardCorrections';
 import History from './components/History';
 import MeetTheTeam from './components/MeetTheTeam';
+import SocialMediaLinks from './components/SocialMediaLinks';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -88,6 +89,7 @@ const App = () => {
             {/* <CardInfo currLang={currLang} /> */}
             <History currLang={currLang} />
             <MeetTheTeam currLang={currLang} />
+            <SocialMediaLinks currLang={currLang} />
             </div>
 
             {/* Final Call to Action - temporarily commented out, will be replaced with links */}

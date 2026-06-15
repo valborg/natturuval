@@ -15,12 +15,19 @@ const NewsUpdates = ({ currLang }) => {
             title: "News & Updates",
             subtitle: "Stay updated with the latest from Náttúruval",
             news: [
+                { 
+                    date: "June 2026",
+                    title: "Deliveries Completed 📦 ",
+                    content: "We have now done three events in Reykjavík to deliver the game to backers, also to showcase it, and sell it. In the coming days, we will reach out to those who have not been able to pick up their copy to find a solution. We want to thank all our backers for their support and patience, and we are very happy to have been able to deliver the game at this time. ☀️ Summer game of the year, don't forget to take it with you on vacation! 🏖️",
+                    type: "update",
+                    isNew: true
+                },
                 {
                     date: "May 2026",
                     title: "Delivery in Nexus Glæsibær! 🎉",
                     content: "Today, May 3rd, we will be handing out to backers their pledges in Nexus in Glæsibær and it will also be available for sale in Nexus from now on.",
                     type: "milestone",
-                    isNew: true
+                    isNew: false
                 },
                 {
                     date: "March 2026",
@@ -59,12 +66,19 @@ const NewsUpdates = ({ currLang }) => {
             title: "Fréttir og uppfærslur",
             subtitle: "Haltu þér upplýstum um það nýjasta frá Náttúruvali",
             news: [
+                { 
+                    date: "Júní 2026",
+                    title: "Búið að afhenda pantanir (aha aha) 📦 ",
+                    content: "Nú erum við búin að halda þrjá viðburði til að afhenda bakhjörlum spilið, sýna og segja frá og selja. Á næstu dögum munum við hafa samband við þau sem hafa ekki getað sótt sér sitt eintak til að finna lausn á því. Við viljum þakka öllum bakhjörlum okkar fyrir stuðninginn og þolinmæðina, við erum mjög ánægð með að hafa getað afhent spilið á þessum tíma. ☀️ Sumarspil ársins, ekki gleyma að taka það með í fríið! 🏖️",
+                    type: "varða",
+                    isNew: true
+                },
                 {
                     date: "Maí 2026",
                     title: "Afhending í Nexus! 🎉",
                     content: "Komið í dag, 3. maí, og fáið afhent eða kaupið eintak af Náttúruval í Nexus Glæsibæ milli klukkan 14 og 16.",
                     type: "áfangi",
-                    isNew: true
+                    isNew: false
                 },
                 {
                     date: "Mars 2026",

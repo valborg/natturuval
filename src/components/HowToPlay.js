@@ -243,10 +243,18 @@ const HowToPlay = ({ currLang }) => {
                 video: {
                     title: "Sjáðu leikinn spilaðan",
                     videos: [
-                        { id: "7381423431465651489", label: "Krakkarnir að spila spilið" },
                         { id: "7417164366778354976", label: "Grunnreglurnar" },
+                        { id: "7641322473388117271", label: "Nokkrar reglur - stutt yfirferð" },
+                        { id: "7381423431465651489", label: "Krakkarnir að spila spilið" },
                         { id: "7581855143293979926", label: "Náttúruval tekið upp"},
-                        { id: "7418755897343642912", label: "Lítill köttur"}
+                        { id: "7383842430446996768", label: "Hvaða dýr eru þetta???" },
+                        { id: "7418755897343642912", label: "Lítill köttur"},
+                        { id: "7419648939390979360", label: "❤️ bókasöfn - Sólheimasafn og lítill svindlari" },
+                        { id: "7388874220433886496", label: "Grísinn í miðjunni (með stokksspilara!)" },
+                        { id: "7418348428943543585", label: "Talþjálfun" },
+                        { id: "7411174580938624288", label: "Látbragðsleikur - og einhver vitleysa" },
+                        { id: "7387944855957212448", label: "Gúrka - 52spilastokks spilið 🥒" },
+                        { id: "7386254670605421857", label: "Ég vona að ég vinni - bannað að kíkja!" },
                     ]
                 },
                     modes: [

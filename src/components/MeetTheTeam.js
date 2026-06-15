@@ -13,6 +13,7 @@ import kate from '../../public/katep2.jpeg';
 import feetIcon from '../../public/Feet.svg';
 import CollapsibleSection from './CollapsibleSection';
 
+
 const MeetTheTeam = ({ currLang }) => {
 
     const content = {
@@ -42,6 +43,10 @@ const MeetTheTeam = ({ currLang }) => {
 
     const lang = currLang || 'is';
     const text = content[lang];
+    let instasocial = 'https://www.instagram.com/natturuval/'
+    let tumblrsocial = 'https://www.tumblr.com/blog/natturuval'
+    let tiktoksocial = 'https://www.tiktok.com/@natturuval'
+    let facebooksocial = currLang === 'is' ? 'https://www.facebook.com/people/N%C3%A1tt%C3%BAruval/61566334469444/' : ''
 
     return (
         <section className="App-about py-5" id="team">
