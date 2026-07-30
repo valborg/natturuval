@@ -54,6 +54,7 @@ const NewsUpdates = ({ currLang }) => {
                 },
             ],
             types: {
+                update: { color: "info", icon: "📰" },
                 milestone: { color: "success", icon: "🎉" },
                 production: { color: "primary", icon: "🏭" },
                 art: { color: "info", icon: "🎨" },
