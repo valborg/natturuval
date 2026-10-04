@@ -364,7 +364,14 @@ const AdultModeGenerator = ({ currLang }) => {
                                 </div>
 
                                 <div className="text-center">
-                                    <Button
+
+
+                                    {selectedCondition && (
+                                        <Alert className="p-4 rounded" style={{ backgroundColor: '#d4edda', borderColor: '#155724', color: '#155724' }}>
+                                            <h5 className="mb-0" style={{ color: '#155724' }}>"{selectedCondition}"</h5>
+                                        </Alert>
+                                    )}
+                                                                        <Button
                                         size="lg"
                                         onClick={generateCondition}
                                         disabled={isGenerating || selectedConditionTypes.length === 0}
@@ -377,12 +384,6 @@ const AdultModeGenerator = ({ currLang }) => {
                                     >
                                         {isGenerating ? '...' : text.generateButton}
                                     </Button>
-
-                                    {selectedCondition && (
-                                        <Alert className="p-4 rounded" style={{ backgroundColor: '#d4edda', borderColor: '#155724', color: '#155724' }}>
-                                            <h5 className="mb-0" style={{ color: '#155724' }}>"{selectedCondition}"</h5>
-                                        </Alert>
-                                    )}
                                 </div>
                             </Card.Body>
                         </Card>

@@ -19,100 +19,6 @@ import CollapsibleSection from './CollapsibleSection';
 const HowToPlay = ({ currLang }) => {
     const [expandedCard, setExpandedCard] = useState(null);
 
-    const TikTokCarousel = ({ videos }) => {
-        const scrollRef = React.useRef(null);
-
-        const scroll = (dir) => {
-            if (scrollRef.current) {
-                scrollRef.current.scrollBy({ left: dir * 360, behavior: 'smooth' });
-            }
-        };
-
-        return (
-            <div style={{ position: 'relative' }}>
-                {/* Left arrow */}
-                <button
-                    onClick={() => scroll(-1)}
-                    aria-label="Scroll left"
-                    style={{
-                        position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)',
-                        zIndex: 10, background: 'rgba(255,255,255,0.9)', border: 'none',
-                        borderRadius: '50%', width: '40px', height: '40px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)', cursor: 'pointer',
-                        fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center'
-                    }}
-                >‹</button>
-
-                {/* Scroll container */}
-                <div
-                    ref={scrollRef}
-                    style={{
-                        display: 'flex',
-                        overflowX: 'auto',
-                        gap: '16px',
-                        padding: '16px 48px',
-                        scrollSnapType: 'x mandatory',
-                        WebkitOverflowScrolling: 'touch',
-                        scrollbarWidth: 'none',
-                        msOverflowStyle: 'none',
-                    }}
-                >
-                    {videos.map((video, i) => (
-                        <div
-                            key={i}
-                            style={{
-                                flex: '0 0 auto',
-                                scrollSnapAlign: 'start',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                gap: '8px',
-                            }}
-                        >
-                            {video.label && (
-                                <span style={{
-                                    fontSize: '0.85rem', fontWeight: 600,
-                                    color: '#198754', textAlign: 'center', maxWidth: '325px'
-                                }}>
-                                    {video.label}
-                                </span>
-                            )}
-                            <iframe
-                                src={`https://www.tiktok.com/embed/v2/${video.id}`}
-                                style={{
-                                    width: '325px',
-                                    height: '580px',
-                                    border: 'none',
-                                    borderRadius: '12px',
-                                    boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-                                    display: 'block',
-                                }}
-                                allowFullScreen
-                                allow="encrypted-media"
-                                title={video.label || `TikTok video ${i + 1}`}
-                            />
-                        </div>
-                    ))}
-                </div>
-
-                {/* Right arrow */}
-                <button
-                    onClick={() => scroll(1)}
-                    aria-label="Scroll right"
-                    style={{
-                        position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)',
-                        zIndex: 10, background: 'rgba(255,255,255,0.9)', border: 'none',
-                        borderRadius: '50%', width: '40px', height: '40px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)', cursor: 'pointer',
-                        fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center'
-                    }}
-                >›</button>
-
-                <style>{`.tiktok-scroll::-webkit-scrollbar { display: none; }`}</style>
-            </div>
-        );
-    };
-
     const content = {
         en: {
             title: "How to Play",
@@ -142,15 +48,6 @@ const HowToPlay = ({ currLang }) => {
             },
             variations: {
                 title: "Game Variations",
-                video: {
-                    title: "See It in Action",
-                    videos: [
-                        { id: "7381423431465651489", label: "Kids playing Náttúruval" },
-                        { id: "7382336269411536160", label: "Basic Rules Explained" },
-                        { id: "7581855143293979926", label: "Unboxing Náttúruval" },
-                        { id: "7381590105464540448", label: "The amazing Blue whale tribute" }
-                    ]
-                },
                     modes: [
                     {
                         name: "Basic Mode",
@@ -240,23 +137,6 @@ const HowToPlay = ({ currLang }) => {
             },
             variations: {
                 title: "Afbrigði",
-                video: {
-                    title: "Sjáðu leikinn spilaðan",
-                    videos: [
-                        { id: "7417164366778354976", label: "Grunnreglurnar" },
-                        { id: "7641322473388117271", label: "Nokkrar reglur - stutt yfirferð" },
-                        { id: "7381423431465651489", label: "Krakkarnir að spila spilið" },
-                        { id: "7581855143293979926", label: "Náttúruval tekið upp"},
-                        { id: "7383842430446996768", label: "Hvaða dýr eru þetta???" },
-                        { id: "7418755897343642912", label: "Lítill köttur"},
-                        { id: "7419648939390979360", label: "❤️ bókasöfn - Sólheimasafn og lítill svindlari" },
-                        { id: "7388874220433886496", label: "Grísinn í miðjunni (með stokksspilara!)" },
-                        { id: "7418348428943543585", label: "Talþjálfun" },
-                        { id: "7411174580938624288", label: "Látbragðsleikur - og einhver vitleysa" },
-                        { id: "7387944855957212448", label: "Gúrka - 52spilastokks spilið 🥒" },
-                        { id: "7386254670605421857", label: "Ég vona að ég vinni - bannað að kíkja!" },
-                    ]
-                },
                     modes: [
                     {
                         name: "Hefðbundnar reglur - nánari útskýring",
@@ -530,12 +410,6 @@ const HowToPlay = ({ currLang }) => {
                                                 ))}
                                             </Row>
                                         </div>
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                                <Accordion.Item eventKey="video" className="rounded">
-                                    <Accordion.Header>{text.variations.video.title}</Accordion.Header>
-                                    <Accordion.Body className="px-0">
-                                        <TikTokCarousel videos={text.variations.video.videos} />
                                     </Accordion.Body>
                                 </Accordion.Item>
                         </Accordion>

@@ -31,14 +31,15 @@ const WhereToBuy = ({ currLang }) => {
                     "Shipping costs are calculated per order"
                 ]
             },
-            WhereToBuyUrl: "https://gamefound.com/en/projects/bespoke-games/natturuval"
+            WhereToBuyUrlOld: "https://gamefound.com/en/projects/bespoke-games/natturuval",
+            WhereToBuyUrl: "https://www.karolinafund.com/project/view/6296"
         },
         is: {
             title: "Hvar á að kaupa spilið",
             subtitle: "Fáðu þitt eintak af Náttúruval",
             crowdfunding: {
                 title: "Hvernig á að nálgast það",
-                description: "Fæst í Nexus, Spilavinum, Karolinafund.org og vonandi á fleiri stöðum fljótlega 🔜",
+                description: "Fæst í Nexus, Spilavinum, Karolinafund.org og í eftirtöldum verslunum Hagkaups: Kringlunni, Smáralind, Skeifunni og Garðabæ",
                 price: "4495 kr.",
                 includes: "Inniheldur stærðarinnar spilastokk, sérhannaða teninga og regluhandbók á íslensku.",
                 buttonText: "Kaupa á netinu",
@@ -133,13 +134,19 @@ const WhereToBuy = ({ currLang }) => {
                                                 </div>
                                             )}
 
+                                            <Button
+                                                variant="success"
+                                                size="lg"
+                                                onClick={() => window.open(text.WhereToBuyUrl, '_blank')}
+                                                className="w-100 rounded mb-3 d-md-none"
+                                            >
+                                                {text.crowdfunding.buttonText}
+                                            </Button>
+
                                             <p className="mb-2 text-start"><strong>{text.crowdfunding.includes}</strong></p>
                                             <p className="text-muted small text-start">{text.crowdfunding.availability}</p>
                                         </Col>
-                                        {/* <Col md={4} className="text-center">
-                                            <div className="price-box p-3 bg-light rounded mb-3">
-                                                <h3 className="text-success mb-0">{text.crowdfunding.price}</h3>
-                                            </div>
+                                        <Col md={4} className="text-center d-none d-md-flex align-items-center justify-content-center">
                                             <Button
                                                 variant="success"
                                                 size="lg"
@@ -148,7 +155,7 @@ const WhereToBuy = ({ currLang }) => {
                                             >
                                                 {text.crowdfunding.buttonText}
                                             </Button>
-                                        </Col> */}
+                                        </Col>
                                     </Row>
                                 </Card.Body>
                             </Card>

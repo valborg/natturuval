@@ -12,7 +12,7 @@ const CardCorrections = ({ currLang }) => {
         en: {
             title: "Card Corrections",
             tern: {
-                text: "Here we have a typo! The <strong>tern</strong> is not nearly a kilogram it is merely 90gr and the correct number for that category would be 0.09-0.12kg"
+                text: "Here we have a typo! The <strong>tern</strong> is not nearly a kilogram it is merely 90gr and the correct number for that category would be <strong>0.09</strong>-0.12kg"
             },
             housefly: {
                 text: "Here we have an unfortunate formatting problem, this is the <strong>scientific version</strong> of the <strong>housefly's</strong> weight and it isn't as easy to understand! So an unfortunate error indeed. But that it means is that the value needs <strong>5 zeros in front of it</strong> and the value written <strong>0.000012kg</strong>"
@@ -24,7 +24,7 @@ const CardCorrections = ({ currLang }) => {
         is: {
             title: "Leiðréttingar á spilum",
             tern: {
-                text: "Hér varð innsláttarvilla, <strong>krían</strong> vegur einungis 90gr en ekki heil 900gr og því á að standa þarna <strong>0,09-0,120kg</strong>"
+                text: "Hér varð innsláttarvilla, <strong>krían</strong> vegur einungis 90gr en ekki heil 900gr og því á að standa þarna <strong>0,09</strong>-0,120kg"
             },
             housefly: {
                 text: "Hér er verið að sýna <strong>vísindalegt snið</strong> á þyngd <strong>húsflugunnar</strong>, talan er rétt en getur verið erfitt að lesa hana! Það sem stendur er að það á að setja <strong>5 núll fyrir framan</strong> þessa tölu og fá þannig þessa ofsa smáu tölu <strong>0,000012kg</strong>"
